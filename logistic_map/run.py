@@ -208,6 +208,7 @@ def _base_run_DPNets(relaxed: bool, metric_deformation_coeff: float, rng_seed: i
     torch.manual_seed(rng_seed)
     kaiming_init(dpnet_fmap.lightning_module.encoder)
     kaiming_init(dpnet_fmap.lightning_module.encoder_timelagged)
+    dpnet_fmap.fit(train_dl)
     return evaluate_representation(dpnet_fmap)
 def _base_DPNets_HPOPT(relaxed: bool, rng_seed: int, feature_dim: int):
     def objective(trial):
