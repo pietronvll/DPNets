@@ -34,7 +34,6 @@ def make_dataset():
     ordered_MNIST = ordered_MNIST.map(lambda example: {'image': example['image']/255.0, 'label': example['label']}, batched=True, keep_in_memory=True, num_proc=2)
     ordered_MNIST.save_to_disk(data_path)
     configs.to_file(data_path / 'configs.yaml')
-
 #CNN Architecture
 class CNNEncoder(torch.nn.Module):
     def __init__(self, num_classes):
@@ -73,6 +72,7 @@ class CNNEncoder(torch.nn.Module):
 class ClassifierModule(lightning.LightningModule):
     def __init__(self, num_classes: int, learning_rate: float):
         super().__init__()
+        self.save_hyperparameters()
         self.num_classes = num_classes
         self.encoder = CNNEncoder(num_classes=num_classes)
         self.learning_rate = learning_rate
