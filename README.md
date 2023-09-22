@@ -4,7 +4,7 @@
 1. Each experiment should be self-contained
 2. The folder structure for each experiment should be as standardized as possible:
     - `/data` (ignored by git)
-    - `results.h5` (which should be small enough to be uploadable on git - Use `tensorstore` for concurrent writes)
+    - `/results`
     - `figures.ipynb` to make figures by loading results
     - `data_pipeline.py` (if needed)
     - `configs.yaml` to be read by `ml_confs`
