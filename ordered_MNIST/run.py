@@ -21,7 +21,7 @@ configs = ml_confs.from_file(experiment_path / 'configs.yaml')
 
 #General Trainer configs
 trainer_kwargs = {
-    'accelerator': 'cpu',
+    'accelerator': 'gpu',
     'devices': 1,
     'max_epochs': configs.max_epochs,  
     'enable_progress_bar': False,
