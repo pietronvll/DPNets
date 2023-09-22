@@ -12,9 +12,10 @@ source activate /projects/mlcompchem/mambaforge/envs/kooplearn
 # Change to the working directory
 cd /work/pnovelli/dp_examples/ordered_MNIST 
 #List containing the models to run
-MODELS=("DMD", "KernelDMD-RBF", "KernelDMD-Poly3", "KernelDMD-AbsExp", "VAMPNets", "Baseline-Classifier", "DPNets", "DPNets-relaxed")
+MODELS=("")
 
-for model_name in "${MODELS[@]}"; do
+for model_name in DMD KernelDMD-RBF KernelDMD-Poly3 KernelDMD-AbsExp VAMPNets Baseline-Classifier DPNets DPNets-relaxed
+do
     python run.py --model="$model_name"
 done
 # Wait for all instances to finish
