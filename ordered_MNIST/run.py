@@ -161,7 +161,7 @@ def _base_DPNets_HPOPT(relaxed: bool, rng_seed: int = 0):
     _, val_data, _ = load_data()
     #HP Opt with Optuna
     def objective(trial):
-        metric_deformation = trial.suggest_float("metric_deformation", 1e-2, 10, log=True)
+        metric_deformation = trial.suggest_float("metric_deformation", 1e-2, 1, log=True)
         model = _base_DPNets(relaxed, metric_deformation, rng_seed)
         report = evaluate_model(model, oracle, val_data)
         return np.mean(report['accuracy']) 
