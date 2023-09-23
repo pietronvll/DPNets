@@ -15,6 +15,9 @@ from functools import partial
 from kooplearn.models.feature_maps import ConcatenateFeatureMaps
 from torch.utils.data import DataLoader
 from kooplearn.nn.data import TrajToContextsDataset
+from time import perf_counter
+import functools
+from lightning.pytorch.callbacks import EarlyStopping
 
 #General definitions
 experiment_path = Path(__file__).parent
@@ -54,10 +57,22 @@ trainer_kwargs = {
     'accelerator': 'cpu',
     'devices': 1,
     'max_epochs': configs.max_epochs,
+    'enable_progress_bar': False,
+    'enable_model_summary': False,
     'enable_checkpointing': False,
     'logger': False  
 }
 
+# Adapted from https://realpython.com/python-timer/#creating-a-python-timer-decorator
+def timer(func):
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        tic = perf_counter()
+        value = func(*args, **kwargs)
+        toc = perf_counter()
+        elapsed_time = toc - tic
+        return value, elapsed_time
+    return wrapper_timer
 def stack_forest(results):
     out = {}
     for run_res in results:
@@ -69,7 +84,7 @@ def stack_forest(results):
     avgout = {}
     for key in out:
         if key == 'eigenvalues':
-            best_hausdorff = np.argmax(out['hausdorff-dist'])
+            best_hausdorff = np.argmin(out['hausdorff-dist'])
             avgout[key] = out[key][best_hausdorff]
         else:
             avgout[key] = np.mean(out[key])
@@ -178,18 +193,56 @@ def kaiming_init(model):
                 torch.nn.init.kaiming_uniform_(p, a= 1, nonlinearity=acname)
         else: #Bias
             torch.nn.init.zeros_(p)
-
 def run_VAMPNets():
-    pass
-def _base_run_DPNets(relaxed: bool, metric_deformation_coeff: float, rng_seed: int, feature_dim: int, lr:float):
-    from kooplearn.models.feature_maps import DPNet
-    trainer = lightning.Trainer(**trainer_kwargs)
+    full_report = {} 
+    for feature_dim in range(2, configs.max_feature_dim + 1):
+        report = []
+        for rng_seed in range(configs.num_rng_seeds):
+            print(f'Feature dim: {feature_dim}/{configs.max_feature_dim}, rng_seed: {rng_seed + 1}/{configs.num_rng_seeds}')
+            _res, train_time  = timer(_base_run_VAMPNets)(rng_seed, feature_dim)
+            _res['time_per_epoch'] = train_time/configs.max_epochs
+            report.append(_res)
+        full_report[f'{feature_dim}_features'] = stack_forest(report)
+    return full_report
+
+def _base_run_VAMPNets(rng_seed: int, feature_dim: int):
+    from kooplearn.models.feature_maps import VAMPNet
+    early_stopping = EarlyStopping('train/VAMP_score', patience=10, mode='max')
+    trainer = lightning.Trainer(**trainer_kwargs, callbacks=[early_stopping])
 
     net_kwargs = {
         'feature_dim': feature_dim,
         'layer_dims': configs.layer_dims
     }
-    opt_args = {'lr': lr}
+    opt_args = {'lr': 1e-4}
+    #Defining the model
+    vamp_fmap = VAMPNet(
+        SimpleMLP,
+        opt,
+        opt_args,
+        trainer,
+        net_kwargs,
+        lobe_timelagged=SimpleMLP,
+        lobe_timelagged_kwargs=net_kwargs,
+        center_covariances=False,
+        seed=rng_seed
+    )
+    #Init
+    torch.manual_seed(rng_seed)
+    kaiming_init(vamp_fmap.lightning_module.lobe)
+    kaiming_init(vamp_fmap.lightning_module.lobe_timelagged)
+    vamp_fmap.fit(train_dl)
+    return evaluate_representation(vamp_fmap)
+def _base_run_DPNets(relaxed: bool, metric_deformation_coeff: float, rng_seed: int, feature_dim: int):
+    from kooplearn.models.feature_maps import DPNet
+    early_stopping = EarlyStopping('train/total_loss', patience=10, mode='max')
+    trainer = lightning.Trainer(**trainer_kwargs, callbacks=[early_stopping])
+
+    net_kwargs = {
+        'feature_dim': feature_dim,
+        'layer_dims': configs.layer_dims
+    }
+    opt_args = {'lr': 1e-4}
     #Defining the model
     dpnet_fmap = DPNet(
         SimpleMLP,
@@ -212,9 +265,8 @@ def _base_run_DPNets(relaxed: bool, metric_deformation_coeff: float, rng_seed: i
     return evaluate_representation(dpnet_fmap)
 def _base_DPNets_HPOPT(relaxed: bool, rng_seed: int, feature_dim: int):
     def objective(trial):
-        lr = trial.suggest_float("lr", min_lr, max_lr, log=True)
         metric_deformation = trial.suggest_float("metric_deformation", 1e-2, 1, log=True)
-        report = _base_run_DPNets(relaxed, metric_deformation, rng_seed, feature_dim, lr)
+        report = _base_run_DPNets(relaxed, metric_deformation, rng_seed, feature_dim)
         return report['optimality-gap']
     sampler = optuna.samplers.TPESampler(seed=0)  #Reproductibility
     study = optuna.create_study(direction="minimize", sampler=sampler)
@@ -224,9 +276,12 @@ def run_DPNets():
     full_report = {} 
     for feature_dim in range(2, configs.max_feature_dim + 1):
         report = []
+        HP_rng_seed = 12345 #Reproductibility
+        best_params = _base_DPNets_HPOPT(False, HP_rng_seed, feature_dim)
         for rng_seed in range(configs.num_rng_seeds):
-            best_params = _base_DPNets_HPOPT(False, rng_seed, feature_dim)
-            _res = _base_run_DPNets(False, best_params['metric_deformation'], rng_seed, feature_dim, best_params['lr'])
+            print(f'Feature dim: {feature_dim}/{configs.max_feature_dim}, rng_seed: {rng_seed + 1}/{configs.num_rng_seeds}')
+            _res, train_time = timer(_base_run_DPNets)(False, best_params['metric_deformation'], rng_seed, feature_dim)
+            _res['time_per_epoch'] = train_time/configs.max_epochs
             report.append(_res)
         full_report[f'{feature_dim}_features'] = stack_forest(report)
     return full_report
@@ -234,9 +289,12 @@ def run_DPNets_relaxed():
     full_report = {} 
     for feature_dim in range(2, configs.max_feature_dim + 1):
         report = []
+        HP_rng_seed = 12345 #Reproductibility
+        best_params = _base_DPNets_HPOPT(False, HP_rng_seed, feature_dim)
         for rng_seed in range(configs.num_rng_seeds):
-            best_params = _base_DPNets_HPOPT(True, rng_seed, feature_dim)
-            _res = _base_run_DPNets(True, best_params['metric_deformation'], rng_seed, feature_dim, best_params['lr'])
+            print(f'Feature dim: {feature_dim}/{configs.max_feature_dim}, rng_seed: {rng_seed + 1}/{configs.num_rng_seeds}')
+            _res, train_time = timer(_base_run_DPNets)(True, best_params['metric_deformation'], rng_seed, feature_dim)
+            _res['time_per_epoch'] = train_time/configs.max_epochs
             report.append(_res)
         full_report[f'{feature_dim}_features'] = stack_forest(report)
     return full_report
