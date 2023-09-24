@@ -136,7 +136,7 @@ def tune_learning_rate(
         model.lightning_module,
         train_dataloaders=train_dataloader,
         min_lr=1e-6,
-        max_lr=1e-2,
+        max_lr=1e-3,
         num_training=100,
         early_stop_threshold=None,
         update_attr=True,
