@@ -270,7 +270,7 @@ def run_VAMPNets():
         )
         best_lr = tune_learning_rate(trainer, feature_map, train_dl)
         assert feature_map.lightning_module.lr == best_lr
-        _, nn_fit_time = (feature_map.fit)(train_dl)
+        _, nn_fit_time = timer(feature_map.fit)(train_dl)
         time_per_epoch = nn_fit_time / trainer.max_epochs
         train_data, _, test_data = load_data()
         VAMPNet_model = DeepEDMD(
@@ -305,7 +305,7 @@ def _run_DPNets(
     )
     best_lr = tune_learning_rate(trainer, feature_map, train_dl)
     assert feature_map.lightning_module.lr == best_lr
-    _, nn_fit_time = (feature_map.fit)(train_dl)
+    _, nn_fit_time = timer(feature_map.fit)(train_dl)
     time_per_epoch = nn_fit_time / trainer.max_epochs
     train_data, _, _ = load_data()
     DPNet_model = DeepEDMD(
@@ -390,7 +390,7 @@ def run_DynamicalAE():
         )
         best_lr = tune_learning_rate(trainer, dae_model, train_dl)
         assert dae_model.lightning_module.lr == best_lr
-        _, fit_time = (dae_model.fit)(train_dl)
+        _, fit_time = timer(dae_model.fit)(train_dl)
         time_per_epoch = fit_time / trainer.max_epochs
         oracle = load_oracle()
         report = evaluate_model(dae_model, oracle, test_data)

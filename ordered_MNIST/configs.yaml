@@ -2,9 +2,9 @@ classes: 5
 train_samples: 1001
 val_ratio: 0.2
 test_samples: 1001
-num_rng_seeds: 20
+num_rng_seeds: 2
 batch_size: 128
 eval_up_to_t: 15
 reduced_rank: True
-max_epochs: 300
-trial_budget: 50
+max_epochs: 10
+trial_budget: 2
