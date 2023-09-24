@@ -86,6 +86,39 @@ class CNNEncoder(torch.nn.Module):
         return output
 
 
+# A decoder which is specular to CNNEncoder, starting with a fully connected layer and then reshaping the output to a 2D image
+class CNNDecoder(torch.nn.Module):
+    def __init__(self, num_classes=10):
+        super(CNNDecoder, self).__init__()
+        self.fc = torch.nn.Sequential(torch.nn.Linear(num_classes, 32 * 7 * 7))
+
+        self.conv1 = torch.nn.Sequential(
+            torch.nn.Upsample(scale_factor=2),
+            torch.nn.ReLU(),
+            torch.nn.ConvTranspose2d(
+                in_channels=32,
+                out_channels=16,
+                kernel_size=5,
+                stride=1,
+                padding=2,
+            ),
+        )
+        self.conv2 = torch.nn.Sequential(
+            torch.nn.Upsample(scale_factor=2),
+            torch.nn.ReLU(),
+            torch.nn.ConvTranspose2d(16, 1, 5, 1, 2),
+        )
+
+    def forward(self, x):
+        x = self.fc(x)
+        x = x.view(x.size(0), 32, 7, 7)
+        x = self.conv1(x)
+        x = self.conv2(x)
+        # Remove the channel dimension
+        x = x.squeeze(1)
+        return x
+
+
 class ClassifierModule(lightning.LightningModule):
     def __init__(self, num_classes: int, learning_rate: float):
         super().__init__()
