@@ -3,8 +3,8 @@
 #PBS -l walltime=24:00:00
 #PBS -q gpu
 #PBS -N ordered_MNIST-DPNets
-#PBS -o /work/pnovelli/dp_examples/ordered_MNIST/logs/out.log
-#PBS -e /work/pnovelli/dp_examples/ordered_MNIST/logs/err.log
+#PBS -j oe
+#PBS -o /work/pnovelli/dp_examples/ordered_MNIST/logs/output.log
 
 module load miniconda3/mc3-py39
 

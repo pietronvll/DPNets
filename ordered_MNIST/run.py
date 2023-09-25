@@ -1,5 +1,6 @@
 import argparse
 import functools
+import logging
 import pickle
 from pathlib import Path
 from time import perf_counter
@@ -23,6 +24,17 @@ data_path = experiment_path / "data"
 ckpt_path = experiment_path / "ckpt"
 results_path = experiment_path / "results"
 configs = ml_confs.from_file(experiment_path / "configs.yaml")
+
+# Logging
+logger = logging.getLogger("ordered_MNIST")
+logger.setLevel(logging.INFO)
+log_file = experiment_path / "logs/run.log"  # Specify the path to your log file
+file_handler = logging.FileHandler(log_file)
+file_handler.setLevel(logging.INFO)
+log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+formatter = logging.Formatter(log_format, datefmt="%Y-%m-%d %H:%M:%S")
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 # Trainer Configuration
 trainer_kwargs = {
@@ -76,7 +88,9 @@ def sanitize_filename(filename):
 def evaluate_model(
     model: BaseModel, oracle: TrainableFeatureMap, test_data: datasets.Dataset
 ):
-    from kooplearn.models import ConsistentAE
+    from kooplearn.models.ae.consistent import (
+        ConsistentAE,  # Need to import the class from the true path, otherwise isinstance will fail (?!)
+    )
 
     cap_saved_imgs = 10  # Deflate report size
     assert model.is_fitted
@@ -105,20 +119,26 @@ def load_oracle():
     return oracle
 
 
-def load_data(torch: bool = False):
+def load_data(torch: bool = False, ctx_len: int = 2):
     ordered_MNIST = load_from_disk(str(data_path))
     # Creating a copy of the dataset in numpy format
     np_ordered_MNIST = ordered_MNIST.with_format(
         type="numpy", columns=["image", "label"]
     )
     if torch:
-        train_ds = TrajToContextsDataset(ordered_MNIST["train"]["image"])
-        val_ds = TrajToContextsDataset(ordered_MNIST["validation"]["image"])
+        train_ds = TrajToContextsDataset(
+            ordered_MNIST["train"]["image"], context_window_len=ctx_len
+        )
+        val_ds = TrajToContextsDataset(
+            ordered_MNIST["validation"]["image"], context_window_len=ctx_len
+        )
         # Dataloaders
         train_data = DataLoader(train_ds, batch_size=configs.batch_size, shuffle=True)
         val_data = DataLoader(val_ds, batch_size=len(val_ds), shuffle=False)
     else:
-        train_data = traj_to_contexts(np_ordered_MNIST["train"]["image"])
+        train_data = traj_to_contexts(
+            np_ordered_MNIST["train"]["image"], context_window_len=ctx_len
+        )
         train_data = train_data.copy()  # Avoid numpy to torch read-only errors
         val_data = np_ordered_MNIST["validation"]
     return train_data, val_data, np_ordered_MNIST["test"]
@@ -161,23 +181,28 @@ def timer(func):
 def run_OracleFeatures():
     from kooplearn.models import DeepEDMD
 
+    logger.info("OracleFeatures::START")
     oracle = load_oracle()
     train_data, _, test_data = load_data()
-    classifier_model = DeepEDMD(oracle, reduced_rank=False, rank=configs.classes).fit(
-        train_data
-    )
-    return evaluate_model(classifier_model, oracle, test_data)
+    classifier_model = DeepEDMD(oracle, reduced_rank=False, rank=configs.classes)
+    _, fit_time = timer(classifier_model.fit)(train_data)
+    report = evaluate_model(classifier_model, oracle, test_data)
+    report["fit_time"] = fit_time
+    logger.info("OracleFeatures::END")
+    return report
 
 
 def run_DMD():
     from kooplearn.models import DMD
 
+    logger.info("DMD::START")
     train_data, _, test_data = load_data()
     dmd_model = DMD(reduced_rank=configs.reduced_rank, rank=configs.classes)
     _, fit_time = timer(dmd_model.fit)(train_data)
     oracle = load_oracle()
     report = evaluate_model(dmd_model, oracle, test_data)
     report["fit_time"] = fit_time
+    logger.info("DMD::END")
     return report
 
 
@@ -230,33 +255,48 @@ def _tune_kDMD_lengthscale(kernel_class, **kw):
 def run_RBF_DMD():
     from sklearn.gaussian_process.kernels import RBF
 
+    logger.info("RBF_DMD::START")
+    logger.info("RBF_DMD::Tuning length-scale")
     ls = _tune_kDMD_lengthscale(RBF)
-    return _run_kDMD(RBF(length_scale=ls))
+    logger.info(f"RBF_DMD::Tuned length-scale: {ls}")
+    report = _run_kDMD(RBF(length_scale=ls))
+    logger.info("RBF_DMD::END")
+    return report
 
 
 def run_Poly3_DMD():
     # Poly3 Kernel DMD
     from sklearn.metrics.pairwise import polynomial_kernel
 
-    return _run_kDMD(polynomial_kernel)
+    logger.info("Poly3_DMD::START")
+    report = _run_kDMD(polynomial_kernel)
+    logger.info("Poly3_DMD::END")
+    return report
 
 
 def run_AbsExp_DMD():
     # Absolute Exponential a.k.a. Matern 0.5 Kernel DMD
     from sklearn.gaussian_process.kernels import Matern
 
+    logger.info("AbsExp_DMD::START")
+    logger.info("AbsExp_DMD::Tuning length-scale")
     ls = _tune_kDMD_lengthscale(Matern, nu=0.5)
-    return _run_kDMD(Matern(length_scale=ls, nu=0.5))
+    logger.info(f"AbsExp_DMD::Tuned length-scale: {ls}")
+    report = _run_kDMD(Matern(length_scale=ls, nu=0.5))
+    logger.info("AbsExp_DMD::END")
+    return report
 
 
 def run_VAMPNets():
     from kooplearn.models import DeepEDMD
     from kooplearn.models.feature_maps import VAMPNet
 
+    logger.info("VAMPNets::START")
     oracle = load_oracle()
     train_dl, _, _ = load_data(torch=True)
     results = []
     for rng_seed in range(configs.num_rng_seeds):  # Reproducibility
+        logger.info(f"VAMPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
         trainer = lightning.Trainer(**trainer_kwargs)
         # Defining the model
         feature_map = VAMPNet(
@@ -280,7 +320,9 @@ def run_VAMPNets():
         report = evaluate_model(VAMPNet_model, oracle, test_data)
         report["fit_time"] = fit_time
         report["time_per_epoch"] = time_per_epoch
-    return stack_reports(results)
+    report = stack_reports(results)
+    logger.info("VAMPNets::END")
+    return report
 
 
 def _run_DPNets(
@@ -337,12 +379,15 @@ def _tune_DPNets_metric_deformation(relaxed: bool, rng_seed: int = 0):
 
 
 def run_DPNets():
+    logger.info("DPNets::START")
     _, _, test_data = load_data()
     oracle = load_oracle()
     results = []
     relaxed = False
     for rng_seed in range(configs.num_rng_seeds):  # Reproducibility
+        logger.info(f"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
         metric_deformation = _tune_DPNets_metric_deformation(relaxed, rng_seed)
+        logger.info(f"DPNets::Tuned metric deformation: {metric_deformation}")
         model, (fit_time, time_per_epoch) = _run_DPNets(
             relaxed, metric_deformation, rng_seed
         )
@@ -350,16 +395,21 @@ def run_DPNets():
         report["fit_time"] = fit_time
         report["time_per_epoch"] = time_per_epoch
         results.append(report)
-    return stack_reports(results)
+    report = stack_reports(results)
+    logger.info("DPNets::END")
+    return report
 
 
 def run_DPNets_relaxed():
+    logger.info("DPNets-relaxed::START")
     _, _, test_data = load_data()
     oracle = load_oracle()
     results = []
     relaxed = True
     for rng_seed in range(configs.num_rng_seeds):  # Reproducibility
+        logger.info(f"DPNets-relaxed::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
         metric_deformation = _tune_DPNets_metric_deformation(relaxed, rng_seed)
+        logger.info(f"DPNets-relaxed::Tuned metric deformation: {metric_deformation}")
         model, (fit_time, time_per_epoch) = _run_DPNets(
             relaxed, metric_deformation, rng_seed
         )
@@ -367,14 +417,18 @@ def run_DPNets_relaxed():
         report["fit_time"] = fit_time
         report["time_per_epoch"] = time_per_epoch
         results.append(report)
-    return stack_reports(results)
+    report = stack_reports(results)
+    logger.info("DPNets-relaxed::END")
+    return report
 
 
 def run_DynamicalAE():
     from kooplearn.models import DynamicAE
 
+    logger.info("DynamicalAE::START")
     results = []
     for rng_seed in range(configs.num_rng_seeds):  # Reproducibility
+        logger.info(f"DynamicalAE::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
         trainer = lightning.Trainer(**trainer_kwargs)
         train_dl, _, test_data = load_data(torch=True)
         dae_model = DynamicAE(
@@ -397,11 +451,42 @@ def run_DynamicalAE():
         report["fit_time"] = fit_time
         report["time_per_epoch"] = time_per_epoch
         results.append(report)
+    report = stack_reports(results)
+    logger.info("DynamicalAE::END")
     return report
 
 
 def run_ConsistentAE():
-    pass
+    from kooplearn.models import ConsistentAE
+    logger.info("ConsistentAE::START")
+    results = []
+    for rng_seed in range(configs.num_rng_seeds):  # Reproducibility
+        logger.info(f"ConsistentAE::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+        trainer = lightning.Trainer(**trainer_kwargs)
+        train_dl, _, test_data = load_data(torch=True, ctx_len=3)
+        dae_model = ConsistentAE(
+            CNNEncoder,
+            CNNDecoder,
+            configs.classes,
+            torch.optim.Adam,
+            {"lr": 1e-4},
+            trainer,
+            encoder_kwargs={"num_classes": configs.classes},
+            decoder_kwargs={"num_classes": configs.classes},
+            seed=rng_seed,
+        )
+        best_lr = tune_learning_rate(trainer, dae_model, train_dl)
+        assert dae_model.lightning_module.lr == best_lr
+        _, fit_time = timer(dae_model.fit)(train_dl)
+        time_per_epoch = fit_time / trainer.max_epochs
+        oracle = load_oracle()
+        report = evaluate_model(dae_model, oracle, test_data)
+        report["fit_time"] = fit_time
+        report["time_per_epoch"] = time_per_epoch
+        results.append(report)
+    report = stack_reports(results)
+    logger.info("ConsistentAE::END")
+    return report
 
 
 ########### MAIN  ###########
