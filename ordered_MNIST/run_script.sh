@@ -11,8 +11,6 @@ module load miniconda3/mc3-py39
 source activate /projects/mlcompchem/mambaforge/envs/kooplearn
 # Change to the working directory
 cd /work/pnovelli/dp_examples/ordered_MNIST 
-#List containing the models to run
-MODELS=("")
 
 for model_name in Oracle-Features DMD KernelDMD-RBF KernelDMD-Poly3 KernelDMD-AbsExp VAMPNets DPNets DPNets-relaxed DynamicalAE
 do
