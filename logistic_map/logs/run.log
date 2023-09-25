@@ -1,0 +1,32 @@
+2023-09-25 16:52:08 - logistic_map - INFO - ChebyT::START
+2023-09-25 16:52:08 - logistic_map - INFO - ChebyT::END
+2023-09-25 16:52:15 - logistic_map - INFO - VAMPNets::START
+2023-09-25 16:52:15 - logistic_map - INFO - VAMPNets::FeatureDim 3
+2023-09-25 16:52:15 - logistic_map - INFO - VAMPNets::Seed 1/2
+2023-09-25 16:52:17 - logistic_map - INFO - VAMPNets::Seed 2/2
+2023-09-25 16:52:18 - logistic_map - INFO - VAMPNets::FeatureDim 4
+2023-09-25 16:52:18 - logistic_map - INFO - VAMPNets::Seed 1/2
+2023-09-25 16:52:19 - logistic_map - INFO - VAMPNets::Seed 2/2
+2023-09-25 16:52:21 - logistic_map - INFO - VAMPNets::END
+2023-09-25 16:52:27 - logistic_map - INFO - DPNets::START
+2023-09-25 16:52:27 - logistic_map - INFO - DPNets::FeatureDim 3
+2023-09-25 16:52:30 - logistic_map - INFO - DPNets::Tuned metric deformation: 0.269388301928541
+2023-09-25 16:52:30 - logistic_map - INFO - DPNets::Seed 1/2
+2023-09-25 16:52:32 - logistic_map - INFO - DPNets::Seed 2/2
+2023-09-25 16:52:33 - logistic_map - INFO - DPNets::FeatureDim 4
+2023-09-25 16:52:35 - logistic_map - INFO - DPNets::Tuned metric deformation: 0.269388301928541
+2023-09-25 16:52:35 - logistic_map - INFO - DPNets::Seed 1/2
+2023-09-25 16:52:37 - logistic_map - INFO - DPNets::Seed 2/2
+2023-09-25 16:52:38 - logistic_map - INFO - DPNets::END
+2023-09-25 16:52:45 - logistic_map - INFO - DPNets-relaxed::START
+2023-09-25 16:52:45 - logistic_map - INFO - DPNets-relaxed::FeatureDim 3
+2023-09-25 16:52:48 - logistic_map - INFO - DPNets-relaxed::Tuned metric deformation: 0.269388301928541
+2023-09-25 16:52:48 - logistic_map - INFO - DPNets-relaxed::Seed 1/2
+2023-09-25 16:52:49 - logistic_map - INFO - DPNets-relaxed::Seed 2/2
+2023-09-25 16:52:50 - logistic_map - INFO - DPNets-relaxed::FeatureDim 4
+2023-09-25 16:52:53 - logistic_map - INFO - DPNets-relaxed::Tuned metric deformation: 0.269388301928541
+2023-09-25 16:52:53 - logistic_map - INFO - DPNets-relaxed::Seed 1/2
+2023-09-25 16:52:54 - logistic_map - INFO - DPNets-relaxed::Seed 2/2
+2023-09-25 16:52:56 - logistic_map - INFO - DPNets-relaxed::END
+2023-09-25 16:53:03 - logistic_map - INFO - NoiseKernel::START
+2023-09-25 16:53:03 - logistic_map - INFO - NoiseKernel::END
