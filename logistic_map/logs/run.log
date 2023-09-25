@@ -1,0 +1,48 @@
+2023-09-25 17:10:41 - logistic_map - INFO - ChebyT::START
+2023-09-25 17:10:42 - logistic_map - INFO - ChebyT::END
+2023-09-25 17:10:55 - logistic_map - INFO - VAMPNets::START
+2023-09-25 17:10:55 - logistic_map - INFO - VAMPNets::FeatureDim 3
+2023-09-25 17:10:55 - logistic_map - INFO - VAMPNets::Seed 1/20
+2023-09-25 17:11:04 - logistic_map - INFO - VAMPNets::Seed 2/20
+2023-09-25 17:11:12 - logistic_map - INFO - VAMPNets::Seed 3/20
+2023-09-25 17:11:20 - logistic_map - INFO - VAMPNets::Seed 4/20
+2023-09-25 17:11:28 - logistic_map - INFO - VAMPNets::Seed 5/20
+2023-09-25 17:11:36 - logistic_map - INFO - VAMPNets::Seed 6/20
+2023-09-25 17:11:44 - logistic_map - INFO - VAMPNets::Seed 7/20
+2023-09-25 17:11:52 - logistic_map - INFO - VAMPNets::Seed 8/20
+2023-09-25 17:12:00 - logistic_map - INFO - VAMPNets::Seed 9/20
+2023-09-25 17:12:08 - logistic_map - INFO - VAMPNets::Seed 10/20
+2023-09-25 17:12:16 - logistic_map - INFO - VAMPNets::Seed 11/20
+2023-09-25 17:12:24 - logistic_map - INFO - VAMPNets::Seed 12/20
+2023-09-25 17:12:32 - logistic_map - INFO - VAMPNets::Seed 13/20
+2023-09-25 17:12:40 - logistic_map - INFO - VAMPNets::Seed 14/20
+2023-09-25 17:12:48 - logistic_map - INFO - VAMPNets::Seed 15/20
+2023-09-25 17:12:56 - logistic_map - INFO - VAMPNets::Seed 16/20
+2023-09-25 17:13:05 - logistic_map - INFO - VAMPNets::Seed 17/20
+2023-09-25 17:13:13 - logistic_map - INFO - VAMPNets::Seed 18/20
+2023-09-25 17:13:21 - logistic_map - INFO - VAMPNets::Seed 19/20
+2023-09-25 17:13:29 - logistic_map - INFO - VAMPNets::Seed 20/20
+2023-09-25 17:13:37 - logistic_map - INFO - VAMPNets::FeatureDim 4
+2023-09-25 17:13:37 - logistic_map - INFO - VAMPNets::Seed 1/20
+2023-09-25 17:13:45 - logistic_map - INFO - VAMPNets::Seed 2/20
+2023-09-25 17:13:53 - logistic_map - INFO - VAMPNets::Seed 3/20
+2023-09-25 17:14:01 - logistic_map - INFO - VAMPNets::Seed 4/20
+2023-09-25 17:14:09 - logistic_map - INFO - VAMPNets::Seed 5/20
+2023-09-25 17:14:18 - logistic_map - INFO - VAMPNets::Seed 6/20
+2023-09-25 17:14:26 - logistic_map - INFO - VAMPNets::Seed 7/20
+2023-09-25 17:14:34 - logistic_map - INFO - VAMPNets::Seed 8/20
+2023-09-25 17:14:42 - logistic_map - INFO - VAMPNets::Seed 9/20
+2023-09-25 17:14:50 - logistic_map - INFO - VAMPNets::Seed 10/20
+2023-09-25 17:14:58 - logistic_map - INFO - VAMPNets::Seed 11/20
+2023-09-25 17:15:06 - logistic_map - INFO - VAMPNets::Seed 12/20
+2023-09-25 17:15:15 - logistic_map - INFO - VAMPNets::Seed 13/20
+2023-09-25 17:15:23 - logistic_map - INFO - VAMPNets::Seed 14/20
+2023-09-25 17:15:31 - logistic_map - INFO - VAMPNets::Seed 15/20
+2023-09-25 17:15:39 - logistic_map - INFO - VAMPNets::Seed 16/20
+2023-09-25 17:15:47 - logistic_map - INFO - VAMPNets::Seed 17/20
+2023-09-25 17:15:55 - logistic_map - INFO - VAMPNets::Seed 18/20
+2023-09-25 17:16:03 - logistic_map - INFO - VAMPNets::Seed 19/20
+2023-09-25 17:16:11 - logistic_map - INFO - VAMPNets::Seed 20/20
+2023-09-25 17:16:19 - logistic_map - INFO - VAMPNets::END
+2023-09-25 17:16:32 - logistic_map - INFO - DPNets::START
+2023-09-25 17:16:32 - logistic_map - INFO - DPNets::FeatureDim 3
