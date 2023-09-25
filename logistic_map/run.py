@@ -212,7 +212,7 @@ def tune_learning_rate(
         model.lightning_module,
         train_dataloaders=train_dataloader,
         min_lr=1e-6,
-        max_lr=1e-3,
+        max_lr=1e-4,
         num_training=50,
         early_stop_threshold=None,
         update_attr=True,
@@ -303,7 +303,7 @@ def _run_VAMPNets(rng_seed: int, feature_dim: int):
     vamp_fmap = VAMPNet(
         SimpleMLP,
         opt,
-        {"lr": 1e-4},
+        {"lr": 5e-5},
         trainer,
         net_kwargs,
         lobe_timelagged=SimpleMLP,
@@ -334,7 +334,7 @@ def _run_DPNets(
     dpnet_fmap = DPNet(
         SimpleMLP,
         opt,
-        {"lr": 1e-4},
+        {"lr": 5e-5},
         trainer,
         use_relaxed_loss=relaxed,
         metric_deformation_loss_coefficient=metric_deformation_coeff,
@@ -378,9 +378,10 @@ def run_DPNets():
         logger.info(f"DPNets::FeatureDim {feature_dim}")
         report = []
         tuner_rng_seed = 171192  # Reproductibility
-        metric_deformation = _tune_DPNets_metric_deformation(
-            relaxed, tuner_rng_seed, feature_dim
-        )
+        # metric_deformation = _tune_DPNets_metric_deformation(
+        #     relaxed, tuner_rng_seed, feature_dim
+        # )
+        metric_deformation = 1.0
         logger.info(f"DPNets::Tuned metric deformation: {metric_deformation}")
         for rng_seed in range(configs.num_rng_seeds):
             logger.info(f"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
@@ -399,9 +400,10 @@ def run_DPNets_relaxed():
         logger.info(f"DPNets-relaxed::FeatureDim {feature_dim}")
         report = []
         tuner_rng_seed = 171192  # Reproductibility
-        metric_deformation = _tune_DPNets_metric_deformation(
-            relaxed, tuner_rng_seed, feature_dim
-        )
+        # metric_deformation = _tune_DPNets_metric_deformation(
+        #     relaxed, tuner_rng_seed, feature_dim
+        # )
+        metric_deformation = 1.0
         logger.info(f"DPNets-relaxed::Tuned metric deformation: {metric_deformation}")
         for rng_seed in range(configs.num_rng_seeds):
             logger.info(f"DPNets-relaxed::Seed {rng_seed + 1}/{configs.num_rng_seeds}")

@@ -603,3 +603,5 @@
 2023-09-25 22:09:41 - logistic_map - INFO - DPNets-relaxed::END
 2023-09-25 22:09:54 - logistic_map - INFO - NoiseKernel::START
 2023-09-25 22:09:54 - logistic_map - INFO - NoiseKernel::END
+2023-09-25 22:31:48 - logistic_map - INFO - ChebyT::START
+2023-09-25 22:31:48 - logistic_map - INFO - ChebyT::END
