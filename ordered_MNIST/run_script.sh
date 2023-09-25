@@ -12,7 +12,7 @@ source activate /projects/mlcompchem/mambaforge/envs/kooplearn
 # Change to the working directory
 cd /work/pnovelli/dp_examples/ordered_MNIST 
 
-for model_name in Oracle-Features DMD KernelDMD-RBF KernelDMD-Poly3 KernelDMD-AbsExp VAMPNets DPNets DPNets-relaxed DynamicalAE
+for model_name in ConsistentAE #Oracle-Features DMD KernelDMD-RBF KernelDMD-Poly3 KernelDMD-AbsExp VAMPNets DPNets DPNets-relaxed DynamicalAE
 do
     python run.py --model="$model_name"
 done
