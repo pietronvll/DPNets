@@ -1,9 +1,11 @@
 import argparse
 import functools
+import logging
 import pickle
 from functools import partial
 from pathlib import Path
 from time import perf_counter
+from typing import Union
 
 import lightning
 import ml_confs
@@ -29,18 +31,30 @@ configs = ml_confs.from_file(
     experiment_path / "configs.yaml", register_jax_pytree=False
 )
 
+# Logging
+logger = logging.getLogger("logistic_map")
+logger.setLevel(logging.INFO)
+log_file = experiment_path / "logs/run.log"  # Specify the path to your log file
+file_handler = logging.FileHandler(log_file)
+file_handler.setLevel(logging.INFO)
+log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+formatter = logging.Formatter(log_format, datefmt="%Y-%m-%d %H:%M:%S")
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+
+# Model Initialization
 logistic = LogisticMap(N=configs.N, rng_seed=0)  # Reproducibility
-# Data preparation
+# Data pipeline
 sample_traj = logistic.sample(
     0.5, configs.num_train + configs.num_val + configs.num_test
 )
+
 dataset = {
     "train": sample_traj[: configs.num_train],
     "validation": sample_traj[configs.num_train : configs.num_train + configs.num_val],
     "test": sample_traj[configs.num_train + configs.num_val :],
 }
 
-# Preparing the data
 train_data = torch.from_numpy(dataset["train"]).float()
 val_data = torch.from_numpy(dataset["validation"]).float()
 
@@ -68,6 +82,7 @@ trainer_kwargs = {
     "logger": False,
 }
 
+
 # Adapted from https://realpython.com/python-timer/#creating-a-python-timer-decorator
 def timer(func):
     @functools.wraps(func)
@@ -81,23 +96,22 @@ def timer(func):
     return wrapper_timer
 
 
-def stack_forest(results):
-    out = {}
-    for run_res in results:
-        for key in run_res:
-            if key not in out:
-                out[key] = []
-            out[key].append(run_res[key])
-    # Take the mean and std of each metric
-    avgout = {}
-    for key in out:
-        if key == "eigenvalues":
-            best_hausdorff = np.argmin(out["hausdorff-dist"])
-            avgout[key] = out[key][best_hausdorff]
-        else:
-            avgout[key] = np.mean(out[key])
-            avgout[key + "_std"] = np.std(out[key])
-    return avgout
+def stack_reports(reports):
+    stacked = {}
+    for key in [
+        "hausdorff-distance",
+        "optimality-gap",
+        "feasibility-gap",
+        "fit-time",
+        "time_per_epoch",
+    ]:
+        if key in reports[0]:
+            stacked[key] = np.mean([r[key] for r in reports])
+            key_std = key + "_std"
+            stacked[key_std] = np.std([r[key] for r in reports])
+    for key in ["estimator-eigenvalues", "covariance-eigenvalues"]:
+        stacked[key] = np.stack([r[key] for r in reports])
+    return stacked
 
 
 def sanitize_filename(filename):
@@ -170,7 +184,7 @@ def evaluate_representation(feature_map: FeatureMap):
     OLS_estimator = np.linalg.solve(cov, cross_cov)
     # Eigenvalue estimation
     OLS_eigs = np.linalg.eigvals(OLS_estimator)
-    report["hausdorff-dist"] = directed_hausdorff_distance(OLS_eigs, logistic.eig())
+    report["hausdorff-distance"] = directed_hausdorff_distance(OLS_eigs, logistic.eig())
     # VAMP2-score
     M = np.linalg.multi_dot(
         [
@@ -182,15 +196,34 @@ def evaluate_representation(feature_map: FeatureMap):
     )
     feature_dim = cov.shape[0]
     report["optimality-gap"] = np.sum(logistic.svals()[:feature_dim] ** 2) - np.trace(M)
-    # Metric distortion
-    cov_eigs = np.linalg.eigvalsh(cov)
-    report["distortionless-gap"] = np.sqrt(
-        np.mean(cov_eigs - np.ones_like(cov_eigs)) ** 2
-    )
-    report["eigenvalues"] = OLS_eigs
+    # Feasibility
+    report["feasibility-gap"] = np.linalg.norm(cov - np.eye(feature_dim), ord="fro")
+    report["estimator-eigenvalues"] = OLS_eigs
+    report["covariance-eigenvalues"] = np.linalg.eigvalsh(cov)
     return report
 
 
+def tune_learning_rate(
+    trainer: lightning.Trainer,
+    model: FeatureMap,
+    train_dataloader: DataLoader,
+):
+    # See https://lightning.ai/docs/pytorch/stable/api/lightning.pytorch.tuner.tuning.Tuner.html#lightning.pytorch.tuner.tuning.Tuner.lr_find for an explanation of how the lr is chosen
+    tuner = lightning.pytorch.tuner.Tuner(trainer)
+    # Run learning rate finder
+    lr_finder = tuner.lr_find(
+        model.lightning_module,
+        train_dataloaders=train_dataloader,
+        min_lr=1e-6,
+        max_lr=1e-3,
+        num_training=50,
+        early_stop_threshold=None,
+        update_attr=True,
+    )
+    return lr_finder.suggestion()
+
+
+# Models
 class SinusoidalEmbedding(torch.nn.Module):
     def __init__(self):
         super().__init__()
@@ -248,34 +281,32 @@ def kaiming_init(model):
             torch.nn.init.zeros_(p)
 
 
+# Runners
 def run_VAMPNets():
+    logger.info("VAMPNets::START")
     full_report = {}
-    for feature_dim in range(2, configs.max_feature_dim + 1):
-        report = []
+    for feature_dim in configs.feature_dims:
+        logger.info(f"VAMPNets::FeatureDim {feature_dim}")
+        reports = []
         for rng_seed in range(configs.num_rng_seeds):
-            print(
-                f"Feature dim: {feature_dim}/{configs.max_feature_dim}, rng_seed: {rng_seed + 1}/{configs.num_rng_seeds}"
-            )
-            _res, train_time = timer(_base_run_VAMPNets)(rng_seed, feature_dim)
-            _res["time_per_epoch"] = train_time / configs.max_epochs
-            report.append(_res)
-        full_report[f"{feature_dim}_features"] = stack_forest(report)
+            logger.info(f"VAMPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+            result = _run_VAMPNets(rng_seed, feature_dim)
+            reports.append(result)
+        full_report[f"{feature_dim}_features"] = stack_reports(reports)
+    logger.info("VAMPNets::END")
     return full_report
 
 
-def _base_run_VAMPNets(rng_seed: int, feature_dim: int):
+def _run_VAMPNets(rng_seed: int, feature_dim: int):
     from kooplearn.models.feature_maps import VAMPNet
 
-    early_stopping = EarlyStopping("train/VAMP_score", patience=10, mode="max")
-    trainer = lightning.Trainer(**trainer_kwargs, callbacks=[early_stopping])
-
+    trainer = lightning.Trainer(**trainer_kwargs)
     net_kwargs = {"feature_dim": feature_dim, "layer_dims": configs.layer_dims}
-    opt_args = {"lr": 1e-4}
     # Defining the model
     vamp_fmap = VAMPNet(
         SimpleMLP,
         opt,
-        opt_args,
+        {"lr": 1e-4},
         trainer,
         net_kwargs,
         lobe_timelagged=SimpleMLP,
@@ -287,25 +318,26 @@ def _base_run_VAMPNets(rng_seed: int, feature_dim: int):
     torch.manual_seed(rng_seed)
     kaiming_init(vamp_fmap.lightning_module.lobe)
     kaiming_init(vamp_fmap.lightning_module.lobe_timelagged)
-    vamp_fmap.fit(train_dl)
-    return evaluate_representation(vamp_fmap)
+    best_lr = tune_learning_rate(trainer, vamp_fmap, train_dl)
+    assert vamp_fmap.lightning_module.lr == best_lr
+    _, fit_time = timer(vamp_fmap.fit)(train_dl)
+    report = evaluate_representation(vamp_fmap)
+    report["time_per_epoch"] = fit_time / configs.max_epochs
+    return report
 
 
-def _base_run_DPNets(
+def _run_DPNets(
     relaxed: bool, metric_deformation_coeff: float, rng_seed: int, feature_dim: int
 ):
     from kooplearn.models.feature_maps import DPNet
 
-    early_stopping = EarlyStopping("train/total_loss", patience=10, mode="max")
-    trainer = lightning.Trainer(**trainer_kwargs, callbacks=[early_stopping])
-
+    trainer = lightning.Trainer(**trainer_kwargs)
     net_kwargs = {"feature_dim": feature_dim, "layer_dims": configs.layer_dims}
-    opt_args = {"lr": 1e-4}
     # Defining the model
     dpnet_fmap = DPNet(
         SimpleMLP,
         opt,
-        opt_args,
+        {"lr": 1e-4},
         trainer,
         use_relaxed_loss=relaxed,
         metric_deformation_loss_coefficient=metric_deformation_coeff,
@@ -319,75 +351,111 @@ def _base_run_DPNets(
     torch.manual_seed(rng_seed)
     kaiming_init(dpnet_fmap.lightning_module.encoder)
     kaiming_init(dpnet_fmap.lightning_module.encoder_timelagged)
-    dpnet_fmap.fit(train_dl)
-    return evaluate_representation(dpnet_fmap)
+    best_lr = tune_learning_rate(trainer, dpnet_fmap, train_dl)
+    assert dpnet_fmap.lightning_module.lr == best_lr
+    _, fit_time = timer(dpnet_fmap.fit)(train_dl)
+    report = evaluate_representation(dpnet_fmap)
+    report["time_per_epoch"] = fit_time / configs.max_epochs
+    return report
 
 
-def _base_DPNets_HPOPT(relaxed: bool, rng_seed: int, feature_dim: int):
+def _tune_DPNets_metric_deformation(relaxed: bool, rng_seed: int, feature_dim: int):
     def objective(trial):
         metric_deformation = trial.suggest_float(
             "metric_deformation", 1e-2, 1, log=True
         )
-        report = _base_run_DPNets(relaxed, metric_deformation, rng_seed, feature_dim)
-        return report["optimality-gap"]
+        report = _run_DPNets(relaxed, metric_deformation, rng_seed, feature_dim)
+        return report["optimality-gap"] + report["feasibility-gap"]
 
     sampler = optuna.samplers.TPESampler(seed=0)  # Reproductibility
     study = optuna.create_study(direction="minimize", sampler=sampler)
     study.optimize(objective, n_trials=configs.trial_budget)
-    return study.best_params
+    return study.best_params["metric_deformation"]
 
 
 def run_DPNets():
+    logger.info("DPNets::START")
     full_report = {}
-    for feature_dim in range(2, configs.max_feature_dim + 1):
+    relaxed = False
+    for feature_dim in configs.feature_dims:
+        logger.info(f"DPNets::FeatureDim {feature_dim}")
         report = []
-        HP_rng_seed = 12345  # Reproductibility
-        best_params = _base_DPNets_HPOPT(False, HP_rng_seed, feature_dim)
+        tuner_rng_seed = 171192  # Reproductibility
+        metric_deformation = _tune_DPNets_metric_deformation(
+            relaxed, tuner_rng_seed, feature_dim
+        )
+        logger.info(f"DPNets::Tuned metric deformation: {metric_deformation}")
         for rng_seed in range(configs.num_rng_seeds):
-            print(
-                f"Feature dim: {feature_dim}/{configs.max_feature_dim}, rng_seed: {rng_seed + 1}/{configs.num_rng_seeds}"
-            )
-            _res, train_time = timer(_base_run_DPNets)(
-                False, best_params["metric_deformation"], rng_seed, feature_dim
-            )
-            _res["time_per_epoch"] = train_time / configs.max_epochs
-            report.append(_res)
-        full_report[f"{feature_dim}_features"] = stack_forest(report)
+            logger.info(f"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+            result = _run_DPNets(False, metric_deformation, rng_seed, feature_dim)
+            report.append(result)
+        full_report[f"{feature_dim}_features"] = stack_reports(report)
+    logger.info("DPNets::END")
     return full_report
 
 
 def run_DPNets_relaxed():
+    logger.info("DPNets-relaxed::START")
     full_report = {}
-    for feature_dim in range(2, configs.max_feature_dim + 1):
+    relaxed = True
+    for feature_dim in configs.feature_dims:
+        logger.info(f"DPNets-relaxed::FeatureDim {feature_dim}")
         report = []
-        HP_rng_seed = 12345  # Reproductibility
-        best_params = _base_DPNets_HPOPT(False, HP_rng_seed, feature_dim)
+        tuner_rng_seed = 171192  # Reproductibility
+        metric_deformation = _tune_DPNets_metric_deformation(
+            relaxed, tuner_rng_seed, feature_dim
+        )
+        logger.info(f"DPNets-relaxed::Tuned metric deformation: {metric_deformation}")
         for rng_seed in range(configs.num_rng_seeds):
-            print(
-                f"Feature dim: {feature_dim}/{configs.max_feature_dim}, rng_seed: {rng_seed + 1}/{configs.num_rng_seeds}"
-            )
-            _res, train_time = timer(_base_run_DPNets)(
-                True, best_params["metric_deformation"], rng_seed, feature_dim
-            )
-            _res["time_per_epoch"] = train_time / configs.max_epochs
-            report.append(_res)
-        full_report[f"{feature_dim}_features"] = stack_forest(report)
+            logger.info(f"DPNets-relaxed::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+            result = _run_DPNets(False, metric_deformation, rng_seed, feature_dim)
+            report.append(result)
+        full_report[f"{feature_dim}_features"] = stack_reports(report)
+    logger.info("DPNets-relaxed::END")
     return full_report
 
 
 def run_ChebyT():
-    def ChebyT(order: int = 3):
+    logger.info("ChebyT::START")
+
+    def ChebyT(feature_dim: int = 3):
         def scaled_chebyt(n, x):
             return scipy.special.eval_chebyt(n, 2 * x - 1)
 
-        fn_list = [partial(scaled_chebyt, n) for n in range(order + 1)]
+        fn_list = [partial(scaled_chebyt, n) for n in range(feature_dim)]
         return ConcatenateFeatureMaps(fn_list)
 
     full_report = {}
-    for feature_dim in range(2, configs.max_feature_dim + 1):
+    for feature_dim in configs.feature_dims:
         full_report[f"{feature_dim}_features"] = evaluate_representation(
-            ChebyT(feature_dim - 1)
+            ChebyT(feature_dim)
         )
+    logger.info("ChebyT::END")
+    return full_report
+
+
+def run_NoiseKernel():
+    import scipy.special
+
+    logger.info("NoiseKernel::START")
+
+    def NoiseKernel(order: int = 3):
+        binom_coeffs = [scipy.special.binom(configs.N, i) for i in range(configs.N + 1)]
+        sorted_coeffs = np.argsort(binom_coeffs)
+
+        def noise_feat(n, x):
+            return logistic.noise_feature(x, n)
+
+        fn_list = [partial(noise_feat, n) for n in sorted_coeffs[:order]]
+
+        return ConcatenateFeatureMaps(fn_list)
+
+    full_report = {}
+    for feature_dim in configs.feature_dims:
+        full_report[f"{feature_dim}_features"] = evaluate_representation(
+            NoiseKernel(feature_dim)
+        )
+    logger.info("NoiseKernel::END")
     return full_report
 
 
@@ -396,6 +464,7 @@ AVAIL_MODELS = {
     "DPNets": run_DPNets,
     "DPNets-relaxed": run_DPNets_relaxed,
     "Cheby-T": run_ChebyT,
+    "NoiseKernel": run_NoiseKernel,
 }
 
 
