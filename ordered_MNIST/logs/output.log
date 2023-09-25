@@ -1,0 +1,475 @@
+Fitted DeepEDMD model. Lookback length set to 1
+Fitted DMD model. Lookback length set to 1
+[I 2023-09-25 12:27:24,859] A new study created in memory with name: no-name-088cae92-1765-4afc-b150-4b5138ca9b73
+The least-squares solution (tikhonov_reg == 0) of the reduced rank problem in the kernel setting is computationally very inefficient. Consider adding a small regularization parameter.
+[I 2023-09-25 12:27:28,138] Trial 0 finished with value: 0.2739635157545605 and parameters: {'ls': 58.01720805176102}. Best is trial 0 with value: 0.2739635157545605.
+The least-squares solution (tikhonov_reg == 0) of the reduced rank problem in the kernel setting is computationally very inefficient. Consider adding a small regularization parameter.
+[I 2023-09-25 12:27:31,890] Trial 1 finished with value: 0.27794361525704814 and parameters: {'ls': 75.28758265108458}. Best is trial 1 with value: 0.27794361525704814.
+The least-squares solution (tikhonov_reg == 0) of the reduced rank problem in the kernel setting is computationally very inefficient. Consider adding a small regularization parameter.
+Fitted KernelDMD model. Lookback length set to 1
+Fitted KernelDMD model. Lookback length set to 1
+Fitted KernelDMD model. Lookback length set to 1
+The least-squares solution (tikhonov_reg == 0) of the reduced rank problem in the kernel setting is computationally very inefficient. Consider adding a small regularization parameter.
+The numerical rank of the result (755) is smaller than the desired rank (799).
+ 44 degrees of freedom will be ignored.
+Fitted KernelDMD model. Lookback length set to 1
+[I 2023-09-25 12:28:17,817] A new study created in memory with name: no-name-e174a4f6-e5dd-4f8a-9f24-27799ce70744
+The least-squares solution (tikhonov_reg == 0) of the reduced rank problem in the kernel setting is computationally very inefficient. Consider adding a small regularization parameter.
+[I 2023-09-25 12:28:21,668] Trial 0 finished with value: 0.291542288557214 and parameters: {'ls': 58.01720805176102}. Best is trial 0 with value: 0.291542288557214.
+The least-squares solution (tikhonov_reg == 0) of the reduced rank problem in the kernel setting is computationally very inefficient. Consider adding a small regularization parameter.
+[I 2023-09-25 12:28:25,503] Trial 1 finished with value: 0.2925373134328358 and parameters: {'ls': 75.28758265108458}. Best is trial 1 with value: 0.2925373134328358.
+The least-squares solution (tikhonov_reg == 0) of the reduced rank problem in the kernel setting is computationally very inefficient. Consider adding a small regularization parameter.
+Fitted KernelDMD model. Lookback length set to 1
+Fitted KernelDMD model. Lookback length set to 1
+Fitted KernelDMD model. Lookback length set to 1
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 0
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 20 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/VAMP_score', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+Finding best initial lr:   2%|▏         | 1/50 [00:01<01:16,  1.57s/it]Finding best initial lr:  34%|███▍      | 17/50 [00:01<00:02, 13.90it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 29.41it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 43.80it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.32it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_59de14e7-2182-4d99-8523-011945b69e03.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_59de14e7-2182-4d99-8523-011945b69e03.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name | Type       | Params
+------------------------------------
+0 | lobe | CNNEncoder | 21.1 K
+------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting VAMPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:00, 125.44it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 135.68it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:00<00:00, 138.52it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 135.83it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_8baaed41-3b1b-4613-a2ab-bc5e8271917d.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_8baaed41-3b1b-4613-a2ab-bc5e8271917d.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name | Type       | Params
+------------------------------------
+0 | lobe | CNNEncoder | 21.1 K
+------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/numpy/core/_methods.py:206: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/numpy/core/_methods.py:163: RuntimeWarning: invalid value encountered in divide
+  arrmean = um.true_divide(arrmean, div, out=arrmean,
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/numpy/core/_methods.py:198: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Fitting VAMPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Traceback (most recent call last):
+  File "/work/pnovelli/dp_examples/ordered_MNIST/run.py", line 539, in <module>
+    main()
+  File "/work/pnovelli/dp_examples/ordered_MNIST/run.py", line 521, in main
+    results = AVAIL_MODELS[args.model]()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/pnovelli/dp_examples/ordered_MNIST/run.py", line 323, in run_VAMPNets
+    report = stack_reports(results)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/pnovelli/dp_examples/ordered_MNIST/run.py", line 59, in stack_reports
+    if "time_per_epoch" in reports[0]:
+                           ~~~~~~~^^^
+IndexError: list index out of range
+[I 2023-09-25 12:29:16,551] A new study created in memory with name: no-name-3e52bd28-3b7f-4e86-b48a-1cf378421f88
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 0
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 20 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/projection_score', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/metric_deformation_loss', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/total_loss', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+Finding best initial lr:   2%|▏         | 1/50 [00:01<01:19,  1.62s/it]Finding best initial lr:  30%|███       | 15/50 [00:01<00:02, 11.85it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 26.95it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 42.45it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 25.43it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_ab1cd714-81e2-4d20-b47e-84aa1af72eed.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_ab1cd714-81e2-4d20-b47e-84aa1af72eed.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+[I 2023-09-25 12:29:24,906] Trial 0 finished with value: 0.9383084577114429 and parameters: {'metric_deformation': 0.12520653814999466}. Best is trial 0 with value: 0.9383084577114429.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 0
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:00, 144.99it/s]Finding best initial lr:  60%|██████    | 30/50 [00:00<00:00, 144.41it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:00<00:00, 134.29it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 133.94it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_05c6ed77-340c-4b55-bca6-fd167c8a7455.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_05c6ed77-340c-4b55-bca6-fd167c8a7455.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+[I 2023-09-25 12:29:29,559] Trial 1 finished with value: 0.8325041459369817 and parameters: {'metric_deformation': 0.269388301928541}. Best is trial 0 with value: 0.9383084577114429.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 0
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:00, 135.68it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:00<00:00, 138.87it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:00<00:00, 141.75it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 140.03it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_169cc9a9-774c-4bbc-84f5-dbbf957e5822.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_169cc9a9-774c-4bbc-84f5-dbbf957e5822.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+[I 2023-09-25 12:29:34,736] A new study created in memory with name: no-name-5474fa5b-5955-467b-9021-6f88a592e377
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:00, 116.27it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 137.19it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:00<00:00, 142.21it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 138.49it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_e16e5cde-fe61-4e47-881d-047c74e9a3d9.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_e16e5cde-fe61-4e47-881d-047c74e9a3d9.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+[I 2023-09-25 12:29:39,591] Trial 0 finished with value: 0.9134328358208956 and parameters: {'metric_deformation': 0.12520653814999466}. Best is trial 0 with value: 0.9134328358208956.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:00, 140.91it/s]Finding best initial lr:  60%|██████    | 30/50 [00:00<00:00, 131.64it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:00<00:00, 141.12it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 140.36it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_7c3b3f61-eac9-4607-92e4-448ec4bdcfe7.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_7c3b3f61-eac9-4607-92e4-448ec4bdcfe7.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+[I 2023-09-25 12:29:44,174] Trial 1 finished with value: 0.7983416252072968 and parameters: {'metric_deformation': 0.269388301928541}. Best is trial 0 with value: 0.9134328358208956.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:00, 131.46it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 121.59it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:00<00:00, 118.48it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 119.31it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_d781a2bf-d085-4dbf-b9bc-4487e06692c2.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_d781a2bf-d085-4dbf-b9bc-4487e06692c2.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+[I 2023-09-25 12:30:05,057] A new study created in memory with name: no-name-ecfc9150-d47c-4509-a891-9b856daa4a33
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 0
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 20 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/relaxed_projection_score', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/metric_deformation_loss', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/total_loss', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+Finding best initial lr:   2%|▏         | 1/50 [00:01<01:19,  1.63s/it]Finding best initial lr:  30%|███       | 15/50 [00:01<00:02, 11.84it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 27.11it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 43.85it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 25.54it/s]
+Learning rate set to 0.0005011872336272724
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_19369dd4-01b9-4a6d-aa71-1096ec03523c.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_19369dd4-01b9-4a6d-aa71-1096ec03523c.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+[I 2023-09-25 12:30:12,525] Trial 0 finished with value: 0.29419568822553893 and parameters: {'metric_deformation': 0.12520653814999466}. Best is trial 0 with value: 0.29419568822553893.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 0
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:00, 103.56it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 108.86it/s]Finding best initial lr:  70%|███████   | 35/50 [00:00<00:00, 111.66it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:00<00:00, 114.58it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 113.27it/s]
+Learning rate set to 0.0007585775750291836
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_4312d264-519b-47f5-a9a1-b21d88844e77.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_4312d264-519b-47f5-a9a1-b21d88844e77.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+[I 2023-09-25 12:30:17,470] Trial 1 finished with value: 0.296849087893864 and parameters: {'metric_deformation': 0.269388301928541}. Best is trial 1 with value: 0.296849087893864.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 0
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:00, 146.17it/s]Finding best initial lr:  60%|██████    | 30/50 [00:00<00:00, 133.16it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:00<00:00, 129.32it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 133.03it/s]
+Learning rate set to 0.0007585775750291836
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_b60758da-adc6-4c35-9f0e-f6b009a58827.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_b60758da-adc6-4c35-9f0e-f6b009a58827.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+[I 2023-09-25 12:30:22,649] A new study created in memory with name: no-name-aafe6bd3-de0d-4faf-84f1-93b18b1f932a
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:00, 149.33it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:00<00:00, 153.63it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:00<00:00, 156.04it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 154.61it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_9da24e50-ea09-4149-9dee-569f28fd1b8e.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_9da24e50-ea09-4149-9dee-569f28fd1b8e.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+[I 2023-09-25 12:30:27,625] Trial 0 finished with value: 0.29286898839137643 and parameters: {'metric_deformation': 0.12520653814999466}. Best is trial 0 with value: 0.29286898839137643.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:00, 139.87it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:00<00:00, 143.08it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:00<00:00, 143.69it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 141.25it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_b8f6f451-ff2f-4dbf-b5da-d3bbc7965ce8.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_b8f6f451-ff2f-4dbf-b5da-d3bbc7965ce8.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+The numerical rank of the result (4) is smaller than the desired rank (5).
+ 1 degrees of freedom will be ignored.
+[I 2023-09-25 12:30:31,705] Trial 1 finished with value: 0.2845771144278607 and parameters: {'metric_deformation': 0.269388301928541}. Best is trial 0 with value: 0.29286898839137643.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:00, 145.36it/s]Finding best initial lr:  60%|██████    | 30/50 [00:00<00:00, 142.71it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:00<00:00, 146.24it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 145.42it/s]
+Learning rate set to 0.0008709635899560806
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_2996cd70-7a58-451f-8b50-4e091a89b1c6.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_2996cd70-7a58-451f-8b50-4e091a89b1c6.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+---------------------------------------
+21.1 K    Trainable params
+0         Non-trainable params
+21.1 K    Total params
+0.084     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+Fitting DPNet. Lookback window length set to 1
+Fitted DeepEDMD model. Lookback length set to 1
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 0
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 20 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/reconstruction_loss', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/prediction_loss', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/linear_loss', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/full_loss', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
+  rank_zero_warn(
+Finding best initial lr:   2%|▏         | 1/50 [00:01<01:03,  1.29s/it]Finding best initial lr:  28%|██▊       | 14/50 [00:01<00:02, 13.57it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:01<00:00, 29.08it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 42.21it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.40it/s]
+Learning rate set to 0.0006606934480075958
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_098d57f7-8d5e-4c6b-9ec1-88f427ed0275.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_098d57f7-8d5e-4c6b-9ec1-88f427ed0275.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+1 | decoder | CNNDecoder | 22.6 K
+2 | _lin    | Linear     | 25    
+---------------------------------------
+43.7 K    Trainable params
+0         Non-trainable params
+43.7 K    Total params
+0.175     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Global seed set to 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:00, 129.01it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 136.11it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:00<00:00, 138.11it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:00<00:00, 137.04it/s]
+Learning rate set to 0.0005011872336272724
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_a74597d5-fb0c-457f-a9d0-b16a1d5a0002.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/ordered_MNIST/.lr_find_a74597d5-fb0c-457f-a9d0-b16a1d5a0002.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [GPU-e724bb03-ffd4-0954-9f9a-10f721e8e98e]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | encoder | CNNEncoder | 21.1 K
+1 | decoder | CNNDecoder | 22.6 K
+2 | _lin    | Linear     | 25    
+---------------------------------------
+43.7 K    Trainable params
+0         Non-trainable params
+43.7 K    Total params
+0.175     Total estimated model params size (MB)
+`Trainer.fit` stopped: `max_epochs=10` reached.

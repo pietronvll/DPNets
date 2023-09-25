@@ -1,0 +1,96 @@
+2023-09-25 12:26:49 - ordered_MNIST - INFO - OracleFeatures::START
+2023-09-25 12:26:52 - ordered_MNIST - INFO - OracleFeatures::END
+2023-09-25 12:27:06 - ordered_MNIST - INFO - DMD::START
+2023-09-25 12:27:10 - ordered_MNIST - INFO - DMD::END
+2023-09-25 12:27:23 - ordered_MNIST - INFO - RBF_DMD::START
+2023-09-25 12:27:23 - ordered_MNIST - INFO - RBF_DMD::Tuning length-scale
+2023-09-25 12:27:31 - ordered_MNIST - INFO - RBF_DMD::Tuned length-scale: 75.28758265108458
+2023-09-25 12:27:39 - ordered_MNIST - INFO - RBF_DMD::END
+2023-09-25 12:27:53 - ordered_MNIST - INFO - Poly3_DMD::START
+2023-09-25 12:28:02 - ordered_MNIST - INFO - Poly3_DMD::END
+2023-09-25 12:28:16 - ordered_MNIST - INFO - AbsExp_DMD::START
+2023-09-25 12:28:16 - ordered_MNIST - INFO - AbsExp_DMD::Tuning length-scale
+2023-09-25 12:28:25 - ordered_MNIST - INFO - AbsExp_DMD::Tuned length-scale: 75.28758265108458
+2023-09-25 12:28:33 - ordered_MNIST - INFO - AbsExp_DMD::END
+2023-09-25 12:28:47 - ordered_MNIST - INFO - VAMPNets::START
+2023-09-25 12:28:48 - ordered_MNIST - INFO - VAMPNets::Seed 1/2
+2023-09-25 12:28:55 - ordered_MNIST - INFO - VAMPNets::Seed 2/2
+2023-09-25 12:29:15 - ordered_MNIST - INFO - DPNets::START
+2023-09-25 12:29:15 - ordered_MNIST - INFO - DPNets::Seed 1/2
+2023-09-25 12:29:29 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.12520653814999466
+2023-09-25 12:29:34 - ordered_MNIST - INFO - DPNets::Seed 2/2
+2023-09-25 12:29:44 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.12520653814999466
+2023-09-25 12:29:49 - ordered_MNIST - INFO - DPNets::END
+2023-09-25 12:30:03 - ordered_MNIST - INFO - DPNets-relaxed::START
+2023-09-25 12:30:04 - ordered_MNIST - INFO - DPNets-relaxed::Seed 1/2
+2023-09-25 12:30:17 - ordered_MNIST - INFO - DPNets-relaxed::Tuned metric deformation: 0.269388301928541
+2023-09-25 12:30:22 - ordered_MNIST - INFO - DPNets-relaxed::Seed 2/2
+2023-09-25 12:30:31 - ordered_MNIST - INFO - DPNets-relaxed::Tuned metric deformation: 0.12520653814999466
+2023-09-25 12:30:37 - ordered_MNIST - INFO - DPNets-relaxed::END
+2023-09-25 12:30:51 - ordered_MNIST - INFO - DynamicalAE::START
+2023-09-25 12:30:51 - ordered_MNIST - INFO - DynamicalAE::Seed 1/2
+2023-09-25 12:30:58 - ordered_MNIST - INFO - DynamicalAE::Seed 2/2
+2023-09-25 12:31:01 - ordered_MNIST - INFO - DynamicalAE::END
+2023-09-25 12:33:45 - ordered_MNIST - INFO - OracleFeatures::START
+2023-09-25 12:33:49 - ordered_MNIST - INFO - OracleFeatures::END
+2023-09-25 12:34:03 - ordered_MNIST - INFO - DMD::START
+2023-09-25 12:34:06 - ordered_MNIST - INFO - DMD::END
+2023-09-25 12:34:20 - ordered_MNIST - INFO - RBF_DMD::START
+2023-09-25 12:34:20 - ordered_MNIST - INFO - RBF_DMD::Tuning length-scale
+2023-09-25 12:37:19 - ordered_MNIST - INFO - RBF_DMD::Tuned length-scale: 97.44062963654696
+2023-09-25 12:37:26 - ordered_MNIST - INFO - RBF_DMD::END
+2023-09-25 12:37:40 - ordered_MNIST - INFO - Poly3_DMD::START
+2023-09-25 12:37:48 - ordered_MNIST - INFO - Poly3_DMD::END
+2023-09-25 12:38:01 - ordered_MNIST - INFO - AbsExp_DMD::START
+2023-09-25 12:38:01 - ordered_MNIST - INFO - AbsExp_DMD::Tuning length-scale
+2023-09-25 12:41:06 - ordered_MNIST - INFO - AbsExp_DMD::Tuned length-scale: 86.27915771882266
+2023-09-25 12:41:13 - ordered_MNIST - INFO - AbsExp_DMD::END
+2023-09-25 12:41:26 - ordered_MNIST - INFO - VAMPNets::START
+2023-09-25 12:41:27 - ordered_MNIST - INFO - VAMPNets::Seed 1/20
+2023-09-25 12:41:39 - ordered_MNIST - INFO - VAMPNets::Seed 2/20
+2023-09-25 12:41:50 - ordered_MNIST - INFO - VAMPNets::Seed 3/20
+2023-09-25 12:42:00 - ordered_MNIST - INFO - VAMPNets::Seed 4/20
+2023-09-25 12:42:11 - ordered_MNIST - INFO - VAMPNets::Seed 5/20
+2023-09-25 12:42:21 - ordered_MNIST - INFO - VAMPNets::Seed 6/20
+2023-09-25 12:42:31 - ordered_MNIST - INFO - VAMPNets::Seed 7/20
+2023-09-25 12:42:41 - ordered_MNIST - INFO - VAMPNets::Seed 8/20
+2023-09-25 12:42:51 - ordered_MNIST - INFO - VAMPNets::Seed 9/20
+2023-09-25 12:43:01 - ordered_MNIST - INFO - VAMPNets::Seed 10/20
+2023-09-25 12:43:11 - ordered_MNIST - INFO - VAMPNets::Seed 11/20
+2023-09-25 12:43:21 - ordered_MNIST - INFO - VAMPNets::Seed 12/20
+2023-09-25 12:43:30 - ordered_MNIST - INFO - VAMPNets::Seed 13/20
+2023-09-25 12:43:40 - ordered_MNIST - INFO - VAMPNets::Seed 14/20
+2023-09-25 12:43:51 - ordered_MNIST - INFO - VAMPNets::Seed 15/20
+2023-09-25 12:44:00 - ordered_MNIST - INFO - VAMPNets::Seed 16/20
+2023-09-25 12:44:11 - ordered_MNIST - INFO - VAMPNets::Seed 17/20
+2023-09-25 12:44:21 - ordered_MNIST - INFO - VAMPNets::Seed 18/20
+2023-09-25 12:44:31 - ordered_MNIST - INFO - VAMPNets::Seed 19/20
+2023-09-25 12:44:41 - ordered_MNIST - INFO - VAMPNets::Seed 20/20
+2023-09-25 12:45:06 - ordered_MNIST - INFO - DPNets::START
+2023-09-25 12:45:06 - ordered_MNIST - INFO - DPNets::Seed 1/20
+2023-09-25 12:54:55 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.18951939363879777
+2023-09-25 12:55:07 - ordered_MNIST - INFO - DPNets::Seed 2/20
+2023-09-25 13:04:57 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.10301944856283578
+2023-09-25 13:05:09 - ordered_MNIST - INFO - DPNets::Seed 3/20
+2023-09-25 13:14:56 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.9645273254711177
+2023-09-25 13:15:08 - ordered_MNIST - INFO - DPNets::Seed 4/20
+2023-09-25 13:24:45 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.9371449384156437
+2023-09-25 13:24:57 - ordered_MNIST - INFO - DPNets::Seed 5/20
+2023-09-25 13:34:36 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.4511608496622851
+2023-09-25 13:34:48 - ordered_MNIST - INFO - DPNets::Seed 6/20
+2023-09-25 13:44:26 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.21204825656513937
+2023-09-25 13:44:38 - ordered_MNIST - INFO - DPNets::Seed 7/20
+2023-09-25 13:54:14 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.47412431400117816
+2023-09-25 13:54:27 - ordered_MNIST - INFO - DPNets::Seed 8/20
+2023-09-25 14:04:01 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.7821113189192814
+2023-09-25 14:04:13 - ordered_MNIST - INFO - DPNets::Seed 9/20
+2023-09-25 14:13:54 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.010967097042542102
+2023-09-25 14:14:05 - ordered_MNIST - INFO - DPNets::Seed 10/20
+2023-09-25 14:23:41 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.269388301928541
+2023-09-25 14:23:52 - ordered_MNIST - INFO - DPNets::Seed 11/20
+2023-09-25 14:33:30 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.9666090134435715
+2023-09-25 14:33:42 - ordered_MNIST - INFO - DPNets::Seed 12/20
+2023-09-25 14:43:18 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.9721873774157987
+2023-09-25 14:43:29 - ordered_MNIST - INFO - DPNets::Seed 13/20
+2023-09-25 14:53:06 - ordered_MNIST - INFO - DPNets::Tuned metric deformation: 0.9532039330005327
+2023-09-25 14:53:18 - ordered_MNIST - INFO - DPNets::Seed 14/20
