@@ -67,9 +67,6 @@ val_dl = DataLoader(val_ds, batch_size=len(val_ds), shuffle=False)
 # Init report dict
 dl_reports = {}
 
-min_lr = 1e-4
-max_lr = 1e-2
-
 opt = torch.optim.Adam
 
 trainer_kwargs = {
