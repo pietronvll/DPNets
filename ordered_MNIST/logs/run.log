@@ -124,3 +124,5 @@
 2023-09-25 16:59:29 - ordered_MNIST - INFO - DPNets-relaxed::Seed 7/20
 2023-09-25 17:08:38 - ordered_MNIST - INFO - DPNets-relaxed::Tuned metric deformation: 0.05590203832905281
 2023-09-25 17:08:49 - ordered_MNIST - INFO - DPNets-relaxed::Seed 8/20
+2023-09-25 17:17:58 - ordered_MNIST - INFO - DPNets-relaxed::Tuned metric deformation: 0.06555994323203924
+2023-09-25 17:18:09 - ordered_MNIST - INFO - DPNets-relaxed::Seed 9/20
