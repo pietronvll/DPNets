@@ -134,3 +134,25 @@
 2023-09-25 17:46:08 - ordered_MNIST - INFO - DPNets-relaxed::Seed 12/20
 2023-09-25 17:55:16 - ordered_MNIST - INFO - DPNets-relaxed::Tuned metric deformation: 0.117264952006031
 2023-09-25 17:55:30 - ordered_MNIST - INFO - DPNets-relaxed::Seed 13/20
+2023-09-25 19:12:16 - ordered_MNIST - INFO - DynamicalAE::START
+2023-09-25 19:12:16 - ordered_MNIST - INFO - DynamicalAE::Seed 1/20
+2023-09-25 19:12:35 - ordered_MNIST - INFO - DynamicalAE::Seed 2/20
+2023-09-25 19:12:45 - ordered_MNIST - INFO - DynamicalAE::Seed 3/20
+2023-09-25 19:12:56 - ordered_MNIST - INFO - DynamicalAE::Seed 4/20
+2023-09-25 19:13:06 - ordered_MNIST - INFO - DynamicalAE::Seed 5/20
+2023-09-25 19:13:17 - ordered_MNIST - INFO - DynamicalAE::Seed 6/20
+2023-09-25 19:13:27 - ordered_MNIST - INFO - DynamicalAE::Seed 7/20
+2023-09-25 19:13:38 - ordered_MNIST - INFO - DynamicalAE::Seed 8/20
+2023-09-25 19:13:49 - ordered_MNIST - INFO - DynamicalAE::Seed 9/20
+2023-09-25 19:13:59 - ordered_MNIST - INFO - DynamicalAE::Seed 10/20
+2023-09-25 19:14:10 - ordered_MNIST - INFO - DynamicalAE::Seed 11/20
+2023-09-25 19:14:20 - ordered_MNIST - INFO - DynamicalAE::Seed 12/20
+2023-09-25 19:14:31 - ordered_MNIST - INFO - DynamicalAE::Seed 13/20
+2023-09-25 19:14:42 - ordered_MNIST - INFO - DynamicalAE::Seed 14/20
+2023-09-25 19:14:52 - ordered_MNIST - INFO - DynamicalAE::Seed 15/20
+2023-09-25 19:15:03 - ordered_MNIST - INFO - DynamicalAE::Seed 16/20
+2023-09-25 19:15:13 - ordered_MNIST - INFO - DynamicalAE::Seed 17/20
+2023-09-25 19:15:24 - ordered_MNIST - INFO - DynamicalAE::Seed 18/20
+2023-09-25 19:15:35 - ordered_MNIST - INFO - DynamicalAE::Seed 19/20
+2023-09-25 19:15:45 - ordered_MNIST - INFO - DynamicalAE::Seed 20/20
+2023-09-25 19:15:56 - ordered_MNIST - INFO - DynamicalAE::END
