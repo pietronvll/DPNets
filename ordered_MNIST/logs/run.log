@@ -126,3 +126,11 @@
 2023-09-25 17:08:49 - ordered_MNIST - INFO - DPNets-relaxed::Seed 8/20
 2023-09-25 17:17:58 - ordered_MNIST - INFO - DPNets-relaxed::Tuned metric deformation: 0.06555994323203924
 2023-09-25 17:18:09 - ordered_MNIST - INFO - DPNets-relaxed::Seed 9/20
+2023-09-25 17:27:15 - ordered_MNIST - INFO - DPNets-relaxed::Tuned metric deformation: 0.07732588995008274
+2023-09-25 17:27:27 - ordered_MNIST - INFO - DPNets-relaxed::Seed 10/20
+2023-09-25 17:36:37 - ordered_MNIST - INFO - DPNets-relaxed::Tuned metric deformation: 0.12520653814999466
+2023-09-25 17:36:48 - ordered_MNIST - INFO - DPNets-relaxed::Seed 11/20
+2023-09-25 17:45:57 - ordered_MNIST - INFO - DPNets-relaxed::Tuned metric deformation: 0.918305045480768
+2023-09-25 17:46:08 - ordered_MNIST - INFO - DPNets-relaxed::Seed 12/20
+2023-09-25 17:55:16 - ordered_MNIST - INFO - DPNets-relaxed::Tuned metric deformation: 0.117264952006031
+2023-09-25 17:55:30 - ordered_MNIST - INFO - DPNets-relaxed::Seed 13/20
