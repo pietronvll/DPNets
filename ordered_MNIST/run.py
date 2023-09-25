@@ -157,7 +157,7 @@ def tune_learning_rate(
         train_dataloaders=train_dataloader,
         min_lr=1e-6,
         max_lr=1e-3,
-        num_training=100,
+        num_training=50,
         early_stop_threshold=None,
         update_attr=True,
     )
@@ -458,6 +458,7 @@ def run_DynamicalAE():
 
 def run_ConsistentAE():
     from kooplearn.models import ConsistentAE
+
     logger.info("ConsistentAE::START")
     results = []
     for rng_seed in range(configs.num_rng_seeds):  # Reproducibility
