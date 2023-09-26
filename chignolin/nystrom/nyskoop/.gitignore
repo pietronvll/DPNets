@@ -1,0 +1,7 @@
+.idea/**
+*.png
+__pycache__
+datasets/
+notebooks/l63_data/
+notebooks/outputs/
+*.pyc
