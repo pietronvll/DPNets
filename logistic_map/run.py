@@ -284,14 +284,14 @@ def kaiming_init(model):
 
 # Runners
 def run_VAMPNets(feature_dim: int):
-    logger.info("VAMPNets::START::FeatureDim {feature_dim}")
+    logger.info(f"VAMPNets::START::FeatureDim {feature_dim}")
     reports = []
     for rng_seed in range(configs.num_rng_seeds):
-        logger.info(f"VAMPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+        logger.info(ff"VAMPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
         result = _run_VAMPNets(rng_seed, feature_dim)
         reports.append(result)
     full_report = stack_reports(reports)
-    logger.info("VAMPNets::END")
+    logger.info(f"VAMPNets::END")
     return full_report
 
 
@@ -372,7 +372,7 @@ def _tune_DPNets_metric_deformation(relaxed: bool, rng_seed: int, feature_dim: i
 
 
 def run_DPNets(feature_dim: int):
-    logger.info("DPNets::START::FeatureDim {feature_dim}")
+    logger.info(f"DPNets::START::FeatureDim {feature_dim}")
     relaxed = False
     report = []
     tuner_rng_seed = 171192  # Reproductibility
@@ -380,18 +380,18 @@ def run_DPNets(feature_dim: int):
     #     relaxed, tuner_rng_seed, feature_dim
     # )
     metric_deformation = 1.0
-    logger.info(f"DPNets::Tuned metric deformation: {metric_deformation}")
+    logger.info(ff"DPNets::Tuned metric deformation: {metric_deformation}")
     for rng_seed in range(configs.num_rng_seeds):
-        logger.info(f"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+        logger.info(ff"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
         result = _run_DPNets(relaxed, metric_deformation, rng_seed, feature_dim)
         report.append(result)
     full_report = stack_reports(report)
-    logger.info("DPNets::END::FeatureDim {feature_dim}")
+    logger.info(f"DPNets::END::FeatureDim {feature_dim}")
     return full_report
 
 
 def run_DPNets_relaxed(feature_dim: int):
-    logger.info("DPNets-relaxed::START::FeatureDim {feature_dim}")
+    logger.info(f"DPNets-relaxed::START::FeatureDim {feature_dim}")
     relaxed = True
     report = []
     tuner_rng_seed = 171192  # Reproductibility
@@ -399,18 +399,18 @@ def run_DPNets_relaxed(feature_dim: int):
     #     relaxed, tuner_rng_seed, feature_dim
     # )
     metric_deformation = 1.0
-    logger.info(f"DPNets-relaxed::Tuned metric deformation: {metric_deformation}")
+    logger.info(ff"DPNets-relaxed::Tuned metric deformation: {metric_deformation}")
     for rng_seed in range(configs.num_rng_seeds):
-        logger.info(f"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+        logger.info(ff"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
         result = _run_DPNets(relaxed, metric_deformation, rng_seed, feature_dim)
         report.append(result)
     full_report = stack_reports(report)
-    logger.info("DPNets-relaxed::END::FeatureDim {feature_dim}")
+    logger.info(f"DPNets-relaxed::END::FeatureDim {feature_dim}")
     return full_report
 
 
 def run_ChebyT(feature_dim: int):
-    logger.info("ChebyT::START::FeatureDim {feature_dim}")
+    logger.info(f"ChebyT::START::FeatureDim {feature_dim}")
 
     def ChebyT(feature_dim: int = 3):
         def scaled_chebyt(n, x):
@@ -420,14 +420,14 @@ def run_ChebyT(feature_dim: int):
         return ConcatenateFeatureMaps(fn_list)
 
     full_report = evaluate_representation(ChebyT(feature_dim))
-    logger.info("ChebyT::END::FeatureDim {feature_dim}")
+    logger.info(f"ChebyT::END::FeatureDim {feature_dim}")
     return full_report
 
 
 def run_NoiseKernel(feature_dim: int):
     import scipy.special
 
-    logger.info("NoiseKernel::START::FeatureDim {feature_dim}")
+    logger.info(f"NoiseKernel::START::FeatureDim {feature_dim}")
 
     def NoiseKernel(order: int = 3):
         binom_coeffs = [scipy.special.binom(configs.N, i) for i in range(configs.N + 1)]
@@ -441,7 +441,7 @@ def run_NoiseKernel(feature_dim: int):
         return ConcatenateFeatureMaps(fn_list)
 
     full_report = evaluate_representation(NoiseKernel(feature_dim))
-    logger.info("NoiseKernel::END::FeatureDim {feature_dim}")
+    logger.info(f"NoiseKernel::END::FeatureDim {feature_dim}")
     return full_report
 
 
@@ -458,9 +458,9 @@ def main():
     parser = argparse.ArgumentParser(
         description="Run the experiment on a specific model."
     )
+    parser.add_argument("--model", help="Specify the model to run.")
     parser.add_argument(
-        "--model",
-        help="Specify the model to run." "--fdim",
+        "--fdim",
         type=int,
         default=3,
         help="Specify the feature dimension.",
