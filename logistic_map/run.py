@@ -287,7 +287,7 @@ def run_VAMPNets(feature_dim: int):
     logger.info(f"VAMPNets::START::FeatureDim {feature_dim}")
     reports = []
     for rng_seed in range(configs.num_rng_seeds):
-        logger.info(ff"VAMPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+        logger.info(f"VAMPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
         result = _run_VAMPNets(rng_seed, feature_dim)
         reports.append(result)
     full_report = stack_reports(reports)
@@ -380,9 +380,9 @@ def run_DPNets(feature_dim: int):
     #     relaxed, tuner_rng_seed, feature_dim
     # )
     metric_deformation = 1.0
-    logger.info(ff"DPNets::Tuned metric deformation: {metric_deformation}")
+    logger.info(f"DPNets::Tuned metric deformation: {metric_deformation}")
     for rng_seed in range(configs.num_rng_seeds):
-        logger.info(ff"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+        logger.info(f"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
         result = _run_DPNets(relaxed, metric_deformation, rng_seed, feature_dim)
         report.append(result)
     full_report = stack_reports(report)
@@ -399,9 +399,9 @@ def run_DPNets_relaxed(feature_dim: int):
     #     relaxed, tuner_rng_seed, feature_dim
     # )
     metric_deformation = 1.0
-    logger.info(ff"DPNets-relaxed::Tuned metric deformation: {metric_deformation}")
+    logger.info(f"DPNets-relaxed::Tuned metric deformation: {metric_deformation}")
     for rng_seed in range(configs.num_rng_seeds):
-        logger.info(ff"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+        logger.info(f"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
         result = _run_DPNets(relaxed, metric_deformation, rng_seed, feature_dim)
         report.append(result)
     full_report = stack_reports(report)
