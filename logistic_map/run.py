@@ -14,6 +14,7 @@ import optuna
 import scipy.special
 import torch
 from kooplearn._src.metrics import directed_hausdorff_distance
+from kooplearn._src.utils import topk
 from kooplearn.abc import FeatureMap
 from kooplearn.datasets import LogisticMap
 from kooplearn.models.feature_maps import ConcatenateFeatureMaps
@@ -181,6 +182,9 @@ def evaluate_representation(feature_map: FeatureMap):
     OLS_estimator = np.linalg.solve(cov, cross_cov)
     # Eigenvalue estimation
     OLS_eigs = np.linalg.eigvals(OLS_estimator)
+    top_eigs = topk(np.abs(OLS_eigs), 3)
+    OLS_eigs = OLS_eigs[top_eigs.indices]
+
     report["hausdorff-distance"] = directed_hausdorff_distance(OLS_eigs, logistic.eig())
     # VAMP2-score
     M = np.linalg.multi_dot(
@@ -194,7 +198,7 @@ def evaluate_representation(feature_map: FeatureMap):
     feature_dim = cov.shape[0]
     report["optimality-gap"] = np.sum(logistic.svals()[:feature_dim] ** 2) - np.trace(M)
     # Feasibility
-    report["feasibility-gap"] = np.linalg.norm(cov - np.eye(feature_dim), ord="fro")
+    report["feasibility-gap"] = np.linalg.norm(cov - np.eye(feature_dim), ord="2")
     report["estimator-eigenvalues"] = OLS_eigs
     report["covariance-eigenvalues"] = np.linalg.eigvalsh(cov)
     return report
@@ -279,17 +283,14 @@ def kaiming_init(model):
 
 
 # Runners
-def run_VAMPNets():
-    logger.info("VAMPNets::START")
-    full_report = {}
-    for feature_dim in configs.feature_dims:
-        logger.info(f"VAMPNets::FeatureDim {feature_dim}")
-        reports = []
-        for rng_seed in range(configs.num_rng_seeds):
-            logger.info(f"VAMPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
-            result = _run_VAMPNets(rng_seed, feature_dim)
-            reports.append(result)
-        full_report[f"{feature_dim}_features"] = stack_reports(reports)
+def run_VAMPNets(feature_dim: int):
+    logger.info("VAMPNets::START::FeatureDim {feature_dim}")
+    reports = []
+    for rng_seed in range(configs.num_rng_seeds):
+        logger.info(f"VAMPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+        result = _run_VAMPNets(rng_seed, feature_dim)
+        reports.append(result)
+    full_report = stack_reports(reports)
     logger.info("VAMPNets::END")
     return full_report
 
@@ -370,52 +371,46 @@ def _tune_DPNets_metric_deformation(relaxed: bool, rng_seed: int, feature_dim: i
     return study.best_params["metric_deformation"]
 
 
-def run_DPNets():
-    logger.info("DPNets::START")
-    full_report = {}
+def run_DPNets(feature_dim: int):
+    logger.info("DPNets::START::FeatureDim {feature_dim}")
     relaxed = False
-    for feature_dim in configs.feature_dims:
-        logger.info(f"DPNets::FeatureDim {feature_dim}")
-        report = []
-        tuner_rng_seed = 171192  # Reproductibility
-        # metric_deformation = _tune_DPNets_metric_deformation(
-        #     relaxed, tuner_rng_seed, feature_dim
-        # )
-        metric_deformation = 1.0
-        logger.info(f"DPNets::Tuned metric deformation: {metric_deformation}")
-        for rng_seed in range(configs.num_rng_seeds):
-            logger.info(f"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
-            result = _run_DPNets(False, metric_deformation, rng_seed, feature_dim)
-            report.append(result)
-        full_report[f"{feature_dim}_features"] = stack_reports(report)
-    logger.info("DPNets::END")
+    report = []
+    tuner_rng_seed = 171192  # Reproductibility
+    # metric_deformation = _tune_DPNets_metric_deformation(
+    #     relaxed, tuner_rng_seed, feature_dim
+    # )
+    metric_deformation = 1.0
+    logger.info(f"DPNets::Tuned metric deformation: {metric_deformation}")
+    for rng_seed in range(configs.num_rng_seeds):
+        logger.info(f"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+        result = _run_DPNets(relaxed, metric_deformation, rng_seed, feature_dim)
+        report.append(result)
+    full_report = stack_reports(report)
+    logger.info("DPNets::END::FeatureDim {feature_dim}")
     return full_report
 
 
-def run_DPNets_relaxed():
-    logger.info("DPNets-relaxed::START")
-    full_report = {}
+def run_DPNets_relaxed(feature_dim: int):
+    logger.info("DPNets-relaxed::START::FeatureDim {feature_dim}")
     relaxed = True
-    for feature_dim in configs.feature_dims:
-        logger.info(f"DPNets-relaxed::FeatureDim {feature_dim}")
-        report = []
-        tuner_rng_seed = 171192  # Reproductibility
-        # metric_deformation = _tune_DPNets_metric_deformation(
-        #     relaxed, tuner_rng_seed, feature_dim
-        # )
-        metric_deformation = 1.0
-        logger.info(f"DPNets-relaxed::Tuned metric deformation: {metric_deformation}")
-        for rng_seed in range(configs.num_rng_seeds):
-            logger.info(f"DPNets-relaxed::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
-            result = _run_DPNets(False, metric_deformation, rng_seed, feature_dim)
-            report.append(result)
-        full_report[f"{feature_dim}_features"] = stack_reports(report)
-    logger.info("DPNets-relaxed::END")
+    report = []
+    tuner_rng_seed = 171192  # Reproductibility
+    # metric_deformation = _tune_DPNets_metric_deformation(
+    #     relaxed, tuner_rng_seed, feature_dim
+    # )
+    metric_deformation = 1.0
+    logger.info(f"DPNets-relaxed::Tuned metric deformation: {metric_deformation}")
+    for rng_seed in range(configs.num_rng_seeds):
+        logger.info(f"DPNets::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+        result = _run_DPNets(relaxed, metric_deformation, rng_seed, feature_dim)
+        report.append(result)
+    full_report = stack_reports(report)
+    logger.info("DPNets-relaxed::END::FeatureDim {feature_dim}")
     return full_report
 
 
-def run_ChebyT():
-    logger.info("ChebyT::START")
+def run_ChebyT(feature_dim: int):
+    logger.info("ChebyT::START::FeatureDim {feature_dim}")
 
     def ChebyT(feature_dim: int = 3):
         def scaled_chebyt(n, x):
@@ -424,19 +419,15 @@ def run_ChebyT():
         fn_list = [partial(scaled_chebyt, n) for n in range(feature_dim)]
         return ConcatenateFeatureMaps(fn_list)
 
-    full_report = {}
-    for feature_dim in configs.feature_dims:
-        full_report[f"{feature_dim}_features"] = evaluate_representation(
-            ChebyT(feature_dim)
-        )
-    logger.info("ChebyT::END")
+    full_report = evaluate_representation(ChebyT(feature_dim))
+    logger.info("ChebyT::END::FeatureDim {feature_dim}")
     return full_report
 
 
-def run_NoiseKernel():
+def run_NoiseKernel(feature_dim: int):
     import scipy.special
 
-    logger.info("NoiseKernel::START")
+    logger.info("NoiseKernel::START::FeatureDim {feature_dim}")
 
     def NoiseKernel(order: int = 3):
         binom_coeffs = [scipy.special.binom(configs.N, i) for i in range(configs.N + 1)]
@@ -449,12 +440,8 @@ def run_NoiseKernel():
 
         return ConcatenateFeatureMaps(fn_list)
 
-    full_report = {}
-    for feature_dim in configs.feature_dims:
-        full_report[f"{feature_dim}_features"] = evaluate_representation(
-            NoiseKernel(feature_dim)
-        )
-    logger.info("NoiseKernel::END")
+    full_report = evaluate_representation(NoiseKernel(feature_dim))
+    logger.info("NoiseKernel::END::FeatureDim {feature_dim}")
     return full_report
 
 
@@ -472,16 +459,20 @@ def main():
         description="Run the experiment on a specific model."
     )
     parser.add_argument(
-        "--model", choices=AVAIL_MODELS.keys(), help="Specify the model to run."
+        "--model",
+        help="Specify the model to run." "--fdim",
+        type=int,
+        default=3,
+        help="Specify the feature dimension.",
     )
 
     args = parser.parse_args()
 
     if args.model:
         if args.model in AVAIL_MODELS:
-            results = AVAIL_MODELS[args.model]()
+            results = AVAIL_MODELS[args.model](args.fdim)
             results["name"] = args.model
-            fname = sanitize_filename(args.model) + "_results.pkl"
+            fname = sanitize_filename(args.model) + f"_results_{args.fdim}.pkl"
             if not results_path.exists():
                 results_path.mkdir()
             with open(results_path / fname, "wb") as f:
