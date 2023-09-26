@@ -73,38 +73,53 @@ def get_data(num_data_pts: int):
     return X, Y
 
 
+def make_data():
+    flist = traj_meta["trajectory_files"]
+    top = traj_meta["topology_path"]
+
+    pwised = []
+    for chunk in tqdm(flist, unit="chunk", desc="Load+Preprocess trajectory"):
+        traj = mdtraj.load(chunk, top=top)
+        dists = compute_pwise_distances(traj)
+        pwised.append(dists)
+
+    pwised = np.concatenate(pwised, axis=0)
+    np.save(f"data/{configs.protein_id}_heavy_pwisedist.npy", pwised)
+
+
 if __name__ == "__main__":
-    model_kw = {
-        "pcr": {
-            "num_components": configs.feature_dim,
-            "M": configs.inducing_points,
-            "kernel": GaussianKernel(configs.ls, opt=FalkonOptions(use_cpu=True)),
-            "svd_solver": "full",
-        },
-        "rrr": {
-            "penalty": 1e-9,
-            "num_components": configs.feature_dim,
-            "M": configs.inducing_points,
-            "kernel": GaussianKernel(configs.ls, opt=FalkonOptions(use_cpu=True)),
-        },
-    }
-    X, Y = get_data(num_data_pts=configs.num_data_pts)
-    print("Data Loaded")
-    # Data shuffling
-    rng = np.random.default_rng()
-    # Train Nystrom
-    for model in model_kw.keys():
-        print(f"Training {model.upper()}")
-        start = time.time()
-        est = train_est(X, Y, kind=model, **model_kw[model])
-        t_elapsed = time.time() - start
-        print(f"Training took {t_elapsed:.1f} seconds")
-        v, lf, rf = evals, efun_left, efun_right = est.eigenfunctions()
-        report = {
-            "model": model,
-            "fit_time": t_elapsed,
-            "eigenvalues": v.detach().resolve_conj().numpy(),
-            "estimator": est,
-        }
-        with open(experiment_path / f"ckpt/nystrom_{model}.pkl", "wb") as f:
-            pickle.dump(report, f)
+    make_data()
+    # model_kw = {
+    #     "pcr": {
+    #         "num_components": configs.feature_dim,
+    #         "M": configs.inducing_points,
+    #         "kernel": GaussianKernel(configs.ls, opt=FalkonOptions(use_cpu=True)),
+    #         "svd_solver": "full",
+    #     },
+    #     "rrr": {
+    #         "penalty": 1e-9,
+    #         "num_components": configs.feature_dim,
+    #         "M": configs.inducing_points,
+    #         "kernel": GaussianKernel(configs.ls, opt=FalkonOptions(use_cpu=True)),
+    #     },
+    # }
+    # X, Y = get_data(num_data_pts=configs.num_data_pts)
+    # print("Data Loaded")
+    # # Data shuffling
+    # rng = np.random.default_rng()
+    # # Train Nystrom
+    # for model in model_kw.keys():
+    #     print(f"Training {model.upper()}")
+    #     start = time.time()
+    #     est = train_est(X, Y, kind=model, **model_kw[model])
+    #     t_elapsed = time.time() - start
+    #     print(f"Training took {t_elapsed:.1f} seconds")
+    #     v, lf, rf = evals, efun_left, efun_right = est.eigenfunctions()
+    #     report = {
+    #         "model": model,
+    #         "fit_time": t_elapsed,
+    #         "eigenvalues": v.detach().resolve_conj().numpy(),
+    #         "estimator": est,
+    #     }
+    #     with open(experiment_path / f"ckpt/nystrom_{model}.pkl", "wb") as f:
+    #         pickle.dump(report, f)
