@@ -7,11 +7,11 @@ Global seed set to 0
   rank_zero_warn(
 Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]/projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/VAMP_score', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
   rank_zero_warn(
-Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 29.41it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 32.55it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 21.91it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 25.85it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 28.40it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 30.07it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 31.28it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 32.51it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 26.05it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.59it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.60it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 31.16it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.39it/s]
+Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 28.93it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 31.46it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 21.05it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 24.71it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 27.53it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 29.27it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.60it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.91it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 25.38it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.61it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.26it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.46it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.65it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_944ba07d-7a91-4143-aa27-f9b0f291fad8.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_944ba07d-7a91-4143-aa27-f9b0f291fad8.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_7b221712-422f-4c83-b5bd-6f2eced73e32.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_7b221712-422f-4c83-b5bd-6f2eced73e32.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -19,11 +19,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 1
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 29.25it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 31.91it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.79it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 33.60it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 33.74it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 33.64it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 26.14it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 28.52it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 30.32it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 31.95it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 32.71it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 26.35it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.91it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:01, 32.10it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:01, 33.07it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 34.26it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:00, 34.14it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:00, 35.10it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 26.63it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 28.94it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 30.41it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 31.44it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 32.36it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 33.18it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 26.30it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 30.12it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_4395734b-e333-4cdb-9eb6-4080d7d43f1a.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_4395734b-e333-4cdb-9eb6-4080d7d43f1a.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_e19ba7e2-b495-40ee-8a72-378a4df02b1a.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_e19ba7e2-b495-40ee-8a72-378a4df02b1a.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -31,11 +31,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 2
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.32it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 26.97it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 21.30it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 25.28it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:01<00:02, 12.86it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:01<00:01, 16.69it/s]Finding best initial lr:  50%|█████     | 25/50 [00:01<00:01, 20.47it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 23.83it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 21.50it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 24.29it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 26.48it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 28.55it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:02<00:00, 30.42it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:02<00:00, 23.53it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:01, 33.02it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:01, 33.97it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 23.83it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 26.98it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:01, 29.57it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 30.82it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 31.70it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 32.38it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 25.66it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 27.79it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 29.46it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 30.84it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.67it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_d10a5a99-1ede-4f82-ad90-01f228758d18.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_d10a5a99-1ede-4f82-ad90-01f228758d18.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_409fefd5-2d86-4ffd-aabe-bc088788cb7f.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_409fefd5-2d86-4ffd-aabe-bc088788cb7f.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -43,11 +43,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 3
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 23.90it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.39it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.48it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.67it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 24.91it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 27.65it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 29.41it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 30.45it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.85it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 33.31it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 25.47it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 27.85it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.09it/s]
-Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_da942900-03d4-4210-9d16-a88a83243953.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_da942900-03d4-4210-9d16-a88a83243953.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.97it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.43it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 30.86it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 32.17it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 24.59it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:01, 27.42it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 29.48it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 30.74it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 32.09it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 33.01it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 33.48it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 26.49it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.29it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.11it/s]
+Learning rate set to 2.7542287033381668e-06
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_2c5ef1df-a2ec-451e-86f9-2a2d8da1a911.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_2c5ef1df-a2ec-451e-86f9-2a2d8da1a911.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -55,11 +55,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 4
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.39it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.08it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 31.01it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 32.42it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:00, 32.85it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:01, 25.57it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 28.23it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 30.25it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 32.04it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 33.10it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 26.63it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 28.93it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 30.35it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.60it/s]
-Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_0b8c3588-c761-4b39-93e0-78b38d07e2c8.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_0b8c3588-c761-4b39-93e0-78b38d07e2c8.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.24it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.15it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 30.26it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 31.55it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:00, 32.01it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:01, 25.15it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 27.80it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 29.61it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 30.76it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 31.68it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 25.50it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 27.69it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.32it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.75it/s]
+Learning rate set to 2.7542287033381668e-06
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_cde4f605-d5e4-45bf-91c6-15498b7ab982.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_cde4f605-d5e4-45bf-91c6-15498b7ab982.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -67,11 +67,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 5
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:03, 12.72it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 21.93it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 27.03it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 30.16it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 32.50it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 33.86it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 34.32it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 26.38it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 28.67it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 30.48it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 32.22it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 33.50it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 30.24it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:07,  6.64it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:04,  9.69it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:02, 18.64it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 22.99it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 26.18it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 28.61it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 30.10it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:01<00:00, 30.85it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 24.83it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 27.00it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 28.75it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 30.03it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 31.47it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.02it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_7cf939c5-4f00-4da6-8a1e-b6b47dd78f2e.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_7cf939c5-4f00-4da6-8a1e-b6b47dd78f2e.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_0b98a140-6959-4b82-a577-730a38c07dbe.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_0b98a140-6959-4b82-a577-730a38c07dbe.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -79,11 +79,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 6
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:03, 12.87it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 21.74it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 26.51it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 29.21it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 31.33it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 32.94it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 33.61it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 26.23it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 27.65it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 29.42it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 31.13it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 32.56it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.48it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:03, 12.72it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:02, 21.34it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 25.70it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 28.50it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 31.16it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 31.97it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 32.54it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 25.29it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 27.26it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 29.06it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 30.60it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 32.00it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.00it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_8d5adf25-96ed-4df8-9aa0-34aa37dd6d86.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_8d5adf25-96ed-4df8-9aa0-34aa37dd6d86.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_9878276b-1618-4d83-9453-26ec56534d77.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_9878276b-1618-4d83-9453-26ec56534d77.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -91,11 +91,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 7
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.97it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:03, 14.22it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:01, 22.41it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 26.98it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 29.72it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:00, 31.89it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 33.08it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 34.23it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 26.64it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 28.90it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 30.67it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 32.10it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 30.86it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.43it/s]
-Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_da3a9ce1-c65c-4e15-9b12-6ffbc6e2f66d.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_da3a9ce1-c65c-4e15-9b12-6ffbc6e2f66d.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.69it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:03, 13.67it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:01, 21.40it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 25.81it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 28.16it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:00, 30.04it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 31.48it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 32.62it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 25.31it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 27.06it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 28.95it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 30.28it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 31.84it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.45it/s]
+Learning rate set to 3.019951720402016e-06
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_9fcea973-2146-41b1-90e9-95c8cf206732.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_9fcea973-2146-41b1-90e9-95c8cf206732.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -103,11 +103,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 8
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:03, 12.52it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:02, 21.23it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 26.04it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 29.06it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 31.38it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 33.15it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 33.56it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 25.98it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 28.23it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 29.87it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 31.36it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 32.91it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.54it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:03, 12.45it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:02, 20.86it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 25.37it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 28.16it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 30.34it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 31.45it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 32.48it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 24.42it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 26.92it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 28.43it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 30.11it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 31.32it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.42it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_5611bfa6-674f-4aa2-a3be-1ffb955cc566.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_5611bfa6-674f-4aa2-a3be-1ffb955cc566.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_8a542ff0-522c-45d8-bd24-8b22789670e3.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_8a542ff0-522c-45d8-bd24-8b22789670e3.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -115,11 +115,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 9
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 16.29it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:03, 13.20it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:01, 21.29it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 25.50it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 28.11it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:00, 30.26it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 31.79it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:01<00:00, 32.07it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 24.64it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 27.12it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 28.86it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 30.64it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 31.68it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.15it/s]
-Learning rate set to 7.585775750291837e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_d6469f7a-f492-4ea4-8977-25d731bdf389.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_d6469f7a-f492-4ea4-8977-25d731bdf389.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:03, 13.77it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 22.70it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 26.84it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 28.96it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 30.48it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 31.29it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 32.12it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 25.34it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 27.84it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 29.26it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 30.61it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 31.49it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.04it/s]
+Learning rate set to 2.7542287033381668e-06
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_9ab43e4c-1723-48bc-8b1f-4f922fd3aeb7.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_9ab43e4c-1723-48bc-8b1f-4f922fd3aeb7.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -127,11 +127,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 10
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.60it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:03, 14.00it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:01, 22.07it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 26.76it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 29.75it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:00, 31.89it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 32.99it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 34.17it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 26.52it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 28.73it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 30.58it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 27.84it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 29.75it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.68it/s]
-Learning rate set to 5.75439937337157e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_24fcc1d0-eae8-470a-8f11-95a90235ca89.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_24fcc1d0-eae8-470a-8f11-95a90235ca89.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:03, 12.70it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:02, 21.03it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 25.85it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 28.67it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 30.55it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 31.73it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 32.52it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 25.98it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 28.30it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 30.00it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 31.29it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 32.05it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.19it/s]
+Learning rate set to 2.7542287033381668e-06
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_584a866f-3310-4ece-a22d-70c1889becd1.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_584a866f-3310-4ece-a22d-70c1889becd1.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -139,11 +139,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 11
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:03, 12.70it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:02, 21.42it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 26.32it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 29.43it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 31.35it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 32.23it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 32.76it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 25.57it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 28.00it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 29.98it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 31.42it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 32.25it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.36it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.52it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.10it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 30.26it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 22.97it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 25.81it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 28.09it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 29.56it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 31.19it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 32.28it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 25.53it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 27.82it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 29.85it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 31.09it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.64it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_35fe9ae2-a8da-4729-8e03-53bf6ab807bc.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_35fe9ae2-a8da-4729-8e03-53bf6ab807bc.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_5047f733-c0ca-4daf-a67e-98c284347b63.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_5047f733-c0ca-4daf-a67e-98c284347b63.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -151,11 +151,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 12
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:03, 12.90it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 21.61it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 26.34it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 29.00it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 31.18it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 32.11it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 32.97it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 25.80it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 28.00it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 29.57it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 31.34it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 32.32it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.33it/s]
-Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_759fd5af-0525-4f02-a887-efc3092924a1.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_759fd5af-0525-4f02-a887-efc3092924a1.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:01, 38.34it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:01, 35.37it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 34.58it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:00, 34.58it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:00, 34.82it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 26.18it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 28.46it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 30.23it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 31.47it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 32.40it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 32.83it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 33.43it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 30.12it/s]
+Learning rate set to 2.7542287033381668e-06
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_13441d30-c6cf-4905-8682-d6f43494cd01.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_13441d30-c6cf-4905-8682-d6f43494cd01.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -163,11 +163,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 13
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.52it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.17it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.21it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 24.21it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 27.28it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 29.93it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 31.63it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 32.56it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 33.06it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 26.02it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 28.24it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.29it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.73it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.36it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:02, 18.17it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 24.22it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 27.83it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 30.17it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 31.63it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 32.44it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 25.93it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 28.27it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 30.24it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 31.71it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 33.13it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 33.59it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.80it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_b06e84f7-94ff-4569-8b35-8a83d6e3fcb5.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_b06e84f7-94ff-4569-8b35-8a83d6e3fcb5.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_dfcd690b-7bfa-4831-80f3-41f8445a7051.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_dfcd690b-7bfa-4831-80f3-41f8445a7051.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -175,11 +175,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 14
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:01, 36.64it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:01, 35.34it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 35.48it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:00, 36.40it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:00, 35.91it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 26.64it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 28.80it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 30.41it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 31.90it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 33.42it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 34.05it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 34.24it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 30.42it/s]
-Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_d3af2b2f-53a7-4dc3-9594-5d0fe08615fd.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_d3af2b2f-53a7-4dc3-9594-5d0fe08615fd.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.36it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.27it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.01it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 23.92it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 27.01it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 29.01it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.60it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.24it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 32.78it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 26.26it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 28.04it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 29.67it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.17it/s]
+Learning rate set to 2.7542287033381668e-06
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_af935c26-e42e-4be7-a1b3-a2aa73b2d659.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_af935c26-e42e-4be7-a1b3-a2aa73b2d659.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -187,11 +187,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 15
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.44it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:02, 17.62it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 23.67it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 27.59it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 30.41it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 31.83it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 32.99it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 25.69it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 27.84it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 29.69it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 31.48it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 32.37it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 33.08it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.47it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.95it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 26.61it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 30.59it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 31.49it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:00, 32.37it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:01, 24.94it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 27.35it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 29.54it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 31.31it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 31.99it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 33.11it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 33.33it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.27it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.86it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_8a97be9f-7c5e-4477-909a-084f888e1bc0.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_8a97be9f-7c5e-4477-909a-084f888e1bc0.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_0f56a09a-d31d-4eda-81ba-b97cdeea590c.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_0f56a09a-d31d-4eda-81ba-b97cdeea590c.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -199,11 +199,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 16
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.79it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.68it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.65it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 24.00it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 26.78it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 29.34it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 31.17it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 32.48it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 33.20it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 26.22it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 28.62it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.62it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.80it/s]
-Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_c118d75b-f280-4585-a5a8-8cca7f6f7f72.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_c118d75b-f280-4585-a5a8-8cca7f6f7f72.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:09,  5.22it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 18.37it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 24.60it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 20.95it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 24.65it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 27.61it/s]Finding best initial lr:  50%|█████     | 25/50 [00:01<00:00, 29.65it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 31.12it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 31.68it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 24.73it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 26.91it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 28.73it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 30.33it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.88it/s]
+Learning rate set to 2.7542287033381668e-06
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_eb952ce4-ef72-4119-a584-09cd41299cbe.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_eb952ce4-ef72-4119-a584-09cd41299cbe.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -211,11 +211,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 17
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.75it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.56it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.50it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 33.21it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 33.67it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 25.77it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 27.92it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 29.74it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.04it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 32.11it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 33.21it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 26.32it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.42it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.33it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.56it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 30.49it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 31.75it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:00, 32.67it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:01, 24.95it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 27.41it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 29.43it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 30.94it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 31.94it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 32.53it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 25.94it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.27it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.87it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_727375ae-065c-418e-aa4f-5e4669d35bc8.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_727375ae-065c-418e-aa4f-5e4669d35bc8.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_e26f65ba-c804-4d35-887d-ad03d0d555b9.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_e26f65ba-c804-4d35-887d-ad03d0d555b9.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -223,11 +223,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 18
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.96it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.45it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.58it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 24.34it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 27.34it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 29.46it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 31.15it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 32.07it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 33.19it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 26.36it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 28.68it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.40it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.78it/s]
-Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_ae67f2ea-9cc9-4c1b-99fc-d68febc35ff1.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_ae67f2ea-9cc9-4c1b-99fc-d68febc35ff1.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:13,  3.66it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:03, 14.92it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:02, 15.05it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 20.24it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 24.62it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:01, 27.13it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:01<00:00, 29.71it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:01<00:00, 31.20it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 24.92it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 27.02it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 29.05it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 30.39it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 31.24it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 25.84it/s]
+Learning rate set to 2.7542287033381668e-06
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_f32b16e7-b185-42e5-b43d-b201304670bc.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_f32b16e7-b185-42e5-b43d-b201304670bc.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -235,11 +235,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 19
 Fitting VAMPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 25.55it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 31.64it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 33.39it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 34.11it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 34.51it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 26.10it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 28.55it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 30.55it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 32.06it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 32.83it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 33.50it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 26.57it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 30.08it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 23.89it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.47it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.15it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 33.67it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 25.65it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 28.38it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.52it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.94it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 32.71it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 33.25it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 26.23it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 28.08it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.65it/s]
 Learning rate set to 2.7542287033381668e-06
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_d9029080-9d5a-4351-b178-b5635eac43fb.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_d9029080-9d5a-4351-b178-b5635eac43fb.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_28c28e26-03e5-4a13-836c-8bb34e6666a5.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_28c28e26-03e5-4a13-836c-8bb34e6666a5.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 Fitting VAMPNet. Lookback window length set to 1
 GPU available: False, used: False
@@ -255,11 +255,11 @@ Global seed set to 0
   rank_zero_warn(
 /projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/total_loss', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
   rank_zero_warn(
-Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 28.32it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.71it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:02, 19.58it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 23.63it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 26.79it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 28.88it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 29.97it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 30.77it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 31.76it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 25.17it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 27.25it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 29.25it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 31.05it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.31it/s]
+Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.86it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.10it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:02, 19.31it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 23.50it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 25.97it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 28.08it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 29.71it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 30.98it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 27.91it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 22.37it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 25.12it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 27.24it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 28.58it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.79it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_7063780f-05e8-4c49-8f34-54aa7811f78b.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_7063780f-05e8-4c49-8f34-54aa7811f78b.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_5d628da9-65e2-4bc7-8a70-6eeff398d8e9.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_5d628da9-65e2-4bc7-8a70-6eeff398d8e9.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -267,11 +267,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 1
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 25.16it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.03it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.51it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.69it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 33.03it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 33.47it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 25.96it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 28.04it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 29.63it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 30.92it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 31.88it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 32.70it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.21it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:06,  7.35it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 20.93it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 25.86it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 28.27it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 29.94it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:00, 31.26it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:01, 24.52it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 26.55it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 27.27it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 28.23it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 29.25it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 30.66it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 24.70it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.58it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_3ae217f7-e2ab-47f8-89a6-0512b025ac98.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_3ae217f7-e2ab-47f8-89a6-0512b025ac98.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_b22fcc20-ccb8-47c6-a4dc-67bf5bc8943c.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_b22fcc20-ccb8-47c6-a4dc-67bf5bc8943c.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -279,11 +279,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 2
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.69it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.59it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.80it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 22.70it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 25.86it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 27.97it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.27it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.46it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 25.22it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.27it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.00it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.44it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.81it/s]
-Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_dce1b7ab-b1bb-49b9-a773-391e58c66d21.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_dce1b7ab-b1bb-49b9-a773-391e58c66d21.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 22.84it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 28.05it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 30.32it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 23.63it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 26.56it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 28.67it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.04it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 30.82it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 24.93it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.08it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.19it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 29.96it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.52it/s]
+Learning rate set to 7.585775750291837e-05
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_6cda48e3-95d7-4d2c-b485-3ccc18cc641f.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_6cda48e3-95d7-4d2c-b485-3ccc18cc641f.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -291,11 +291,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 3
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:06,  7.03it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 21.80it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 27.11it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 30.08it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 31.83it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 24.91it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:00, 27.77it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 29.65it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 31.04it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 32.16it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 32.71it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 33.15it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 26.52it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.20it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:06,  7.31it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 21.39it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 26.58it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 29.40it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 31.28it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 24.45it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:00, 27.28it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 29.29it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 30.70it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 31.97it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 32.63it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 33.15it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 26.11it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.90it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_0527f89d-e3a2-4113-8432-a89d53c601c1.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_0527f89d-e3a2-4113-8432-a89d53c601c1.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_1eab2e60-e4e2-44b3-9acb-e7ca7cef0849.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_1eab2e60-e4e2-44b3-9acb-e7ca7cef0849.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -303,11 +303,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 4
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.46it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.41it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.51it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 33.60it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 25.27it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 27.77it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 29.62it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 30.94it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.97it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 32.79it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 33.42it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 26.80it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.64it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.04it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 27.60it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.39it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.43it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 23.25it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 25.98it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 27.83it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 29.43it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.16it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 31.96it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 32.38it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 25.54it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.21it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_f9ce0ec6-78a5-41a1-a9db-75f2e993830c.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_f9ce0ec6-78a5-41a1-a9db-75f2e993830c.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_76c8108d-9e8f-4701-a7c5-e004ebafff79.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_76c8108d-9e8f-4701-a7c5-e004ebafff79.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -315,11 +315,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 5
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.54it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.46it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.63it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.72it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 24.46it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 27.43it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 28.96it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 30.42it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.21it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 31.93it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 25.55it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 27.78it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.87it/s]
-Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_6fbdbdbf-8a44-47be-b51d-f7528d9a5c00.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_6fbdbdbf-8a44-47be-b51d-f7528d9a5c00.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.99it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 28.25it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 31.46it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 33.15it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 25.01it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:01, 27.55it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 29.43it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 30.98it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 32.21it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 32.96it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 33.59it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 26.51it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.43it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.29it/s]
+Learning rate set to 8.317637711026709e-05
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_ca0a00e4-d805-4f64-8cd2-7c10e700797c.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_ca0a00e4-d805-4f64-8cd2-7c10e700797c.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -327,11 +327,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 6
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.18it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:02, 17.81it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 23.83it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 27.16it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 29.73it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 30.73it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 31.57it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 25.00it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 27.07it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 28.94it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 30.69it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 31.69it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 32.48it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.89it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:05,  8.72it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:03, 12.79it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:02, 20.66it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 25.36it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 27.54it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:01, 29.53it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 30.69it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:01<00:00, 31.58it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 24.99it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 27.65it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 29.26it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 30.24it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 31.36it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.77it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_a4c91378-4517-4522-8986-0702346a20cf.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_a4c91378-4517-4522-8986-0702346a20cf.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_6fb2d8c7-3b8a-4c64-ba07-79a9a706d631.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_6fb2d8c7-3b8a-4c64-ba07-79a9a706d631.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -339,11 +339,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 7
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:09,  5.31it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 18.89it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 25.18it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 20.99it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 24.54it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 27.11it/s]Finding best initial lr:  50%|█████     | 25/50 [00:01<00:00, 28.90it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 30.59it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 31.64it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 32.58it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 25.58it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 27.79it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 29.22it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.94it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 23.78it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.37it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.96it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 23.58it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 26.49it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 28.77it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.90it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.51it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 32.21it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 25.46it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 27.82it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 29.59it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.96it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_a7912121-221e-4fd0-a0ac-1c803ac4a0bb.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_a7912121-221e-4fd0-a0ac-1c803ac4a0bb.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_702bcc8a-15f4-4391-bb6f-4c9bb189812f.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_702bcc8a-15f4-4391-bb6f-4c9bb189812f.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -351,11 +351,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 8
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 27.07it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 31.34it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.12it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 23.68it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 26.66it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 28.39it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.08it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.58it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 32.67it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 25.79it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 27.93it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 29.61it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.14it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 22.59it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 28.37it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 30.19it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 22.93it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 26.12it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 27.94it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 29.45it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 30.78it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.42it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 24.94it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 27.11it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 28.83it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.14it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_08cbbfe8-6a1a-4186-9dcf-6470da9bf9d5.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_08cbbfe8-6a1a-4186-9dcf-6470da9bf9d5.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_80993e3e-8342-4f97-ac35-6b0f4758cf81.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_80993e3e-8342-4f97-ac35-6b0f4758cf81.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -363,11 +363,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 9
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.99it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.74it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 30.21it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 21.82it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 25.67it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 24.75it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:00, 27.42it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 29.51it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 30.98it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 31.57it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 25.59it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 27.80it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 29.59it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.92it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.70it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 28.15it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 30.77it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 23.03it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 26.11it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 28.14it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 29.63it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 30.80it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 31.89it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 25.38it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 27.48it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 29.20it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 30.31it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.46it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_c767a53a-52c7-47d1-8508-de80ef08075c.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_c767a53a-52c7-47d1-8508-de80ef08075c.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_2ff75cf5-fc16-4e3d-ace0-c9de4498fdab.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_2ff75cf5-fc16-4e3d-ace0-c9de4498fdab.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -375,11 +375,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 10
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 27.00it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 31.42it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.15it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.82it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 33.07it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 33.45it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 25.98it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 28.43it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 30.25it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 31.56it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 32.60it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 33.22it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.66it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:29,  1.68it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:05,  8.65it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:02, 14.56it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 19.63it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:01<00:01, 23.31it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:01<00:01, 25.95it/s]Finding best initial lr:  50%|█████     | 25/50 [00:01<00:01, 22.18it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 25.02it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 27.13it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 28.67it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 29.88it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:02<00:00, 31.12it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:02<00:00, 25.16it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:02<00:00, 21.86it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_9dd928ba-2104-4de2-8518-9b82f87fb462.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_9dd928ba-2104-4de2-8518-9b82f87fb462.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_5132fb72-6cd6-40f0-af41-6e113eba1f20.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_5132fb72-6cd6-40f0-af41-6e113eba1f20.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -387,11 +387,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 11
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.99it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.08it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.42it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 24.37it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 27.13it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 29.19it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.43it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.81it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 25.46it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.65it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.34it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.65it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.20it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 23.62it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:02, 16.09it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 21.93it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 18.63it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 22.69it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 25.47it/s]Finding best initial lr:  50%|█████     | 25/50 [00:01<00:00, 28.14it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 30.05it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 31.44it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 25.33it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 27.64it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 29.27it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 30.68it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.71it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_06fc6fd9-ca94-49ce-a38f-db228559a26a.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_06fc6fd9-ca94-49ce-a38f-db228559a26a.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_4d89af34-4b42-4287-ad20-50429be95689.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_4d89af34-4b42-4287-ad20-50429be95689.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -399,11 +399,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 12
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 25.45it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.40it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.23it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 33.01it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 33.70it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 25.55it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 28.05it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 29.70it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.10it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 32.18it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 33.08it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 26.09it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.33it/s]
-Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_a2afd461-7acc-4470-989a-d16d892ff897.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_a2afd461-7acc-4470-989a-d16d892ff897.ckpt
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.38it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.23it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.62it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 33.08it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 33.82it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 25.48it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 27.94it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 29.72it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.13it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 32.33it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 33.34it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 25.90it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.17it/s]
+Learning rate set to 8.317637711026709e-05
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_3a8043fd-7c5e-4254-86fe-02143ce81d56.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_3a8043fd-7c5e-4254-86fe-02143ce81d56.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -411,11 +411,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 13
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 23.54it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.03it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.09it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.42it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 33.07it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 25.35it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 27.47it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 29.36it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 30.36it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 31.54it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 32.29it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 25.46it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.77it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.69it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 28.81it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 30.88it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 32.59it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:00, 32.89it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 33.22it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 25.37it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 27.65it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 29.33it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 30.95it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 32.33it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 25.77it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.88it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.96it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_7d554312-3452-473f-8b94-7a88ba24c740.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_7d554312-3452-473f-8b94-7a88ba24c740.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_aa5c3b3a-52a0-4a0d-9e91-21217e516ac9.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_aa5c3b3a-52a0-4a0d-9e91-21217e516ac9.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -423,11 +423,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 14
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.42it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.36it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 21.31it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 25.38it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 27.73it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 29.45it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 30.65it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 31.48it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 25.12it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 26.90it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 28.32it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 29.71it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 30.67it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.37it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:05,  8.49it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:01, 22.53it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:02, 17.81it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 22.66it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 26.12it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:01, 28.24it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 29.91it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:01<00:00, 31.04it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 32.14it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 25.23it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 27.25it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 28.69it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 30.06it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.41it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_48630208-ded7-4748-8bf0-405d39890d6c.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_48630208-ded7-4748-8bf0-405d39890d6c.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_425d2ff9-81f9-49e4-b4b3-8dd65f624290.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_425d2ff9-81f9-49e4-b4b3-8dd65f624290.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -435,11 +435,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 15
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.28it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 28.48it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 21.50it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 25.09it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 28.06it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 29.58it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.50it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.45it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 25.01it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 26.98it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 28.94it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.12it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.34it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 23.79it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.15it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 22.13it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 25.84it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 28.25it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 30.00it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 31.15it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 32.27it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 25.77it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.81it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.40it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.89it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.99it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_461e4815-5899-455b-bc12-a5904ce6a7e0.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_461e4815-5899-455b-bc12-a5904ce6a7e0.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_dc214710-c701-4958-8eed-eb00e0cebe5f.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_dc214710-c701-4958-8eed-eb00e0cebe5f.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -447,11 +447,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 16
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:07,  6.36it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 20.56it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 26.39it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 29.39it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 31.27it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 23.91it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:00, 26.19it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 28.25it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 29.90it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 31.25it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 32.49it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 25.60it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 27.82it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.38it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:11,  4.24it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 16.53it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 22.95it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 27.38it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 29.70it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 23.76it/s]Finding best initial lr:  50%|█████     | 25/50 [00:01<00:00, 26.43it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 28.83it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 30.53it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 31.85it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 32.52it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 25.99it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 28.05it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.66it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_af05a677-a34f-440f-9536-c646dd4ce0eb.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_af05a677-a34f-440f-9536-c646dd4ce0eb.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_780dad05-1d4d-4080-b929-b6ded28a56bf.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_780dad05-1d4d-4080-b929-b6ded28a56bf.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -459,11 +459,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 17
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.16it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 27.72it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 30.23it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 31.26it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 32.03it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 24.74it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 27.23it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 28.43it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 29.73it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 30.95it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 31.42it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 25.35it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.13it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.45it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.04it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.13it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 31.66it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 32.99it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 25.01it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 27.65it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 29.19it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 30.49it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 31.52it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 32.48it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 25.64it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.73it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_137808fc-1be8-490d-a42e-7ccd0c61bf74.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_137808fc-1be8-490d-a42e-7ccd0c61bf74.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_8d5755e9-45b2-439f-9271-a0abcffb6ca9.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_8d5755e9-45b2-439f-9271-a0abcffb6ca9.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -471,11 +471,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 18
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.74it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 28.01it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:02, 19.76it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 24.32it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 27.30it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:00, 29.61it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:00, 31.06it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 24.48it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 21.56it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 24.27it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 26.41it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 28.33it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 30.03it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.70it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:09,  5.04it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 17.80it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:02, 15.98it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 21.17it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 24.83it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:01, 27.49it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:01<00:00, 29.48it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:01<00:00, 30.96it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 32.20it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 25.52it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 27.63it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 29.31it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 30.49it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.58it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_bfae6c70-2419-4861-ad9b-4704534fb022.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_bfae6c70-2419-4861-ad9b-4704534fb022.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_1eb9ee27-3c00-431f-ac22-47bad4d73aa5.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_1eb9ee27-3c00-431f-ac22-47bad4d73aa5.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -483,11 +483,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 19
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:13,  3.67it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 15.11it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 21.69it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:02, 18.78it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 23.05it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:01, 26.28it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:01<00:00, 28.76it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:01<00:00, 30.60it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 31.76it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 25.68it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 27.80it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 29.55it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 31.00it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.14it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 25.34it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.46it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 22.37it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 26.31it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 28.76it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 30.34it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 31.68it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 32.60it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 25.75it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.90it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.71it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 31.21it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.37it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_f99ce8d4-74fa-4d15-bdef-508775e3e446.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_f99ce8d4-74fa-4d15-bdef-508775e3e446.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_b57d6c7e-80e4-4b02-a8b9-acaf999e0ca3.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_b57d6c7e-80e4-4b02-a8b9-acaf999e0ca3.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 Fitting DPNet. Lookback window length set to 1
 GPU available: False, used: False
@@ -503,11 +503,11 @@ Global seed set to 0
   rank_zero_warn(
 /projects/mlcompchem/mambaforge/envs/kooplearn/lib/python3.11/site-packages/lightning/pytorch/core/module.py:490: UserWarning: You called `self.log('train/total_loss', ..., logger=True)` but have no logger configured. You can enable one by doing `Trainer(logger=ALogger(...))`
   rank_zero_warn(
-Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 26.64it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.95it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 21.19it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 24.89it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 27.94it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 29.68it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 31.29it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 32.54it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 26.03it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.99it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.76it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 31.18it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.17it/s]
+Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 26.59it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.63it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 20.82it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 24.18it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 27.06it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 28.66it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.01it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.57it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 24.96it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.17it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 28.96it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.11it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.28it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_0faf6881-ef2b-4e17-a1af-51b171639c73.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_0faf6881-ef2b-4e17-a1af-51b171639c73.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_58736888-c0d3-4c64-afa3-adc7711f3805.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_58736888-c0d3-4c64-afa3-adc7711f3805.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -515,11 +515,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 1
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.60it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.13it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.01it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 33.45it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 34.08it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 34.46it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 26.40it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 28.39it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 30.07it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 31.48it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 32.75it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 33.68it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.68it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.27it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.67it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 30.18it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 31.27it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 31.51it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 31.78it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 24.89it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 27.11it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 28.65it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 29.76it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 30.73it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 31.39it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.10it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_5f54469d-c6b8-45a0-b449-6535d6deb00c.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_5f54469d-c6b8-45a0-b449-6535d6deb00c.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_dca036bb-ed79-42f6-80e5-6899ddadddcb.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_dca036bb-ed79-42f6-80e5-6899ddadddcb.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -527,11 +527,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 2
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.01it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 28.66it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 30.63it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 23.58it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 26.43it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 28.85it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.78it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 32.06it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 24.82it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.08it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 28.93it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.57it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.87it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.46it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.53it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 29.98it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 21.76it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 25.33it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 27.44it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:00, 29.13it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 30.38it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 31.67it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 25.28it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 27.48it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 28.95it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 30.20it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.17it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_5fe2328c-7efa-44d3-85b1-61e7c14f289f.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_5fe2328c-7efa-44d3-85b1-61e7c14f289f.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_40295c9b-bc20-44c9-8899-e0be873091ea.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_40295c9b-bc20-44c9-8899-e0be873091ea.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -539,11 +539,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 3
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.33it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 28.00it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 29.95it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 31.50it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 32.16it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 24.38it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 26.52it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 28.42it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 30.22it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 31.80it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 32.64it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 25.80it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.35it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.40it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.34it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.58it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.46it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 32.70it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 24.92it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 27.46it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 29.50it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 30.96it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 32.10it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 32.62it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 25.75it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.88it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_7735439b-c126-4e2e-b432-c34d36b72753.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_7735439b-c126-4e2e-b432-c34d36b72753.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_ad82f5b7-4b26-487b-8d9d-4152891e6e99.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_ad82f5b7-4b26-487b-8d9d-4152891e6e99.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -551,11 +551,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 4
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.47it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.80it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.42it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.76it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 24.68it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 27.19it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 29.13it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 30.82it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.77it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 32.77it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 33.69it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 26.64it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.30it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.65it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.00it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 29.38it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 29.97it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 30.72it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:01, 24.41it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 26.84it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 28.64it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 30.30it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 31.30it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 32.09it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 25.72it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.68it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.18it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_9e2033ef-d8b7-4bb7-8f63-9ba5d5398c58.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_9e2033ef-d8b7-4bb7-8f63-9ba5d5398c58.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_5cf1e494-8014-4ec0-95a8-fa3f6c45311e.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_5cf1e494-8014-4ec0-95a8-fa3f6c45311e.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -563,11 +563,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 5
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 25.79it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.24it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.33it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 33.34it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 24.88it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 27.77it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 29.85it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.41it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 32.23it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 33.11it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 26.36it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 28.43it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.60it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.37it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 28.61it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.48it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.65it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 24.40it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 27.08it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 28.98it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 30.41it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.64it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 32.91it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 25.83it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 28.05it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.90it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_2ffd860e-bc59-4ec1-b412-b54457de6340.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_2ffd860e-bc59-4ec1-b412-b54457de6340.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_852d3a9f-6682-4b11-9a44-3a7cdfc7f5b0.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_852d3a9f-6682-4b11-9a44-3a7cdfc7f5b0.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -575,11 +575,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 6
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 25.50it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:02, 18.10it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 24.02it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 27.29it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 29.28it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 30.91it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 31.80it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 25.30it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 27.29it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 29.02it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 30.34it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 31.54it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 32.22it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.93it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.43it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:03, 13.64it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:01, 22.06it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 25.94it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 28.51it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:00, 30.41it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 31.57it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:00<00:00, 32.32it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 26.01it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 27.77it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 29.42it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 30.91it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 31.69it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.73it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_16887547-2bf8-4865-9438-72642cba4c62.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_16887547-2bf8-4865-9438-72642cba4c62.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_500d228f-8003-4c5c-9f09-f91bc25afc09.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_500d228f-8003-4c5c-9f09-f91bc25afc09.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -587,11 +587,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 7
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.25it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.31it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.78it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 23.66it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 26.56it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 28.73it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.40it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 29.50it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 30.44it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 24.68it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 26.84it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 28.25it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.23it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:09,  5.44it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 18.72it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 24.54it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 21.03it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 24.83it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 27.49it/s]Finding best initial lr:  50%|█████     | 25/50 [00:01<00:00, 29.44it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 30.84it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 32.05it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 32.61it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 26.13it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 28.10it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 29.49it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.16it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_bd97bdca-0943-49f5-92d0-3e203ed581be.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_bd97bdca-0943-49f5-92d0-3e203ed581be.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_c22a2274-48fc-466a-9767-45f608d23291.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_c22a2274-48fc-466a-9767-45f608d23291.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -599,11 +599,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 8
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:06,  7.22it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 21.41it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 27.07it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 20.97it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 24.82it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:01, 27.62it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:00<00:00, 29.92it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:01<00:00, 31.60it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 32.90it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 33.90it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 26.06it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 27.95it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 29.51it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.01it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:09,  5.00it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 17.50it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 23.59it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 19.31it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 23.32it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:01, 26.32it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:01<00:00, 28.85it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:01<00:00, 30.13it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 31.49it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 32.50it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 25.46it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 27.47it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 29.21it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.50it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_b30bcb0a-a529-4328-aa36-d49ede40b29a.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_b30bcb0a-a529-4328-aa36-d49ede40b29a.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_1d3f02ed-adee-421e-9e20-f39a07a0ff07.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_1d3f02ed-adee-421e-9e20-f39a07a0ff07.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -611,11 +611,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 9
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 26.04it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 30.52it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.96it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 23.82it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 26.97it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 29.16it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.72it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 32.11it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 33.24it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 26.21it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 28.10it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 29.90it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.48it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.35it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.66it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 29.16it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 21.74it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 25.47it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 27.82it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:00, 29.25it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 30.86it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 32.11it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 32.08it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 25.07it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 27.00it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 28.33it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.98it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_66f08882-4998-433f-a87e-3511611c2a25.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_66f08882-4998-433f-a87e-3511611c2a25.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_4756a260-2328-407d-beae-6c620fc7f21d.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_4756a260-2328-407d-beae-6c620fc7f21d.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -623,11 +623,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 10
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:06,  8.02it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:01, 23.10it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 28.06it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 30.71it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 32.67it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:00, 33.63it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:00, 25.82it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 28.25it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 30.24it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 31.74it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 32.98it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 33.75it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 26.67it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.86it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.95it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.29it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 29.82it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 31.33it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 31.91it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 32.31it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 25.08it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 27.29it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 29.03it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 30.48it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 31.39it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 31.80it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 25.49it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.29it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_b85566a4-2829-44ca-b551-ed11139f8d4d.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_b85566a4-2829-44ca-b551-ed11139f8d4d.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_72e58886-829d-48d3-a2ea-f3610e287a27.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_72e58886-829d-48d3-a2ea-f3610e287a27.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -635,11 +635,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 11
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.30it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.08it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 30.47it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 23.45it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 26.31it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 28.60it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.62it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.61it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 25.33it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.71it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.46it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 31.00it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.06it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:09,  5.24it/s]Finding best initial lr:   8%|▊         | 4/50 [00:00<00:02, 15.84it/s]Finding best initial lr:  16%|█▌        | 8/50 [00:00<00:01, 22.79it/s]Finding best initial lr:  24%|██▍       | 12/50 [00:00<00:01, 19.27it/s]Finding best initial lr:  32%|███▏      | 16/50 [00:00<00:01, 23.19it/s]Finding best initial lr:  40%|████      | 20/50 [00:00<00:01, 25.88it/s]Finding best initial lr:  48%|████▊     | 24/50 [00:01<00:00, 28.33it/s]Finding best initial lr:  56%|█████▌    | 28/50 [00:01<00:00, 29.78it/s]Finding best initial lr:  64%|██████▍   | 32/50 [00:01<00:00, 30.78it/s]Finding best initial lr:  72%|███████▏  | 36/50 [00:01<00:00, 24.85it/s]Finding best initial lr:  80%|████████  | 40/50 [00:01<00:00, 26.94it/s]Finding best initial lr:  88%|████████▊ | 44/50 [00:01<00:00, 28.55it/s]Finding best initial lr:  96%|█████████▌| 48/50 [00:01<00:00, 29.89it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 26.12it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_5a4973ff-b96d-44c6-9714-d849d733f72b.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_5a4973ff-b96d-44c6-9714-d849d733f72b.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_549be5ff-e60c-4d1c-8c3d-b9f41690e04a.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_549be5ff-e60c-4d1c-8c3d-b9f41690e04a.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -647,11 +647,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 12
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.22it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 28.69it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 30.54it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.01it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 32.56it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 24.96it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 27.25it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 29.08it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 30.56it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 31.91it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 32.87it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 26.18it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.84it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.09it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.27it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 29.78it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 31.26it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:00, 33.13it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:01, 24.88it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 27.04it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 28.71it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 29.79it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 30.44it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 31.60it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 25.40it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.06it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.14it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_3612eef5-1244-45b4-96ce-c8fdc0e9db06.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_3612eef5-1244-45b4-96ce-c8fdc0e9db06.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_3cea1a80-59a8-4f2c-bac9-42d9a20855d8.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_3cea1a80-59a8-4f2c-bac9-42d9a20855d8.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -659,11 +659,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 13
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.62it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.76it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 30.09it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 31.47it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:00, 32.15it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 32.48it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 25.37it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 27.73it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 29.67it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 30.88it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 31.73it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 25.48it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.66it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.66it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.05it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 28.65it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 30.46it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 31.44it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 32.10it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 24.97it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 26.99it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 29.00it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 30.19it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 31.30it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 31.45it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 25.30it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.33it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_d7172508-73e3-4afe-b945-70273eba7afd.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_d7172508-73e3-4afe-b945-70273eba7afd.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_4b5c3d51-ea70-433f-875b-60a03881c8f0.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_4b5c3d51-ea70-433f-875b-60a03881c8f0.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -671,11 +671,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 14
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.26it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 28.73it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 20.77it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 25.16it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 28.35it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 30.40it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 31.84it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 32.73it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 25.69it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 27.57it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 29.43it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 30.67it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 31.65it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.98it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.78it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 26.91it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:02, 19.44it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 23.80it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 26.78it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 28.40it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:00, 30.43it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 31.39it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 31.82it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 25.00it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 27.08it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 28.48it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 30.21it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.00it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_9fd8273a-c625-433e-a871-d613dcfe7156.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_9fd8273a-c625-433e-a871-d613dcfe7156.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_094754ce-d0a7-46e4-941b-b202edad978e.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_094754ce-d0a7-46e4-941b-b202edad978e.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -683,11 +683,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 15
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 25.99it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 31.19it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 22.89it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 26.90it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 29.65it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 31.45it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 32.88it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 33.42it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 26.22it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 28.72it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 30.35it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 31.88it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 30.11it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 19.37it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.01it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 29.83it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 21.63it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 25.36it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 27.76it/s]Finding best initial lr:  50%|█████     | 25/50 [00:00<00:00, 29.45it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 30.63it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 31.69it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 24.87it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 26.79it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 28.63it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 30.12it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.11it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_3737d83a-5aec-4833-9a67-950ead95727c.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_3737d83a-5aec-4833-9a67-950ead95727c.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_b292bb3f-5f0a-4cd5-991b-2fe463dae386.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_b292bb3f-5f0a-4cd5-991b-2fe463dae386.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -695,11 +695,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 16
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 24.01it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.56it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 32.21it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 33.93it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 25.09it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 27.72it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 30.02it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 31.70it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 32.68it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 33.82it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 34.09it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 26.44it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.66it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:08,  5.94it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 19.51it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 24.92it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 27.96it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 29.77it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:01, 23.72it/s]Finding best initial lr:  50%|█████     | 25/50 [00:01<00:00, 26.64it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 28.72it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 30.15it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 31.26it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 32.22it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 25.96it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 28.21it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 27.27it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_9712f56b-2cc9-4e04-9599-658dfed1418a.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_9712f56b-2cc9-4e04-9599-658dfed1418a.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_78fd0089-3e88-4c1d-9c3d-17214a9be026.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_78fd0089-3e88-4c1d-9c3d-17214a9be026.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -707,11 +707,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 17
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 25.10it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 29.20it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 31.11it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 32.84it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:00, 33.84it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:01, 25.83it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 28.34it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 30.09it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 31.60it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 32.61it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 33.44it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 26.42it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.55it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   2%|▏         | 1/50 [00:00<00:10,  4.47it/s]Finding best initial lr:  10%|█         | 5/50 [00:00<00:02, 16.57it/s]Finding best initial lr:  18%|█▊        | 9/50 [00:00<00:01, 22.56it/s]Finding best initial lr:  26%|██▌       | 13/50 [00:00<00:01, 26.16it/s]Finding best initial lr:  34%|███▍      | 17/50 [00:00<00:01, 28.14it/s]Finding best initial lr:  42%|████▏     | 21/50 [00:00<00:00, 29.52it/s]Finding best initial lr:  50%|█████     | 25/50 [00:01<00:01, 23.89it/s]Finding best initial lr:  58%|█████▊    | 29/50 [00:01<00:00, 26.20it/s]Finding best initial lr:  66%|██████▌   | 33/50 [00:01<00:00, 28.29it/s]Finding best initial lr:  74%|███████▍  | 37/50 [00:01<00:00, 29.88it/s]Finding best initial lr:  82%|████████▏ | 41/50 [00:01<00:00, 31.24it/s]Finding best initial lr:  90%|█████████ | 45/50 [00:01<00:00, 25.03it/s]Finding best initial lr:  98%|█████████▊| 49/50 [00:01<00:00, 27.08it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 25.91it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_7ac16918-b436-437a-9602-88f2d1306230.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_7ac16918-b436-437a-9602-88f2d1306230.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_ce3c235f-910a-43fd-9399-034786048a32.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_ce3c235f-910a-43fd-9399-034786048a32.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -719,11 +719,11 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 18
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.03it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:02, 18.64it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 23.70it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 27.08it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 29.09it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 31.02it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 32.25it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 33.13it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 25.95it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.75it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.09it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.60it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.77it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:02, 23.03it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:02, 18.71it/s]Finding best initial lr:  22%|██▏       | 11/50 [00:00<00:01, 23.40it/s]Finding best initial lr:  30%|███       | 15/50 [00:00<00:01, 26.54it/s]Finding best initial lr:  38%|███▊      | 19/50 [00:00<00:01, 28.96it/s]Finding best initial lr:  46%|████▌     | 23/50 [00:00<00:00, 30.82it/s]Finding best initial lr:  54%|█████▍    | 27/50 [00:00<00:00, 31.92it/s]Finding best initial lr:  62%|██████▏   | 31/50 [00:01<00:00, 32.60it/s]Finding best initial lr:  70%|███████   | 35/50 [00:01<00:00, 25.36it/s]Finding best initial lr:  78%|███████▊  | 39/50 [00:01<00:00, 27.49it/s]Finding best initial lr:  86%|████████▌ | 43/50 [00:01<00:00, 29.02it/s]Finding best initial lr:  94%|█████████▍| 47/50 [00:01<00:00, 30.63it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.59it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_7e89f482-90d4-41d8-a50a-25e6891cfe51.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_7e89f482-90d4-41d8-a50a-25e6891cfe51.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_29d61efa-d14c-4d83-ac78-f7ae3b734dea.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_29d61efa-d14c-4d83-ac78-f7ae3b734dea.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 GPU available: False, used: False
 TPU available: False, using: 0 TPU cores
@@ -731,10 +731,10 @@ IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
 Global seed set to 19
 Fitting DPNet. Lookback window length set to 1
-Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   4%|▍         | 2/50 [00:00<00:02, 18.94it/s]Finding best initial lr:  12%|█▏        | 6/50 [00:00<00:01, 27.65it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 21.25it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 25.30it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 28.41it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 30.45it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 31.61it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 32.46it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 25.76it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 28.25it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 30.08it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 31.33it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 32.40it/s]`Trainer.fit` stopped: `max_steps=50` reached.
-Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 29.20it/s]
+Finding best initial lr:   0%|          | 0/50 [00:00<?, ?it/s]Finding best initial lr:   6%|▌         | 3/50 [00:00<00:01, 23.85it/s]Finding best initial lr:  14%|█▍        | 7/50 [00:00<00:01, 28.55it/s]Finding best initial lr:  20%|██        | 10/50 [00:00<00:01, 20.48it/s]Finding best initial lr:  28%|██▊       | 14/50 [00:00<00:01, 24.57it/s]Finding best initial lr:  36%|███▌      | 18/50 [00:00<00:01, 27.50it/s]Finding best initial lr:  44%|████▍     | 22/50 [00:00<00:00, 29.17it/s]Finding best initial lr:  52%|█████▏    | 26/50 [00:00<00:00, 30.84it/s]Finding best initial lr:  60%|██████    | 30/50 [00:01<00:00, 31.75it/s]Finding best initial lr:  68%|██████▊   | 34/50 [00:01<00:00, 24.16it/s]Finding best initial lr:  76%|███████▌  | 38/50 [00:01<00:00, 26.31it/s]Finding best initial lr:  84%|████████▍ | 42/50 [00:01<00:00, 27.78it/s]Finding best initial lr:  92%|█████████▏| 46/50 [00:01<00:00, 29.42it/s]Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 30.83it/s]`Trainer.fit` stopped: `max_steps=50` reached.
+Finding best initial lr: 100%|██████████| 50/50 [00:01<00:00, 28.02it/s]
 Learning rate set to 9.120108393559096e-05
-Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_e8638ec8-5c0d-4e74-9254-a52bcd1591e8.ckpt
-Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_e8638ec8-5c0d-4e74-9254-a52bcd1591e8.ckpt
+Restoring states from the checkpoint path at /work/pnovelli/dp_examples/logistic_map/.lr_find_6fbf2b0f-84b9-4899-be76-4e7cbffd9b45.ckpt
+Restored all states from the checkpoint at /work/pnovelli/dp_examples/logistic_map/.lr_find_6fbf2b0f-84b9-4899-be76-4e7cbffd9b45.ckpt
 `Trainer.fit` stopped: `max_epochs=500` reached.
 Fitting DPNet. Lookback window length set to 1
