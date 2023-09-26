@@ -198,7 +198,7 @@ def evaluate_representation(feature_map: FeatureMap):
     feature_dim = cov.shape[0]
     report["optimality-gap"] = np.sum(logistic.svals()[:feature_dim] ** 2) - np.trace(M)
     # Feasibility
-    report["feasibility-gap"] = np.linalg.norm(cov - np.eye(feature_dim), ord="2")
+    report["feasibility-gap"] = np.linalg.norm(cov - np.eye(feature_dim), ord=2)
     report["estimator-eigenvalues"] = OLS_eigs
     report["covariance-eigenvalues"] = np.linalg.eigvalsh(cov)
     return report
