@@ -194,7 +194,11 @@ def evaluate_representation(feature_map: FeatureMap):
     top_eigs = topk(np.abs(OLS_eigs), 3)
     OLS_eigs = OLS_eigs[top_eigs.indices]
 
-    return directed_hausdorff_distance(OLS_eigs, logistic.eig())
+    true_eigs = logistic.eig()
+    top_eigs = topk(np.abs(true_eigs), 3)
+    true_eigs = true_eigs[top_eigs.indices]
+
+    return directed_hausdorff_distance(OLS_eigs, true_eigs)
 
 
 def tune_learning_rate(

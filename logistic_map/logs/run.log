@@ -905,3 +905,5 @@
 2023-09-27 17:44:56 - logistic_map - INFO - DPNets-relaxed::START::FeatureDim 8
 2023-09-27 17:44:56 - logistic_map - INFO - DPNets-relaxed::Tuned metric deformation: 1.0
 2023-09-27 17:44:56 - logistic_map - INFO - DPNets::Seed 20/20
+2023-09-27 17:47:18 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 8
+2023-09-27 17:47:42 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 8
