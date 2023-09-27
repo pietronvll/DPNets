@@ -589,3 +589,11 @@
 2023-09-27 16:09:02 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
 2023-09-27 16:09:02 - logistic_map - INFO - VAMPNets::Seed 1
 2023-09-27 16:09:06 - logistic_map - INFO - VAMPNets::END
+2023-09-27 16:11:54 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
+2023-09-27 16:11:54 - logistic_map - INFO - VAMPNets::Seed 3
+2023-09-27 16:11:54 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
+2023-09-27 16:11:54 - logistic_map - INFO - VAMPNets::Seed 4
+2023-09-27 16:11:54 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
+2023-09-27 16:11:54 - logistic_map - INFO - VAMPNets::Seed 1
+2023-09-27 16:11:54 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
+2023-09-27 16:11:54 - logistic_map - INFO - VAMPNets::Seed 2
