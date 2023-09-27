@@ -5,7 +5,7 @@
 #PBS -N logistic_map-DPNets
 #PBS -j oe
 #PBS -o /work/pnovelli/dp_examples/logistic_map/logs/output.log
-#PBS -J 0-20
+#PBS -J 10-19
 #PBS -r y
 
 module load miniconda3/mc3-py39

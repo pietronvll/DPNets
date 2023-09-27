@@ -574,3 +574,6 @@
 2023-09-26 13:11:41 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 8
 2023-09-26 13:11:58 - logistic_map - INFO - NoiseKernel::START::FeatureDim 8
 2023-09-26 13:11:58 - logistic_map - INFO - NoiseKernel::END::FeatureDim 8
+2023-09-27 15:56:16 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
+2023-09-27 15:56:16 - logistic_map - INFO - VAMPNets::Seed 4
+2023-09-27 15:56:16 - logistic_map - INFO - VAMPNets::Seed 1
