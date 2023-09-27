@@ -34,7 +34,7 @@ plt.rcParams["font.weight"] = "normal"
 plt.rcParams["lines.linewidth"] = 1
 
 # Layout
-plt.rcParams["figure.constrained_layout.use"] = True
+# plt.rcParams["figure.constrained_layout.use"] = True
 
 
 def pt_to_inch(pt):
