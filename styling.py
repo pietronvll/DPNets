@@ -5,7 +5,6 @@ from cycler import cycler
 from matplotlib import font_manager
 
 font_path = [Path(__file__).parent / "fonts"]
-print(font_path)
 font_files = font_manager.findSystemFonts(font_path)
 for font_file in font_files:
     font_manager.fontManager.addfont(font_file)
@@ -35,7 +34,7 @@ plt.rcParams["font.weight"] = "normal"
 plt.rcParams["lines.linewidth"] = 1
 
 # Layout
-plt.rcParams["figure.constrained_layout.use"] = True
+# plt.rcParams["figure.constrained_layout.use"] = True
 
 
 def pt_to_inch(pt):
