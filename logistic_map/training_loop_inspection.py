@@ -4,10 +4,8 @@ import logging
 import pickle
 from pathlib import Path
 from time import perf_counter
-from typing import Any
 
 import lightning
-import lightning.pytorch as pl
 import ml_confs
 import numpy as np
 import torch
@@ -17,7 +15,6 @@ from kooplearn.abc import FeatureMap
 from kooplearn.datasets import LogisticMap
 from kooplearn.nn.data import TrajToContextsDataset
 from lightning.pytorch.callbacks import Callback
-from lightning.pytorch.utilities.types import STEP_OUTPUT
 from scipy.integrate import romb
 from torch.utils.data import DataLoader
 
