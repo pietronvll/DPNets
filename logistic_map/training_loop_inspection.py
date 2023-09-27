@@ -25,7 +25,7 @@ from torch.utils.data import DataLoader
 experiment_path = Path(__file__).parent
 data_path = experiment_path / "data"
 ckpt_path = experiment_path / "ckpt"
-results_path = experiment_path / "results"
+results_path = experiment_path / "results_training_loop_inspection"
 configs = ml_confs.from_file(
     experiment_path / "configs.yaml", register_jax_pytree=False
 )
