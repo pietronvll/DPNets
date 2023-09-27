@@ -5,7 +5,6 @@ from cycler import cycler
 from matplotlib import font_manager
 
 font_path = [Path(__file__).parent / "fonts"]
-print(font_path)
 font_files = font_manager.findSystemFonts(font_path)
 for font_file in font_files:
     font_manager.fontManager.addfont(font_file)
