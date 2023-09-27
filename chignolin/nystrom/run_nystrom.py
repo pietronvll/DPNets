@@ -45,7 +45,9 @@ def make_dataset(train_pts: Optional[int] = None):
     X = pwised[rnd_ids]
     Y = pwised[rnd_ids + 1]
     del pwised
-    print(f"Shape {X.shape} Dtype {X.dtype} - {tensor_size(X):.1f} GB")
+    print(
+        f"DATA INFO\nshape - {X.shape}\ndtype - {X.dtype}\nsize - {tensor_size(X):.1f} GB"
+    )
     return X, Y
 
 
@@ -55,8 +57,8 @@ def fit_and_evd(X, Y, kind: str, **kw):
     est = train_est(X, Y, kind=kind, **kw)
     fit_time = time.time() - start
     print(f"Training took {fit_time:.1f} seconds")
-    print("Computing EVD")
     data = load_data()
+    print("Computing EVD")
     start = time.time()
     evals, _left_fn, _right_fn = est.eigenfunctions()
     evals = evals.resolve_conj().numpy()
@@ -114,4 +116,4 @@ if __name__ == "__main__":
     # Train Nystrom
     for model in model_kw.keys():
         kw = model_kw[model]
-        fit_and_evd(*make_dataset(configs.num_data_pts), **kw)
+        fit_and_evd(*make_dataset(configs.num_data_pts), model, **kw)
