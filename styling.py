@@ -31,6 +31,12 @@ plt.rcParams["font.size"] = 8
 plt.rcParams["figure.dpi"] = 120
 plt.rcParams["font.weight"] = "normal"
 
+# Line style
+plt.rcParams["lines.linewidth"] = 1
+
+# Layout
+plt.rcParams["figure.constrained_layout.use"] = True
+
 
 def pt_to_inch(pt):
     return pt / 72.27
