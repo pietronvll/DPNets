@@ -72,7 +72,7 @@ trainer_kwargs = {
     "accelerator": "cpu",
     "devices": 1,
     "max_epochs": configs.max_epochs,
-    "enable_progress_bar": False,
+    "enable_progress_bar": True,
     "enable_model_summary": False,
     "enable_checkpointing": False,
     "logger": False,
@@ -89,8 +89,9 @@ class HausdorffCB(Callback):
         self, trainer, pl_module, outputs, batch, batch_idx, dataloader_idx=0
     ) -> None:
         fmap = pl_module._kooplearn_feature_map_weakref()
-        d_H = evaluate_representation(fmap)
-        self.distance.append(d_H)
+        if (trainer.global_step - 1) % 10 == 0:
+            d_H = evaluate_representation(fmap)
+            self.distance.append(d_H)
 
 
 # Adapted from https://realpython.com/python-timer/#creating-a-python-timer-decorator
@@ -392,7 +393,6 @@ def main():
     if args.model:
         if args.model in AVAIL_MODELS:
             results = AVAIL_MODELS[args.model](configs.feature_dim, args.rngseed)
-            results["name"] = args.model
             fname = sanitize_filename(args.model) + f"_{args.rngseed}.pkl"
             if not results_path.exists():
                 results_path.mkdir()
