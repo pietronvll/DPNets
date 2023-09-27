@@ -949,3 +949,42 @@
 2023-09-27 18:16:24 - logistic_map - INFO - DPNets::Seed 2/20
 2023-09-27 18:19:04 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 8
 2023-09-27 18:19:08 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 8
+2023-09-27 18:19:23 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 8
+2023-09-27 18:19:24 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 8
+2023-09-27 18:19:30 - logistic_map - INFO - VAMPNets::START::FeatureDim 8
+2023-09-27 18:19:30 - logistic_map - INFO - VAMPNets::Seed 5
+2023-09-27 18:19:32 - logistic_map - INFO - VAMPNets::START::FeatureDim 8
+2023-09-27 18:19:32 - logistic_map - INFO - VAMPNets::Seed 6
+2023-09-27 18:19:42 - logistic_map - INFO - VAMPNets::START::FeatureDim 8
+2023-09-27 18:19:42 - logistic_map - INFO - VAMPNets::Seed 7
+2023-09-27 18:19:49 - logistic_map - INFO - VAMPNets::START::FeatureDim 8
+2023-09-27 18:19:49 - logistic_map - INFO - VAMPNets::Seed 8
+2023-09-27 18:22:29 - logistic_map - INFO - VAMPNets::END
+2023-09-27 18:22:44 - logistic_map - INFO - VAMPNets::END
+2023-09-27 18:22:47 - logistic_map - INFO - DPNets::START::FeatureDim 8
+2023-09-27 18:22:47 - logistic_map - INFO - DPNets::Tuned metric deformation: 1.0
+2023-09-27 18:22:47 - logistic_map - INFO - DPNets::Seed 6
+2023-09-27 18:22:54 - logistic_map - INFO - VAMPNets::END
+2023-09-27 18:22:54 - logistic_map - INFO - VAMPNets::END
+2023-09-27 18:22:58 - logistic_map - INFO - DPNets::START::FeatureDim 8
+2023-09-27 18:22:58 - logistic_map - INFO - DPNets::Tuned metric deformation: 1.0
+2023-09-27 18:22:58 - logistic_map - INFO - DPNets::Seed 5
+2023-09-27 18:23:07 - logistic_map - INFO - DPNets::START::FeatureDim 8
+2023-09-27 18:23:07 - logistic_map - INFO - DPNets::Tuned metric deformation: 1.0
+2023-09-27 18:23:07 - logistic_map - INFO - DPNets::Seed 8
+2023-09-27 18:23:08 - logistic_map - INFO - DPNets::START::FeatureDim 8
+2023-09-27 18:23:08 - logistic_map - INFO - DPNets::Tuned metric deformation: 1.0
+2023-09-27 18:23:08 - logistic_map - INFO - DPNets::Seed 7
+2023-09-27 18:25:55 - logistic_map - INFO - DPNets::END::FeatureDim 8
+2023-09-27 18:25:58 - logistic_map - INFO - DPNets::END::FeatureDim 8
+2023-09-27 18:26:02 - logistic_map - INFO - DPNets::END::FeatureDim 8
+2023-09-27 18:26:12 - logistic_map - INFO - DPNets-relaxed::START::FeatureDim 8
+2023-09-27 18:26:12 - logistic_map - INFO - DPNets-relaxed::Tuned metric deformation: 1.0
+2023-09-27 18:26:12 - logistic_map - INFO - DPNets::Seed 7/20
+2023-09-27 18:26:18 - logistic_map - INFO - DPNets-relaxed::START::FeatureDim 8
+2023-09-27 18:26:18 - logistic_map - INFO - DPNets-relaxed::Tuned metric deformation: 1.0
+2023-09-27 18:26:18 - logistic_map - INFO - DPNets::Seed 6/20
+2023-09-27 18:26:22 - logistic_map - INFO - DPNets-relaxed::START::FeatureDim 8
+2023-09-27 18:26:22 - logistic_map - INFO - DPNets-relaxed::Tuned metric deformation: 1.0
+2023-09-27 18:26:22 - logistic_map - INFO - DPNets::Seed 5/20
+2023-09-27 18:26:39 - logistic_map - INFO - DPNets::END::FeatureDim 8
