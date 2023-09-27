@@ -635,3 +635,57 @@
 2023-09-27 16:21:23 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
 2023-09-27 16:21:23 - logistic_map - INFO - VAMPNets::Seed 5
 2023-09-27 16:21:26 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 7
+2023-09-27 16:21:35 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
+2023-09-27 16:21:35 - logistic_map - INFO - VAMPNets::Seed 6
+2023-09-27 16:21:38 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
+2023-09-27 16:21:38 - logistic_map - INFO - VAMPNets::Seed 7
+2023-09-27 16:21:52 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
+2023-09-27 16:21:52 - logistic_map - INFO - VAMPNets::Seed 8
+2023-09-27 16:24:21 - logistic_map - INFO - VAMPNets::END
+2023-09-27 16:24:26 - logistic_map - INFO - VAMPNets::END
+2023-09-27 16:24:36 - logistic_map - INFO - DPNets::START::FeatureDim 7
+2023-09-27 16:24:36 - logistic_map - INFO - DPNets::Tuned metric deformation: 1.0
+2023-09-27 16:24:36 - logistic_map - INFO - DPNets::Seed 7
+2023-09-27 16:24:39 - logistic_map - INFO - DPNets::START::FeatureDim 7
+2023-09-27 16:24:39 - logistic_map - INFO - DPNets::Tuned metric deformation: 1.0
+2023-09-27 16:24:39 - logistic_map - INFO - DPNets::Seed 5
+2023-09-27 16:24:47 - logistic_map - INFO - VAMPNets::END
+2023-09-27 16:25:00 - logistic_map - INFO - DPNets::START::FeatureDim 7
+2023-09-27 16:25:00 - logistic_map - INFO - DPNets::Tuned metric deformation: 1.0
+2023-09-27 16:25:00 - logistic_map - INFO - DPNets::Seed 6
+2023-09-27 16:25:01 - logistic_map - INFO - VAMPNets::END
+2023-09-27 16:25:15 - logistic_map - INFO - DPNets::START::FeatureDim 7
+2023-09-27 16:25:15 - logistic_map - INFO - DPNets::Tuned metric deformation: 1.0
+2023-09-27 16:25:15 - logistic_map - INFO - DPNets::Seed 8
+2023-09-27 16:27:34 - logistic_map - INFO - DPNets::END::FeatureDim 7
+2023-09-27 16:27:35 - logistic_map - INFO - DPNets::END::FeatureDim 7
+2023-09-27 16:27:52 - logistic_map - INFO - DPNets-relaxed::START::FeatureDim 7
+2023-09-27 16:27:52 - logistic_map - INFO - DPNets-relaxed::Tuned metric deformation: 1.0
+2023-09-27 16:27:52 - logistic_map - INFO - DPNets::Seed 5/20
+2023-09-27 16:27:53 - logistic_map - INFO - DPNets-relaxed::START::FeatureDim 7
+2023-09-27 16:27:53 - logistic_map - INFO - DPNets-relaxed::Tuned metric deformation: 1.0
+2023-09-27 16:27:53 - logistic_map - INFO - DPNets::Seed 7/20
+2023-09-27 16:28:13 - logistic_map - INFO - DPNets::END::FeatureDim 7
+2023-09-27 16:28:31 - logistic_map - INFO - DPNets-relaxed::START::FeatureDim 7
+2023-09-27 16:28:31 - logistic_map - INFO - DPNets-relaxed::Tuned metric deformation: 1.0
+2023-09-27 16:28:31 - logistic_map - INFO - DPNets::Seed 8/20
+2023-09-27 16:28:32 - logistic_map - INFO - DPNets::END::FeatureDim 7
+2023-09-27 16:28:47 - logistic_map - INFO - DPNets-relaxed::START::FeatureDim 7
+2023-09-27 16:28:47 - logistic_map - INFO - DPNets-relaxed::Tuned metric deformation: 1.0
+2023-09-27 16:28:47 - logistic_map - INFO - DPNets::Seed 6/20
+2023-09-27 16:30:43 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 7
+2023-09-27 16:30:52 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 7
+2023-09-27 16:31:09 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
+2023-09-27 16:31:09 - logistic_map - INFO - VAMPNets::Seed 9
+2023-09-27 16:31:17 - logistic_map - INFO - VAMPNets::START::FeatureDim 7
+2023-09-27 16:31:17 - logistic_map - INFO - VAMPNets::Seed 10
+2023-09-27 16:31:50 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 7
+2023-09-27 16:32:16 - logistic_map - INFO - DPNets-relaxed::END::FeatureDim 7
+2023-09-27 16:34:20 - logistic_map - INFO - VAMPNets::END
+2023-09-27 16:34:26 - logistic_map - INFO - VAMPNets::END
+2023-09-27 16:34:35 - logistic_map - INFO - DPNets::START::FeatureDim 7
+2023-09-27 16:34:35 - logistic_map - INFO - DPNets::Tuned metric deformation: 1.0
+2023-09-27 16:34:35 - logistic_map - INFO - DPNets::Seed 10
+2023-09-27 16:34:43 - logistic_map - INFO - DPNets::START::FeatureDim 7
+2023-09-27 16:34:43 - logistic_map - INFO - DPNets::Tuned metric deformation: 1.0
+2023-09-27 16:34:43 - logistic_map - INFO - DPNets::Seed 9
