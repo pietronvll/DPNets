@@ -1,4 +1,4 @@
-max_epochs: 40000
+max_epochs: 5000
 log_every_epochs: 20
 subsample: 2 
 layer_widths: [128, 512, 1024, 512, 256, 64]
