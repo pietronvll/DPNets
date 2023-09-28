@@ -1,11 +1,11 @@
 #!/bin/bash
-#PBS -l select=1:ncpus=32:ngpus=1:mem=64gb
+#PBS -l select=1:ncpus=128:mem=64gb
 #PBS -l walltime=24:00:00
-#PBS -q gpu
+#PBS -q cpu
 #PBS -N fluid-DPNets
 #PBS -j oe
 #PBS -o /work/pnovelli/dp_examples/fluid/logs/output.log
-#PBS -J 1-9
+#PBS -J 10-19
 #PBS -r y
 
 module load miniconda3/mc3-py39

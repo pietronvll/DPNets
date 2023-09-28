@@ -38,7 +38,7 @@ opt = torch.optim.Adam
 
 # Trainer Configuration
 trainer_kwargs = {
-    "accelerator": "gpu",
+    "accelerator": "cpu",
     "devices": 1,
     "max_epochs": configs.max_epochs,
     "enable_progress_bar": True,
@@ -256,8 +256,11 @@ def run_VAMPNets(rng_seed: int):
     fmap = _run_VAMPNets(rng_seed)
     rank = configs.layer_widths[-1]  # Full rank OLS
     model = DeepEDMD(fmap, rank=rank, reduced_rank=False)
-    model.fit(np_train, verbose=False)
-    return evaluate_model(model, experiment_path, configs)
+    try:
+        model.fit(np_train, verbose=False)
+        return evaluate_model(model, experiment_path, configs)
+    except:
+        return None
 
 
 def _run_VAMPNets(rng_seed: int):
@@ -285,8 +288,8 @@ def _run_VAMPNets(rng_seed: int):
         train_ds.reshape(train_ds.shape[0], -1), full_matrices=False
     )
     Vh = Vh.astype(np.float32)
-    svd_init(vamp_fmap.lightning_module.encoder, trail_dims, Vh)
-    svd_init(vamp_fmap.lightning_module.encoder_timelagged, trail_dims, Vh)
+    svd_init(vamp_fmap.lightning_module.lobe, trail_dims, Vh)
+    svd_init(vamp_fmap.lightning_module.lobe_timelagged, trail_dims, Vh)
 
     best_lr = tune_learning_rate(trainer, vamp_fmap, torch_dl)
     assert vamp_fmap.lightning_module.lr == best_lr
@@ -329,6 +332,7 @@ def _run_DPNets(
 
     best_lr = tune_learning_rate(trainer, dpnet_fmap, torch_dl)
     assert dpnet_fmap.lightning_module.lr == best_lr
+
     dpnet_fmap.fit(torch_dl)
 
     return dpnet_fmap
@@ -342,8 +346,11 @@ def run_DPNets(rng_seed: int):
     fmap = _run_DPNets(relaxed, rng_seed)
     rank = configs.layer_widths[-1]  # Full rank OLS
     model = DeepEDMD(fmap, rank=rank, reduced_rank=False)
-    model.fit(np_train, verbose=False)
-    return evaluate_model(model, experiment_path, configs)
+    try:
+        model.fit(np_train, verbose=False)
+        return evaluate_model(model, experiment_path, configs)
+    except:
+        return None
 
 
 def run_DPNets_relaxed(rng_seed: int):
@@ -354,8 +361,11 @@ def run_DPNets_relaxed(rng_seed: int):
     fmap = _run_DPNets(relaxed, rng_seed)
     rank = configs.layer_widths[-1]  # Full rank OLS
     model = DeepEDMD(fmap, rank=rank, reduced_rank=False)
-    model.fit(np_train, verbose=False)
-    return evaluate_model(model, experiment_path, configs)
+    try:
+        model.fit(np_train, verbose=False)
+        return evaluate_model(model, experiment_path, configs)
+    except:
+        return None
 
 
 def run_DynamicalAE(rng_seed: int):
