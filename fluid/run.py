@@ -371,7 +371,7 @@ def run_DPNets_relaxed(rng_seed: int):
 def run_DynamicalAE(rng_seed: int):
     from kooplearn.models import DynamicAE
 
-    logger.info(f"DynamicalAE::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+    logger.info(f"DynamicalAE::Seed {rng_seed}")
     trainer = lightning.Trainer(**trainer_kwargs)
 
     model = DynamicAE(
@@ -390,7 +390,7 @@ def run_DynamicalAE(rng_seed: int):
             "layer_widths": configs.layer_widths,
             "input_dims": trail_dims,
         },
-        seed=configs.rng_seed,
+        seed=rng_seed,
     )
 
     # Choose learning rate
@@ -403,7 +403,7 @@ def run_DynamicalAE(rng_seed: int):
 def run_ConsistentAE(rng_seed: int):
     from kooplearn.models import ConsistentAE
 
-    logger.info(f"ConsistentAE::Seed {rng_seed + 1}/{configs.num_rng_seeds}")
+    logger.info(f"ConsistentAE::Seed {rng_seed}")
     trainer = lightning.Trainer(**trainer_kwargs)
 
     model = ConsistentAE(
@@ -422,7 +422,7 @@ def run_ConsistentAE(rng_seed: int):
             "layer_widths": configs.layer_widths,
             "input_dims": trail_dims,
         },
-        seed=configs.rng_seed,
+        seed=rng_seed,
     )
 
     # Data for this
