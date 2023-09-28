@@ -41,7 +41,7 @@ trainer_kwargs = {
     "accelerator": "gpu",
     "devices": 1,
     "max_epochs": configs.max_epochs,
-    "enable_progress_bar": False,
+    "enable_progress_bar": True,
     "enable_checkpointing": False,
     "logger": False,
 }
