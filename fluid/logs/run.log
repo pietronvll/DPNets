@@ -83,3 +83,11 @@
 2023-09-28 17:54:56 - fluid_flow - INFO - ConsistentAE::Seed 1
 2023-09-28 17:54:59 - fluid_flow - INFO - ConsistentAE::Seed 3
 2023-09-28 17:55:00 - fluid_flow - INFO - ConsistentAE::Seed 2
+2023-09-28 17:55:22 - fluid_flow - INFO - ConsistentAE::Seed 0
+2023-09-28 18:07:02 - fluid_flow - INFO - DynamicalAE::Seed 4
+2023-09-28 18:07:40 - fluid_flow - INFO - DynamicalAE::Seed 5
+2023-09-28 18:07:48 - fluid_flow - INFO - DynamicalAE::Seed 6
+2023-09-28 18:08:08 - fluid_flow - INFO - DynamicalAE::Seed 7
+2023-09-28 18:13:03 - fluid_flow - INFO - ConsistentAE::Seed 4
+2023-09-28 18:13:27 - fluid_flow - INFO - ConsistentAE::Seed 5
+2023-09-28 18:13:37 - fluid_flow - INFO - ConsistentAE::Seed 6
