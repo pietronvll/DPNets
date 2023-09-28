@@ -178,3 +178,46 @@
 2023-09-25 21:28:47 - ordered_MNIST - INFO - ConsistentAE::Seed 19/20
 2023-09-25 21:29:03 - ordered_MNIST - INFO - ConsistentAE::Seed 20/20
 2023-09-25 21:29:18 - ordered_MNIST - INFO - ConsistentAE::END
+2023-09-28 14:20:18 - ordered_MNIST - INFO - VAMPNets::START
+2023-09-28 14:20:20 - ordered_MNIST - INFO - VAMPNets::Seed 1/20
+2023-09-28 14:20:55 - ordered_MNIST - INFO - VAMPNets::Seed 2/20
+2023-09-28 14:21:04 - ordered_MNIST - INFO - VAMPNets::Seed 3/20
+2023-09-28 14:21:14 - ordered_MNIST - INFO - VAMPNets::Seed 4/20
+2023-09-28 14:21:24 - ordered_MNIST - INFO - VAMPNets::Seed 5/20
+2023-09-28 14:21:33 - ordered_MNIST - INFO - VAMPNets::Seed 6/20
+2023-09-28 14:21:42 - ordered_MNIST - INFO - VAMPNets::Seed 7/20
+2023-09-28 14:21:53 - ordered_MNIST - INFO - VAMPNets::Seed 8/20
+2023-09-28 14:22:03 - ordered_MNIST - INFO - VAMPNets::Seed 9/20
+2023-09-28 14:22:13 - ordered_MNIST - INFO - VAMPNets::Seed 10/20
+2023-09-28 14:22:23 - ordered_MNIST - INFO - VAMPNets::Seed 11/20
+2023-09-28 14:22:32 - ordered_MNIST - INFO - VAMPNets::Seed 12/20
+2023-09-28 14:22:42 - ordered_MNIST - INFO - VAMPNets::Seed 13/20
+2023-09-28 14:22:52 - ordered_MNIST - INFO - VAMPNets::Seed 14/20
+2023-09-28 14:23:01 - ordered_MNIST - INFO - VAMPNets::Seed 15/20
+2023-09-28 14:23:11 - ordered_MNIST - INFO - VAMPNets::Seed 16/20
+2023-09-28 14:23:21 - ordered_MNIST - INFO - VAMPNets::Seed 17/20
+2023-09-28 14:23:30 - ordered_MNIST - INFO - VAMPNets::Seed 18/20
+2023-09-28 14:23:41 - ordered_MNIST - INFO - VAMPNets::Seed 19/20
+2023-09-28 14:23:50 - ordered_MNIST - INFO - VAMPNets::Seed 20/20
+2023-09-28 14:25:18 - ordered_MNIST - INFO - VAMPNets::START
+2023-09-28 14:25:18 - ordered_MNIST - INFO - VAMPNets::Seed 1/20
+2023-09-28 14:25:32 - ordered_MNIST - INFO - VAMPNets::Seed 2/20
+2023-09-28 14:25:41 - ordered_MNIST - INFO - VAMPNets::Seed 3/20
+2023-09-28 14:25:51 - ordered_MNIST - INFO - VAMPNets::Seed 4/20
+2023-09-28 14:26:00 - ordered_MNIST - INFO - VAMPNets::Seed 5/20
+2023-09-28 14:26:10 - ordered_MNIST - INFO - VAMPNets::Seed 6/20
+2023-09-28 14:26:19 - ordered_MNIST - INFO - VAMPNets::Seed 7/20
+2023-09-28 14:26:29 - ordered_MNIST - INFO - VAMPNets::Seed 8/20
+2023-09-28 14:26:38 - ordered_MNIST - INFO - VAMPNets::Seed 9/20
+2023-09-28 14:26:47 - ordered_MNIST - INFO - VAMPNets::Seed 10/20
+2023-09-28 14:26:57 - ordered_MNIST - INFO - VAMPNets::Seed 11/20
+2023-09-28 14:27:07 - ordered_MNIST - INFO - VAMPNets::Seed 12/20
+2023-09-28 14:27:17 - ordered_MNIST - INFO - VAMPNets::Seed 13/20
+2023-09-28 14:27:26 - ordered_MNIST - INFO - VAMPNets::Seed 14/20
+2023-09-28 14:27:36 - ordered_MNIST - INFO - VAMPNets::Seed 15/20
+2023-09-28 14:27:45 - ordered_MNIST - INFO - VAMPNets::Seed 16/20
+2023-09-28 14:27:54 - ordered_MNIST - INFO - VAMPNets::Seed 17/20
+2023-09-28 14:28:04 - ordered_MNIST - INFO - VAMPNets::Seed 18/20
+2023-09-28 14:28:13 - ordered_MNIST - INFO - VAMPNets::Seed 19/20
+2023-09-28 14:28:23 - ordered_MNIST - INFO - VAMPNets::Seed 20/20
+2023-09-28 14:28:32 - ordered_MNIST - INFO - VAMPNets::END

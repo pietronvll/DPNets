@@ -23,7 +23,9 @@ experiment_path = Path(__file__).parent
 data_path = experiment_path / "data"
 ckpt_path = experiment_path / "ckpt"
 results_path = experiment_path / "results"
-configs = ml_confs.from_file(experiment_path / "configs.yaml", register_jax_pytree = False)
+configs = ml_confs.from_file(
+    experiment_path / "configs.yaml", register_jax_pytree=False
+)
 
 # Logging
 logger = logging.getLogger("ordered_MNIST")
@@ -320,6 +322,7 @@ def run_VAMPNets():
         report = evaluate_model(VAMPNet_model, oracle, test_data)
         report["fit_time"] = fit_time
         report["time_per_epoch"] = time_per_epoch
+        results.append(report)
     report = stack_reports(results)
     logger.info("VAMPNets::END")
     return report
