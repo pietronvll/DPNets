@@ -5,7 +5,6 @@
 #PBS -N logistic_map-DPNets
 #PBS -j oe
 #PBS -o /work/pnovelli/dp_examples/logistic_map/logs/output.log
-#PBS -J 10-19
 #PBS -r y
 
 module load miniconda3/mc3-py39
@@ -13,9 +12,10 @@ module load miniconda3/mc3-py39
 source activate /projects/mlcompchem/mambaforge/envs/kooplearn
 # Change to the working directory
 cd /work/pnovelli/dp_examples/logistic_map 
-
-for model_name in VAMPNets DPNets DPNets-relaxed; do
-    python training_loop_inspection.py --model="$model_name" --rngseed=$PBS_ARRAY_INDEX
+for RNG_SEED in {0..1}; do
+    for model_name in VAMPNets DPNets DPNets-relaxed; do
+        python training_loop_inspection.py --model="$model_name" --rngseed=$RNG_SEED
+    done
 done
 # Wait for all instances to finish
 wait

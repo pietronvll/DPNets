@@ -28,9 +28,7 @@ experiment_path = Path(__file__).parent
 data_path = experiment_path / "data"
 ckpt_path = experiment_path / "ckpt"
 results_path = experiment_path / "results"
-configs = ml_confs.from_file(
-    experiment_path / "configs.yaml", register_jax_pytree=False
-)
+configs = ml_confs.from_file(experiment_path / "configs.yaml")
 
 # Logging
 logger = logging.getLogger("logistic_map")
@@ -311,15 +309,15 @@ def _run_VAMPNets(rng_seed: int, feature_dim: int):
         {"lr": 5e-5},
         trainer,
         net_kwargs,
-        lobe_timelagged=SimpleMLP,
-        lobe_timelagged_kwargs=net_kwargs,
+        encoder_timelagged=SimpleMLP,
+        encoder_timelagged_kwargs=net_kwargs,
         center_covariances=False,
         seed=rng_seed,
     )
     # Init
     torch.manual_seed(rng_seed)
-    kaiming_init(vamp_fmap.lightning_module.lobe)
-    kaiming_init(vamp_fmap.lightning_module.lobe_timelagged)
+    kaiming_init(vamp_fmap.lightning_module.encoder)
+    kaiming_init(vamp_fmap.lightning_module.encoder_timelagged)
     best_lr = tune_learning_rate(trainer, vamp_fmap, train_dl)
     assert vamp_fmap.lightning_module.lr == best_lr
     _, fit_time = timer(vamp_fmap.fit)(train_dl)
