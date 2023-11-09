@@ -1,5 +1,5 @@
 N: 20
-num_rng_seeds: 20
+num_rng_seeds: 1
 num_train: 16385 #batch_size*4 + 1
 num_val: 10000
 num_test: 10000

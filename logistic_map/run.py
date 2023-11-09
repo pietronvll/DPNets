@@ -293,7 +293,7 @@ def run_VAMPNets(feature_dim: int):
         result = _run_VAMPNets(rng_seed, feature_dim)
         reports.append(result)
     full_report = stack_reports(reports)
-    logger.info(f"VAMPNets::END")
+    logger.info("VAMPNets::END")
     return full_report
 
 
@@ -306,9 +306,9 @@ def _run_VAMPNets(rng_seed: int, feature_dim: int):
     vamp_fmap = VAMPNet(
         SimpleMLP,
         opt,
-        {"lr": 5e-5},
         trainer,
-        net_kwargs,
+        encoder_kwargs=net_kwargs,
+        optimizer_kwargs={"lr": 5e-5},
         encoder_timelagged=SimpleMLP,
         encoder_timelagged_kwargs=net_kwargs,
         center_covariances=False,
@@ -337,11 +337,11 @@ def _run_DPNets(
     dpnet_fmap = DPNet(
         SimpleMLP,
         opt,
-        {"lr": 5e-5},
         trainer,
         use_relaxed_loss=relaxed,
         metric_deformation_loss_coefficient=metric_deformation_coeff,
         encoder_kwargs=net_kwargs,
+        optimizer_kwargs={"lr": 5e-5},
         encoder_timelagged=SimpleMLP,
         encoder_timelagged_kwargs=net_kwargs,
         center_covariances=False,
@@ -446,7 +446,8 @@ def run_NoiseKernel(feature_dim: int):
     logger.info(f"NoiseKernel::END::FeatureDim {feature_dim}")
     return full_report
 
-#Runners
+
+# Runners
 AVAIL_MODELS = {
     "VAMPNets": run_VAMPNets,
     "DPNets": run_DPNets,

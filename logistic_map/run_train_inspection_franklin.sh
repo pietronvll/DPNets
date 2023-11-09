@@ -12,7 +12,7 @@ module load miniconda3/mc3-py39
 source activate /projects/mlcompchem/mambaforge/envs/kooplearn
 # Change to the working directory
 cd /work/pnovelli/dp_examples/logistic_map 
-for RNG_SEED in {0..1}; do
+for RNG_SEED in {0..19}; do
     for model_name in VAMPNets DPNets DPNets-relaxed; do
         python training_loop_inspection.py --model="$model_name" --rngseed=$RNG_SEED
     done

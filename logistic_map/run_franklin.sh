@@ -12,7 +12,7 @@ module load miniconda3/mc3-py39
 source activate /projects/mlcompchem/mambaforge/envs/kooplearn
 # Change to the working directory
 cd /work/pnovelli/dp_examples/logistic_map 
-for FDIM in {6..10}; do
+for FDIM in {6..16}; do
     for model_name in Cheby-T VAMPNets DPNets DPNets-relaxed NoiseKernel; do
         python run.py --model="$model_name" --fdim=$FDIM
     done

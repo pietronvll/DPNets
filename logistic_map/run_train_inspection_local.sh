@@ -1,4 +1,4 @@
- for RNG_SEED in {0..1}; do
+ for RNG_SEED in {0..19}; do
     for model_name in VAMPNets DPNets DPNets-relaxed; do
         python training_loop_inspection.py --model="$model_name" --rngseed=$RNG_SEED
     done
