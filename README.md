@@ -1,4 +1,4 @@
-# Deep projections - Experiments 
+# DPNets (submitted to ICLR 2024) - Experiments 
 
 ## General notes:
 1. Each experiment should be self-contained
@@ -12,5 +12,8 @@
 
 ## Noisy Logistic Map
 
-
 ## Ordered MNIST
+
+## Fluid Flow
+
+## Chignolin

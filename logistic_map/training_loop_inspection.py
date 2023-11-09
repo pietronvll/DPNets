@@ -20,7 +20,6 @@ from torch.utils.data import DataLoader
 
 # General definitions
 experiment_path = Path(__file__).parent
-data_path = experiment_path / "data"
 ckpt_path = experiment_path / "ckpt"
 results_path = experiment_path / "results_training_loop_inspection"
 configs = ml_confs.from_file(

@@ -5,7 +5,7 @@
 #PBS -N fluid-DPNets
 #PBS -j oe
 #PBS -o /work/pnovelli/dp_examples/fluid/logs/output.log
-#PBS -J 0-9
+#PBS -J 10-19
 #PBS -r y
 
 module load miniconda3/mc3-py39
