@@ -275,11 +275,11 @@ def _run_VAMPNets(rng_seed: int):
     vamp_fmap = VAMPNet(
         MLP,
         opt,
-        {"lr": 1e-3},
         trainer,
-        net_kwargs,
-        lobe_timelagged=MLP,
-        lobe_timelagged_kwargs=net_kwargs,
+        encoder_kwargs=net_kwargs,
+        optimizer_kwargs={"lr": 1e-3},
+        encoder_timelagged=MLP,
+        encoder_timelagged_kwargs=net_kwargs,
         center_covariances=False,
         seed=rng_seed,
     )
@@ -289,7 +289,7 @@ def _run_VAMPNets(rng_seed: int):
     )
     Vh = Vh.astype(np.float32)
     svd_init(vamp_fmap.lightning_module.lobe, trail_dims, Vh)
-    svd_init(vamp_fmap.lightning_module.lobe_timelagged, trail_dims, Vh)
+    svd_init(vamp_fmap.lightning_module.encoder_timelagged, trail_dims, Vh)
 
     best_lr = tune_learning_rate(trainer, vamp_fmap, torch_dl)
     assert vamp_fmap.lightning_module.lr == best_lr
@@ -313,10 +313,10 @@ def _run_DPNets(
     dpnet_fmap = DPNet(
         MLP,
         opt,
-        {"lr": 1e-3},
         trainer,
         use_relaxed_loss=relaxed,
         encoder_kwargs=net_kwargs,
+        optimizer_kwargs={"lr": 1e-3},
         encoder_timelagged=MLP,
         encoder_timelagged_kwargs=net_kwargs,
         center_covariances=False,
@@ -379,7 +379,6 @@ def run_DynamicalAE(rng_seed: int):
         MLP_r,
         configs.layer_widths[-1],
         opt,
-        {"lr": 1e-3},
         trainer,
         encoder_kwargs={
             "feature_dim": np.prod(trail_dims),
@@ -390,6 +389,7 @@ def run_DynamicalAE(rng_seed: int):
             "layer_widths": configs.layer_widths,
             "input_dims": trail_dims,
         },
+        optimizer_kwargs={"lr": 1e-3},
         seed=rng_seed,
     )
 
@@ -411,7 +411,6 @@ def run_ConsistentAE(rng_seed: int):
         MLP_r,
         configs.layer_widths[-1],
         opt,
-        {"lr": 1e-3},
         trainer,
         encoder_kwargs={
             "feature_dim": np.prod(trail_dims),
@@ -422,6 +421,7 @@ def run_ConsistentAE(rng_seed: int):
             "layer_widths": configs.layer_widths,
             "input_dims": trail_dims,
         },
+        optimizer_kwargs={"lr": 1e-3},
         seed=rng_seed,
     )
 

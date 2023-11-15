@@ -40,10 +40,10 @@ logger.addHandler(file_handler)
 
 # Trainer Configuration
 trainer_kwargs = {
-    "accelerator": "gpu",
+    "accelerator": "mps",
     "devices": 1,
     "max_epochs": configs.max_epochs,
-    "enable_progress_bar": False,
+    "enable_progress_bar": True,
     "enable_checkpointing": False,
     "logger": False,
 }
@@ -304,9 +304,9 @@ def run_VAMPNets():
         feature_map = VAMPNet(
             CNNEncoder,
             torch.optim.Adam,
-            {"lr": 1e-4},
             trainer,
-            {"num_classes": configs.classes},
+            encoder_kwargs={"num_classes": configs.classes},
+            optimizer_kwargs={"lr": 1e-4},
             center_covariances=False,
             seed=rng_seed,
         )
@@ -340,11 +340,11 @@ def _run_DPNets(
     feature_map = DPNet(
         CNNEncoder,
         torch.optim.Adam,
-        {"lr": 1e-4},
         trainer,
         use_relaxed_loss=relaxed,
         metric_deformation_loss_coefficient=metric_deformation_coeff,
         encoder_kwargs={"num_classes": configs.classes},
+        optimizer_kwargs={"lr": 1e-4},
         center_covariances=False,
         seed=rng_seed,
     )
@@ -439,10 +439,10 @@ def run_DynamicalAE():
             CNNDecoder,
             configs.classes,
             torch.optim.Adam,
-            {"lr": 1e-4},
             trainer,
             encoder_kwargs={"num_classes": configs.classes},
             decoder_kwargs={"num_classes": configs.classes},
+            optimizer_kwargs={"lr": 1e-4},
             seed=rng_seed,
         )
         best_lr = tune_learning_rate(trainer, dae_model, train_dl)
@@ -473,10 +473,10 @@ def run_ConsistentAE():
             CNNDecoder,
             configs.classes,
             torch.optim.Adam,
-            {"lr": 1e-4},
             trainer,
             encoder_kwargs={"num_classes": configs.classes},
             decoder_kwargs={"num_classes": configs.classes},
+            optimizer_kwargs={"lr": 1e-4},
             seed=rng_seed,
         )
         best_lr = tune_learning_rate(trainer, dae_model, train_dl)

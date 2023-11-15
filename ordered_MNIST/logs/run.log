@@ -221,3 +221,33 @@
 2023-09-28 14:28:13 - ordered_MNIST - INFO - VAMPNets::Seed 19/20
 2023-09-28 14:28:23 - ordered_MNIST - INFO - VAMPNets::Seed 20/20
 2023-09-28 14:28:32 - ordered_MNIST - INFO - VAMPNets::END
+2023-11-15 18:58:53 - ordered_MNIST - INFO - ConsistentAE::START
+2023-11-15 18:58:53 - ordered_MNIST - INFO - ConsistentAE::Seed 1/20
+2023-11-15 19:01:39 - ordered_MNIST - INFO - ConsistentAE::START
+2023-11-15 19:01:39 - ordered_MNIST - INFO - ConsistentAE::Seed 1/20
+2023-11-15 19:02:37 - ordered_MNIST - INFO - ConsistentAE::Seed 2/20
+2023-11-15 19:02:47 - ordered_MNIST - INFO - ConsistentAE::START
+2023-11-15 19:02:47 - ordered_MNIST - INFO - ConsistentAE::Seed 1/20
+2023-11-15 19:03:37 - ordered_MNIST - INFO - ConsistentAE::Seed 2/20
+2023-11-15 19:03:48 - ordered_MNIST - INFO - ConsistentAE::START
+2023-11-15 19:03:48 - ordered_MNIST - INFO - ConsistentAE::Seed 1/20
+2023-11-15 19:07:04 - ordered_MNIST - INFO - ConsistentAE::Seed 2/20
+2023-11-15 19:10:17 - ordered_MNIST - INFO - ConsistentAE::Seed 3/20
+2023-11-15 19:13:30 - ordered_MNIST - INFO - ConsistentAE::Seed 4/20
+2023-11-15 19:16:43 - ordered_MNIST - INFO - ConsistentAE::Seed 5/20
+2023-11-15 19:19:54 - ordered_MNIST - INFO - ConsistentAE::Seed 6/20
+2023-11-15 19:23:06 - ordered_MNIST - INFO - ConsistentAE::Seed 7/20
+2023-11-15 19:26:18 - ordered_MNIST - INFO - ConsistentAE::Seed 8/20
+2023-11-15 19:29:30 - ordered_MNIST - INFO - ConsistentAE::Seed 9/20
+2023-11-15 19:32:43 - ordered_MNIST - INFO - ConsistentAE::Seed 10/20
+2023-11-15 19:35:56 - ordered_MNIST - INFO - ConsistentAE::Seed 11/20
+2023-11-15 19:39:10 - ordered_MNIST - INFO - ConsistentAE::Seed 12/20
+2023-11-15 19:42:24 - ordered_MNIST - INFO - ConsistentAE::Seed 13/20
+2023-11-15 19:45:38 - ordered_MNIST - INFO - ConsistentAE::Seed 14/20
+2023-11-15 19:48:52 - ordered_MNIST - INFO - ConsistentAE::Seed 15/20
+2023-11-15 19:52:06 - ordered_MNIST - INFO - ConsistentAE::Seed 16/20
+2023-11-15 19:55:20 - ordered_MNIST - INFO - ConsistentAE::Seed 17/20
+2023-11-15 19:58:33 - ordered_MNIST - INFO - ConsistentAE::Seed 18/20
+2023-11-15 20:01:46 - ordered_MNIST - INFO - ConsistentAE::Seed 19/20
+2023-11-15 20:05:01 - ordered_MNIST - INFO - ConsistentAE::Seed 20/20
+2023-11-15 20:08:15 - ordered_MNIST - INFO - ConsistentAE::END

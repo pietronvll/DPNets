@@ -16,7 +16,7 @@ from torch.utils.data import DataLoader
 main_path = Path(__file__).parent
 data_path = main_path / "data"
 ckpt_path = main_path / "ckpt"
-configs = mlcfg.from_file(main_path / "configs.yaml", register_jax_pytree = False)
+configs = mlcfg.from_file(main_path / "configs.yaml")
 
 
 def make_dataset():
