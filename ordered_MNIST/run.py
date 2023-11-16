@@ -40,7 +40,7 @@ logger.addHandler(file_handler)
 
 # Trainer Configuration
 trainer_kwargs = {
-    "accelerator": "mps",
+    "accelerator": "gpu",
     "devices": 1,
     "max_epochs": configs.max_epochs,
     "enable_progress_bar": True,
