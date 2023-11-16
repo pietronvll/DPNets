@@ -253,3 +253,45 @@
 2023-11-15 20:08:15 - ordered_MNIST - INFO - ConsistentAE::END
 2023-11-16 08:57:46 - ordered_MNIST - INFO - DynamicalAE::START
 2023-11-16 08:57:46 - ordered_MNIST - INFO - DynamicalAE::Seed 1/20
+2023-11-16 08:58:45 - ordered_MNIST - INFO - DynamicalAE::Seed 2/20
+2023-11-16 08:59:42 - ordered_MNIST - INFO - DynamicalAE::Seed 3/20
+2023-11-16 09:05:44 - ordered_MNIST - INFO - DynamicalAE::Seed 4/20
+2023-11-16 09:06:41 - ordered_MNIST - INFO - DynamicalAE::Seed 5/20
+2023-11-16 09:07:38 - ordered_MNIST - INFO - DynamicalAE::Seed 6/20
+2023-11-16 09:08:35 - ordered_MNIST - INFO - DynamicalAE::Seed 7/20
+2023-11-16 09:09:33 - ordered_MNIST - INFO - DynamicalAE::Seed 8/20
+2023-11-16 09:10:30 - ordered_MNIST - INFO - DynamicalAE::Seed 9/20
+2023-11-16 09:11:27 - ordered_MNIST - INFO - DynamicalAE::Seed 10/20
+2023-11-16 09:12:25 - ordered_MNIST - INFO - DynamicalAE::Seed 11/20
+2023-11-16 09:13:21 - ordered_MNIST - INFO - DynamicalAE::Seed 12/20
+2023-11-16 09:14:19 - ordered_MNIST - INFO - DynamicalAE::Seed 13/20
+2023-11-16 09:15:16 - ordered_MNIST - INFO - DynamicalAE::Seed 14/20
+2023-11-16 09:16:13 - ordered_MNIST - INFO - DynamicalAE::Seed 15/20
+2023-11-16 09:17:10 - ordered_MNIST - INFO - DynamicalAE::Seed 16/20
+2023-11-16 09:22:06 - ordered_MNIST - INFO - DynamicalAE::Seed 17/20
+2023-11-16 09:23:08 - ordered_MNIST - INFO - DynamicalAE::Seed 18/20
+2023-11-16 09:24:15 - ordered_MNIST - INFO - DynamicalAE::Seed 19/20
+2023-11-16 09:25:12 - ordered_MNIST - INFO - DynamicalAE::Seed 20/20
+2023-11-16 09:31:46 - ordered_MNIST - INFO - DynamicalAE::END
+2023-11-16 09:42:23 - ordered_MNIST - INFO - DynamicalAE::START
+2023-11-16 09:42:23 - ordered_MNIST - INFO - DynamicalAE::Seed 1/20
+2023-11-16 09:42:55 - ordered_MNIST - INFO - DynamicalAE::Seed 2/20
+2023-11-16 09:43:23 - ordered_MNIST - INFO - DynamicalAE::Seed 3/20
+2023-11-16 09:43:53 - ordered_MNIST - INFO - DynamicalAE::Seed 4/20
+2023-11-16 09:46:06 - ordered_MNIST - INFO - DynamicalAE::Seed 5/20
+2023-11-16 09:50:06 - ordered_MNIST - INFO - DynamicalAE::Seed 6/20
+2023-11-16 09:51:29 - ordered_MNIST - INFO - DynamicalAE::Seed 7/20
+2023-11-16 09:51:59 - ordered_MNIST - INFO - DynamicalAE::Seed 8/20
+2023-11-16 09:52:28 - ordered_MNIST - INFO - DynamicalAE::Seed 9/20
+2023-11-16 09:52:58 - ordered_MNIST - INFO - DynamicalAE::Seed 10/20
+2023-11-16 09:56:05 - ordered_MNIST - INFO - DynamicalAE::Seed 11/20
+2023-11-16 09:59:11 - ordered_MNIST - INFO - DynamicalAE::Seed 12/20
+2023-11-16 10:03:11 - ordered_MNIST - INFO - DynamicalAE::Seed 13/20
+2023-11-16 10:07:10 - ordered_MNIST - INFO - DynamicalAE::Seed 14/20
+2023-11-16 10:08:31 - ordered_MNIST - INFO - DynamicalAE::Seed 15/20
+2023-11-16 10:09:01 - ordered_MNIST - INFO - DynamicalAE::Seed 16/20
+2023-11-16 10:09:31 - ordered_MNIST - INFO - DynamicalAE::Seed 17/20
+2023-11-16 10:10:01 - ordered_MNIST - INFO - DynamicalAE::Seed 18/20
+2023-11-16 10:13:08 - ordered_MNIST - INFO - DynamicalAE::Seed 19/20
+2023-11-16 10:15:00 - ordered_MNIST - INFO - DynamicalAE::Seed 20/20
+2023-11-16 10:15:30 - ordered_MNIST - INFO - DynamicalAE::END

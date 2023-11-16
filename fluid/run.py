@@ -38,7 +38,7 @@ opt = torch.optim.Adam
 
 # Trainer Configuration
 trainer_kwargs = {
-    "accelerator": "cpu",
+    "accelerator": "gpu",
     "devices": 1,
     "max_epochs": configs.max_epochs,
     "enable_progress_bar": True,
@@ -241,9 +241,7 @@ train_ds, test_ds, mean, std = load_data(experiment_path, configs)
 np_train = traj_to_contexts(train_ds).astype(np.float32)
 # Torch
 torch_train = TrajToContextsDataset(train_ds.astype(np.float32))
-torch_dl = torch.utils.data.DataLoader(
-    torch_train, batch_size=len(torch_train), shuffle=True
-)
+torch_dl = torch.utils.data.DataLoader(torch_train, batch_size=64, shuffle=True)
 # Data info
 trail_dims = torch_train.contexts.shape[2:]
 
@@ -427,9 +425,7 @@ def run_ConsistentAE(rng_seed: int):
 
     # Data for this
     cae_train = TrajToContextsDataset(train_ds.astype(np.float32), context_window_len=3)
-    cae_dl = torch.utils.data.DataLoader(
-        cae_train, batch_size=len(cae_train), shuffle=True
-    )
+    cae_dl = torch.utils.data.DataLoader(cae_train, batch_size=64, shuffle=True)
 
     # Choose learning rate
     lr = tune_learning_rate(trainer, model, cae_dl)
