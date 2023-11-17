@@ -12,7 +12,7 @@ from kooplearn.nn.functional import (
 from lightning import LightningModule
 
 
-class DeepGraphKernel(LightningModule):
+class GraphDPNet(LightningModule):
     def __init__(
         self,
         configs: ml_confs.Configs,
@@ -24,9 +24,7 @@ class DeepGraphKernel(LightningModule):
     ):
         super().__init__()
 
-        self.save_hyperparameters(
-            ignore=["encoder", "optimizer_fn", "kooplearn_feature_map_weakref"]
-        )
+        self.save_hyperparameters(ignore=["configs", "optimizer"])
         _tmp_opt_kwargs = deepcopy(optimizer_kwargs)
         if "lr" in _tmp_opt_kwargs:  # For Lightning's LearningRateFinder
             self.lr = _tmp_opt_kwargs.pop("lr")
@@ -83,7 +81,7 @@ class DeepGraphKernel(LightningModule):
 
     def configure_optimizers(self):
         kw = self.opt_kwargs | {"lr": self.lr}
-        return self._optimizer(self.parameters(), **kw)
+        return self.optimizer(self.parameters(), **kw)
 
 
 class SchNet(schnetpack.model.AtomisticModel):

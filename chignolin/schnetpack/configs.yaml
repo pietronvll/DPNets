@@ -1,0 +1,18 @@
+# Data loading
+topology_path: '/media/data/pnovelli/md_datasets/chignolin-unbiased/CLN025-0-protein.pdb'
+trajectory_path: '/media/data/pnovelli/md_datasets/chignolin-unbiased/CLN025-0-protein-ALL.dcd'
+selection: 'backbone'
+data_path: '/home/pnovelli/code/dp_examples/chignolin/schnetpack/data'
+# NN configs
+n_final_features: 16
+n_atom_basis: 64
+n_interactions: 3
+n_rbf: 20
+cutoff: 10.
+# Training
+batch_size: 392
+lagtime: 1
+max_epochs: 100
+
+# Rng seed
+seed: 0
