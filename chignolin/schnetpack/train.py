@@ -48,8 +48,8 @@ def main():
         configs,
         n_atoms,
         torch.optim.Adam,
-        use_relaxed_loss=True,
-        metric_deformation_loss_coefficient=1e-2,
+        use_relaxed_loss=configs.use_relaxed_loss,
+        metric_deformation_loss_coefficient=configs.metric_loss,
         optimizer_kwargs={"lr": 1e-2},
     )
 

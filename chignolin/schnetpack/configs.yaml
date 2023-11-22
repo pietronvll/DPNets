@@ -11,8 +11,10 @@ n_rbf: 20
 cutoff: 10.
 # Training
 batch_size: 392
-lagtime: 1
-max_epochs: 100
-
+lagtime: 20
+max_epochs: 20
+# Method
+use_relaxed_loss: True
+metric_loss: 1e-3
 # Rng seed
 seed: 0
