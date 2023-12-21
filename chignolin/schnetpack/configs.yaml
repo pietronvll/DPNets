@@ -10,11 +10,11 @@ n_interactions: 3
 n_rbf: 20
 cutoff: 10.
 # Training
-batch_size: 392
-lagtime: 20
-max_epochs: 20
+batch_size: 784
+lagtime: 1
+max_epochs: 5
 # Method
 use_relaxed_loss: True
-metric_loss: 1e-3
+metric_loss: 0.0
 # Rng seed
 seed: 0

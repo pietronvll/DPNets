@@ -13,13 +13,16 @@ from model import GraphDPNet
 def get_dataset(db_path, cutoff):
     data_path = db_path.parent
     db_name = db_path.name.split(".")[0]
-    cache_path = str(data_path / f"__cache-{db_name}__")
+    cache_path = str(data_path / "__tmp__")
     nb_list_transform = schnetpack.transform.CachedNeighborList(
         cache_path,
         schnetpack.transform.MatScipyNeighborList(cutoff=cutoff),
         keep_cache=True,
     )
-    in_transforms = [schnetpack.transform.CastTo32(), nb_list_transform]
+    in_transforms = [
+        schnetpack.transform.CastTo32(),
+        schnetpack.transform.MatScipyNeighborList(cutoff=cutoff),
+    ]
     return schnetpack.data.ASEAtomsData(str(db_path), transforms=in_transforms)
 
 
@@ -40,7 +43,11 @@ def main():
         dataset, batch_size=configs.batch_size, lagtime=configs.lagtime, shuffle=True
     )
     dataloader = schnetpack.data.AtomsLoader(
-        dataset, batch_sampler=batch_sampler, num_workers=20, persistent_workers=True
+        dataset,
+        batch_sampler=batch_sampler,
+        num_workers=20,
+        persistent_workers=True,
+        pin_memory=True,
     )
 
     n_atoms = dataset[0][schnetpack.properties.n_atoms].item()
@@ -50,7 +57,7 @@ def main():
         torch.optim.Adam,
         use_relaxed_loss=configs.use_relaxed_loss,
         metric_deformation_loss_coefficient=configs.metric_loss,
-        optimizer_kwargs={"lr": 1e-2},
+        optimizer_kwargs={"lr": 1e-3},
     )
 
     train_logger = lightning.pytorch.loggers.WandbLogger(
@@ -64,7 +71,10 @@ def main():
 
     trainer = lightning.Trainer(
         accelerator="gpu",
+        devices=1,
         logger=train_logger,
+        log_every_n_steps=1,
+        overfit_batches=100,
         max_epochs=configs.max_epochs,
         callbacks=[ckpt_cb],
     )
