@@ -14,7 +14,7 @@ batch_size: 784
 lagtime: 1
 max_epochs: 5
 # Method
-use_relaxed_loss: True
-metric_loss: 0.0
+use_EY_loss: False
+metric_loss: 1.0
 # Rng seed
 seed: 0

@@ -4,6 +4,7 @@ from copy import deepcopy
 import ml_confs
 import schnetpack
 import torch
+from cca_zoo.deep._discriminative._dcca_ey import _CCA_EYLoss as EYLoss
 from kooplearn.nn.functional import (  # relaxed_projection_score,
     log_fro_metric_deformation_loss,
     vamp_score,
@@ -12,22 +13,28 @@ from lightning import LightningModule
 from lightning.pytorch.utilities import grad_norm
 
 
-def relaxed_projection_score(cov_x, cov_y, cov_xy):
-    return (
-        2 * torch.linalg.matrix_norm(cov_xy, ord="fro").log()
-        - torch.linalg.matrix_norm(cov_x, ord=2).log()
-        - torch.linalg.matrix_norm(cov_y, ord=2).log()
-    )
+class DPLoss:
+    # A logarithmic version of the DPNets-relaxed score ! Note that covariances are un-centered !
+    @staticmethod
+    def __call__(representations: list[torch.Tensor]):
+        cov_X, cov_Y, cov_XY = compute_covs(*representations)
+        rewards = 2 * torch.linalg.matrix_norm(cov_XY, ord="fro").log()
+        penalties = (
+            torch.linalg.matrix_norm(cov_X, ord=2).log()
+            + torch.linalg.matrix_norm(cov_Y, ord=2).log()
+        )
+        return {
+            "objective": -rewards + penalties,
+            "rewards": rewards,
+            "penalties": penalties,
+        }
 
 
-def EY_CCA_loss(cov_x, cov_y, cov_xy, cov_x_prime, cov_y_prime, cov_xy_prime):
-    symm_xcov = cov_xy + cov_xy.T
-    symm_xcov_prime = cov_xy_prime + cov_xy_prime.T
-    in_cov = cov_x + cov_y
-    in_cov_prime = cov_x_prime + cov_y_prime
-    return -torch.trace(symm_xcov + symm_xcov_prime) + torch.trace(
-        torch.mm(in_cov_prime, in_cov)
-    )
+class VAMP2:
+    @staticmethod
+    def __call__(representations: list[torch.Tensor]):
+        cov_X, cov_Y, cov_XY = compute_covs(*representations)
+        return vamp_score(cov_X, cov_Y, cov_XY)
 
 
 def compute_covs(encoded_X, encoded_Y):
@@ -47,7 +54,7 @@ class GraphDPNet(LightningModule):
         configs: ml_confs.Configs,
         n_atoms: int,
         optimizer: torch.optim.Optimizer,
-        use_relaxed_loss: bool = False,
+        use_EY_loss: bool = False,
         metric_deformation_loss_coefficient: float = 1.0,  # That is, the parameter γ in the paper.
         optimizer_kwargs={},
     ):
@@ -69,6 +76,11 @@ class GraphDPNet(LightningModule):
         self.n_atoms = n_atoms
         self.configs = configs
         self.optimizer = optimizer
+        if self.hparams.use_EY_loss:
+            self.loss = EYLoss()
+        else:
+            self.loss = DPLoss()
+        self.val_metric = VAMP2()
 
     def forward(self, inputs: dict[str, torch.Tensor]) -> dict[str, torch.Tensor]:
         return self.schnet(inputs)
@@ -78,28 +90,26 @@ class GraphDPNet(LightningModule):
         features = features.reshape(-1, self.n_atoms, self.configs.n_final_features)
         features = features.mean(dim=1)  # Linear kernel mean embedding
 
-        encoded_X, encoded_X_prime = torch.tensor_split(features[::2], 2, dim=0)
-        encoded_Y, encoded_Y_prime = torch.tensor_split(features[1::2], 2, dim=0)
-
-        cov_X, cov_Y, cov_XY = compute_covs(encoded_X, encoded_Y)
-        cov_X_prime, cov_Y_prime, cov_XY_prime = compute_covs(
-            encoded_X_prime, encoded_Y_prime
-        )
+        if self.hparams.use_EY_loss:
+            encoded_X, encoded_X_prime = torch.tensor_split(features[::2], 2, dim=0)
+            encoded_Y, encoded_Y_prime = torch.tensor_split(features[1::2], 2, dim=0)
+            representations = [encoded_X, encoded_Y]
+            independent_representations = [encoded_X_prime, encoded_Y_prime]
+            loss = self.loss(
+                representations, independent_representations=independent_representations
+            )["objective"]
+            loss_slug = "EY_loss"
+        else:
+            representations = [features[::2], features[1::2]]
+            loss = self.loss(representations)["objective"]
+            loss_slug = "DP_loss"
 
         metrics = {}
-        S_loss = -1 * relaxed_projection_score(cov_X, cov_Y, cov_XY)
-        EY_loss = EY_CCA_loss(
-            cov_X, cov_Y, cov_XY, cov_X_prime, cov_Y_prime, cov_XY_prime
-        )
-        P_loss = -1 * vamp_score(cov_X, cov_Y, cov_XY, schatten_norm=2)
-        metrics["train/relaxed_projection_score"] = (-1.0 * S_loss).exp().item()
-        metrics["train/projection_score"] = -1.0 * P_loss.item()
-        metrics["train/EY_score"] = -1.0 * EY_loss.item()
-        # Compute the losses
-        if self.hparams.use_relaxed_loss:
-            svd_loss = EY_loss
-        else:
-            svd_loss = P_loss
+        metrics["train/projection_score"] = self.val_metric(
+            [features[::2], features[1::2]]
+        ).item()
+        metrics[f"train/{loss_slug}"] = -1.0 * loss.item()
+        cov_X, cov_Y, cov_XY = compute_covs(*representations)
         if self.hparams.metric_deformation_loss_coefficient > 0.0:
             metric_deformation_loss = 0.5 * (
                 log_fro_metric_deformation_loss(cov_X)
@@ -107,23 +117,19 @@ class GraphDPNet(LightningModule):
             )
             metric_deformation_loss *= self.hparams.metric_deformation_loss_coefficient
             metrics["train/metric_deformation_loss"] = metric_deformation_loss.item()
-            svd_loss += metric_deformation_loss
-        # cov_eigs = torch.linalg.eigvalsh(cov_X)
-        # top_eigs = torch.topk(cov_eigs, k=5, largest=True).values
+            loss += metric_deformation_loss
+        cov_eigs = torch.linalg.eigvalsh(cov_X)
+        top_eigs = torch.topk(cov_eigs, k=5, largest=True).values
 
-        # covXY_svals = torch.linalg.svdvals(cov_XY)
-        # top_svals = torch.topk(covXY_svals, k=5, largest=True).values
-        # for i, v in enumerate(top_eigs):
-        #     metrics[f"train/cov_eig_{i}"] = v.item()
-        # for i, v in enumerate(top_svals):
-        #     metrics[f"train/covXY_sval_{i}"] = v.item()
-        # metrics["train/total_loss"] = svd_loss.item()
-        # metrics["train/phi_XY_difference"] = (
-        #     torch.linalg.matrix_norm(encoded_X - encoded_Y).item()
-        #     / torch.linalg.matrix_norm(encoded_X).item()
-        # )
+        covXY_svals = torch.linalg.svdvals(cov_XY)
+        top_svals = torch.topk(covXY_svals, k=5, largest=True).values
+        for i, v in enumerate(top_eigs):
+            metrics[f"train/cov_eig_{i}"] = v.item()
+        for i, v in enumerate(top_svals):
+            metrics[f"train/covXY_sval_{i}"] = v.item()
+
         self.log_dict(metrics, on_step=True, prog_bar=True, logger=True)
-        return svd_loss
+        return loss
 
     def configure_optimizers(self):
         kw = self.opt_kwargs | {"lr": self.lr}
@@ -162,5 +168,4 @@ class SchNet(schnetpack.model.AtomisticModel):
         inputs["scalar_representation"] = self.final_lin(
             inputs["scalar_representation"]
         )
-        return inputs
         return inputs

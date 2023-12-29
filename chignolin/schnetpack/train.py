@@ -55,16 +55,16 @@ def main():
         configs,
         n_atoms,
         torch.optim.Adam,
-        use_relaxed_loss=configs.use_relaxed_loss,
+        use_EY_loss=configs.use_EY_loss,
         metric_deformation_loss_coefficient=configs.metric_loss,
         optimizer_kwargs={"lr": 1e-3},
     )
 
     train_logger = lightning.pytorch.loggers.WandbLogger(
-        project="GraphDPNet-chignolin", entity="csml"
+        project="GraphDPNet-EYLoss", entity="csml"
     )
 
-    lr_finder_cb = lightning.pytorch.callbacks.LearningRateFinder(max_lr=1e-3)
+    lr_finder_cb = lightning.pytorch.callbacks.LearningRateFinder(max_lr=5e-5)
 
     ckpt_path = db_path.parent.parent / "ckpt" / str(train_logger.experiment.name)
     ckpt_cb = lightning.pytorch.callbacks.ModelCheckpoint(dirpath=ckpt_path)
