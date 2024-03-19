@@ -2,7 +2,13 @@
 
 Warning! The repository is in the process of being updated to the latest version of `kooplearn`. Thanks for your patience!
 
-##### Roadmap:
+### Timeline:
+
+**Mar 19, 2024:**
+
+- Working on the fluid flow example. Refactoring to the new `kooplearn` API. Adding Kernel Baselines
+
+### Roadmap:
 - General
     - [ ] Create `requirements.txt`
     - [ ] Write instructions to run experiments.
