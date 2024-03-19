@@ -1,3 +1,0 @@
-[tool.isort]
-# make it compatible with black
-profile = "black"

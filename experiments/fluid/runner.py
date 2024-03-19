@@ -1,18 +1,17 @@
 import argparse
-import functools
 import logging
 import pickle
 from pathlib import Path
-from time import perf_counter
-from typing import Union
 
 import lightning
 import ml_confs
 import numpy as np
 import torch
-from kooplearn.abc import BaseModel, TrainableFeatureMap
+from kooplearn.abc import BaseModel
 from kooplearn.data import traj_to_contexts
-from kooplearn.nn.data import TrajToContextsDataset
+from kooplearn.nn.data import collate_context_dataset
+
+from experiments.utils import sanitize_filename, tune_learning_rate
 
 # Paths and configs
 experiment_path = Path(__file__).parent
@@ -36,9 +35,10 @@ logger.addHandler(file_handler)
 
 opt = torch.optim.Adam
 
+device = "cpu"
 # Trainer Configuration
 trainer_kwargs = {
-    "accelerator": "gpu",
+    "accelerator": device,
     "devices": 1,
     "max_epochs": configs.max_epochs,
     "enable_progress_bar": True,
@@ -68,19 +68,6 @@ class MLP(torch.nn.Module):
         return x
 
 
-# Adapted from https://realpython.com/python-timer/#creating-a-python-timer-decorator
-def timer(func):
-    @functools.wraps(func)
-    def wrapper_timer(*args, **kwargs):
-        tic = perf_counter()
-        value = func(*args, **kwargs)
-        toc = perf_counter()
-        elapsed_time = toc - tic
-        return value, elapsed_time
-
-    return wrapper_timer
-
-
 class MLP_r(torch.nn.Module):
     def __init__(
         self,
@@ -107,46 +94,6 @@ class MLP_r(torch.nn.Module):
         # Restore dimensions
         x = x.view(x.shape[0], *self.input_dims)
         return x
-
-
-def sanitize_filename(filename):
-    # Define a set of characters that are not allowed in file names on most systems
-    illegal_chars = ["<", ">", ":", '"', "/", "\\", "|", "?", "*"]
-    # Replace any illegal characters with an underscore
-    for char in illegal_chars:
-        filename = filename.replace(char, "_")
-    # Remove leading and trailing spaces
-    filename = filename.strip()
-    # Remove dots and spaces from the beginning and end of the filename
-    filename = filename.strip(". ")
-    # Ensure the filename is not empty and is not just composed of dots
-    if not filename:
-        filename = "unnamed"
-    # Limit the filename length to a reasonable number of characters
-    max_length = 255  # Max file name length on most systems
-    if len(filename) > max_length:
-        filename = filename[:max_length]
-    return filename
-
-
-def tune_learning_rate(
-    trainer: lightning.Trainer,
-    model: Union[BaseModel, TrainableFeatureMap],
-    train_dataloader: torch.utils.data.DataLoader,
-):
-    # See https://lightning.ai/docs/pytorch/stable/api/lightning.pytorch.tuner.tuning.Tuner.html#lightning.pytorch.tuner.tuning.Tuner.lr_find for an explanation of how the lr is chosen
-    tuner = lightning.pytorch.tuner.Tuner(trainer)
-    # Run learning rate finder
-    lr_finder = tuner.lr_find(
-        model.lightning_module,
-        train_dataloaders=train_dataloader,
-        min_lr=1e-6,
-        max_lr=1e-3,
-        num_training=50,
-        early_stop_threshold=None,
-        update_attr=True,
-    )
-    return lr_finder.suggestion()
 
 
 # Init fn
@@ -236,134 +183,86 @@ def evaluate_model(model: BaseModel, experiment_path: Path, configs: ml_confs.Co
 
 
 # Data
-# Data
 train_ds, test_ds, mean, std = load_data(experiment_path, configs)
-np_train = traj_to_contexts(train_ds).astype(np.float32)
+np_train = traj_to_contexts(
+    train_ds,
+)
 # Torch
-torch_train = TrajToContextsDataset(train_ds.astype(np.float32))
-torch_dl = torch.utils.data.DataLoader(torch_train, batch_size=64, shuffle=True)
+train_ctxs = traj_to_contexts(
+    train_ds, backend="torch", device=device, dtype=torch.float32
+)
+torch_dl = torch.utils.data.DataLoader(
+    train_ctxs, batch_size=64, shuffle=True, collate_fn=collate_context_dataset
+)
 # Data info
-trail_dims = torch_train.contexts.shape[2:]
+trail_dims = train_ctxs.data
 
 
 # Runners
-def run_VAMPNets(rng_seed: int):
-    from kooplearn.models import DeepEDMD
+def _run_NNFeatureMap(rng_seed: int, loss_fn, loss_kwargs):
+    from kooplearn.models import Nonlinear
+    from kooplearn.models.feature_maps import NNFeatureMap
 
-    logger.info(f"VAMPNets::Seed {rng_seed + 1}")
-    fmap = _run_VAMPNets(rng_seed)
+    logger.info(f"{loss_fn.__class__.__name__}::Seed {rng_seed + 1}")
+    trainer = lightning.Trainer(**trainer_kwargs)
+    net_kwargs = {
+        "feature_dim": np.prod(trail_dims),
+        "layer_widths": configs.layer_widths,
+    }
+    # Defining the model
+    fmap = NNFeatureMap(
+        MLP,
+        loss_fn,
+        opt,
+        trainer,
+        lagged_encoder=MLP,
+        encoder_kwargs=net_kwargs,
+        loss_kwargs=loss_kwargs,
+        lagged_encoder_kwargs=net_kwargs,
+        seed=rng_seed,
+    )
+    # Init
+    _, _, Vh = np.linalg.svd(
+        train_ds.reshape(train_ds.shape[0], -1), full_matrices=False
+    )
+    Vh = Vh.astype(np.float32)
+    svd_init(fmap.lightning_module.lobe, trail_dims, Vh)
+    svd_init(fmap.lightning_module.encoder_timelagged, trail_dims, Vh)
+
+    best_lr = tune_learning_rate(trainer, fmap, torch_dl)
+    assert fmap.lightning_module.lr == best_lr
+    fmap.fit(torch_dl)
+
     rank = configs.layer_widths[-1]  # Full rank OLS
-    model = DeepEDMD(fmap, rank=rank, reduced_rank=False)
+    model = Nonlinear(fmap, rank=rank, reduced_rank=False)
     try:
         model.fit(np_train, verbose=False)
         return evaluate_model(model, experiment_path, configs)
-    except:
+    except Exception as e:
+        logger.warn(e)
         return None
 
 
-def _run_VAMPNets(rng_seed: int):
-    from kooplearn.models.feature_maps import VAMPNet
+def run_VAMPNets(rng_seed: int):
+    from kooplearn.nn import VAMPLoss
 
-    trainer = lightning.Trainer(**trainer_kwargs)
-    net_kwargs = {
-        "feature_dim": np.prod(trail_dims),
-        "layer_widths": configs.layer_widths,
-    }
-    # Defining the model
-    vamp_fmap = VAMPNet(
-        MLP,
-        opt,
-        trainer,
-        encoder_kwargs=net_kwargs,
-        optimizer_kwargs={"lr": 1e-3},
-        encoder_timelagged=MLP,
-        encoder_timelagged_kwargs=net_kwargs,
-        center_covariances=False,
-        seed=rng_seed,
-    )
-    # Init
-    _, _, Vh = np.linalg.svd(
-        train_ds.reshape(train_ds.shape[0], -1), full_matrices=False
-    )
-    Vh = Vh.astype(np.float32)
-    svd_init(vamp_fmap.lightning_module.lobe, trail_dims, Vh)
-    svd_init(vamp_fmap.lightning_module.encoder_timelagged, trail_dims, Vh)
-
-    best_lr = tune_learning_rate(trainer, vamp_fmap, torch_dl)
-    assert vamp_fmap.lightning_module.lr == best_lr
-    vamp_fmap.fit(torch_dl)
-
-    return vamp_fmap
-
-
-def _run_DPNets(
-    relaxed: bool,
-    rng_seed: int,
-):
-    from kooplearn.models.feature_maps import DPNet
-
-    trainer = lightning.Trainer(**trainer_kwargs)
-    net_kwargs = {
-        "feature_dim": np.prod(trail_dims),
-        "layer_widths": configs.layer_widths,
-    }
-    # Defining the model
-    dpnet_fmap = DPNet(
-        MLP,
-        opt,
-        trainer,
-        use_relaxed_loss=relaxed,
-        encoder_kwargs=net_kwargs,
-        optimizer_kwargs={"lr": 1e-3},
-        encoder_timelagged=MLP,
-        encoder_timelagged_kwargs=net_kwargs,
-        center_covariances=False,
-        seed=rng_seed,
-    )
-    # Init
-    _, _, Vh = np.linalg.svd(
-        train_ds.reshape(train_ds.shape[0], -1), full_matrices=False
-    )
-    Vh = Vh.astype(np.float32)
-    svd_init(dpnet_fmap.lightning_module.encoder, trail_dims, Vh)
-    svd_init(dpnet_fmap.lightning_module.encoder_timelagged, trail_dims, Vh)
-
-    best_lr = tune_learning_rate(trainer, dpnet_fmap, torch_dl)
-    assert dpnet_fmap.lightning_module.lr == best_lr
-
-    dpnet_fmap.fit(torch_dl)
-
-    return dpnet_fmap
+    return _run_NNFeatureMap(rng_seed, VAMPLoss, {"center_covariances": False})
 
 
 def run_DPNets(rng_seed: int):
-    from kooplearn.models import DeepEDMD
+    from kooplearn.nn import DPLoss
 
-    relaxed = False
-    logger.info(f"DPNets::Seed {rng_seed + 1}")
-    fmap = _run_DPNets(relaxed, rng_seed)
-    rank = configs.layer_widths[-1]  # Full rank OLS
-    model = DeepEDMD(fmap, rank=rank, reduced_rank=False)
-    try:
-        model.fit(np_train, verbose=False)
-        return evaluate_model(model, experiment_path, configs)
-    except:
-        return None
+    return _run_NNFeatureMap(
+        rng_seed, DPLoss, {"center_covariances": False, "relaxed": False}
+    )
 
 
 def run_DPNets_relaxed(rng_seed: int):
-    from kooplearn.models import DeepEDMD
+    from kooplearn.nn import DPLoss
 
-    relaxed = True
-    logger.info(f"DPNets::Seed {rng_seed + 1}")
-    fmap = _run_DPNets(relaxed, rng_seed)
-    rank = configs.layer_widths[-1]  # Full rank OLS
-    model = DeepEDMD(fmap, rank=rank, reduced_rank=False)
-    try:
-        model.fit(np_train, verbose=False)
-        return evaluate_model(model, experiment_path, configs)
-    except:
-        return None
+    return _run_NNFeatureMap(
+        rng_seed, DPLoss, {"center_covariances": False, "relaxed": True}
+    )
 
 
 def run_DynamicalAE(rng_seed: int):
