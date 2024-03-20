@@ -1,6 +1,7 @@
 import argparse
 import logging
 import pickle
+import sys
 from functools import partial
 from pathlib import Path
 
@@ -8,13 +9,13 @@ import lightning
 import ml_confs
 import numpy as np
 import torch
-from kooplearn.abc import BaseModel
 from kooplearn.data import traj_to_contexts
 from kooplearn.models import Kernel
 from kooplearn.nn.data import collate_context_dataset
-from sklearn.gaussian_process.kernels import RBF
 from sklearn.metrics.pairwise import polynomial_kernel
 
+main_path = Path(__file__).parent.parent.parent
+sys.path.append(str(main_path))
 from experiments.utils import sanitize_filename, tune_learning_rate
 
 # Paths and configs
@@ -163,25 +164,17 @@ def channel_from_state(snapshots, mean, std, channel_idx=-1):
     return snapshots[..., channel_idx] * std[channel_idx] + mean[channel_idx]
 
 
-def evaluate_model(model: BaseModel, experiment_path: Path, configs: ml_confs.Configs):
-    train_ds, test_ds, mean, std = load_data(experiment_path, configs)
+def evaluate_model(model):
+    true = np_test.lookforward(1)
+    true_C = channel_from_state(true, mean, std)
 
-    lookback_len = model.lookback_len
-    # Initial condition - last training point
-    init = np.expand_dims(train_ds[-1:], 1)
-    init = np.concatenate([init for _ in range(lookback_len)], axis=1)
+    pred = np.concatenate(
+        [model.predict(np_test[0], t=t) for t in range(1, len(np_test) + 1)], axis=0
+    )
+    pred_C = channel_from_state(pred, mean, std)
 
-    def obs_fn(x):
-        return channel_from_state(x, mean, std)
-
-    # Predict
-    ref = channel_from_state(test_ds, mean, std)
-    # MSE
-    mse = []
-    for t in range(len(test_ds)):
-        pred = model.predict(init, t=t, observables=obs_fn)
-        mse.append(np.mean((pred - ref[t]) ** 2))
-    return np.sqrt(mse)
+    rMSE_error = np.sqrt(np.mean((true_C - pred_C) ** 2, axis=(2, 3)))[:, 0]
+    return rMSE_error
 
 
 # Data
@@ -200,7 +193,7 @@ torch_dl = torch.utils.data.DataLoader(
     train_ctxs, batch_size=64, shuffle=True, collate_fn=collate_context_dataset
 )
 # Data info
-trail_dims = train_ctxs.data
+trail_dims = train_ctxs.data.shape[2:]
 
 
 # Runners
@@ -231,8 +224,8 @@ def _run_NNFeatureMap(rng_seed: int, loss_fn, loss_kwargs):
         train_ds.reshape(train_ds.shape[0], -1), full_matrices=False
     )
     Vh = Vh.astype(np.float32)
-    svd_init(fmap.lightning_module.lobe, trail_dims, Vh)
-    svd_init(fmap.lightning_module.encoder_timelagged, trail_dims, Vh)
+    svd_init(fmap.lightning_module.encoder, trail_dims, Vh)
+    svd_init(fmap.lightning_module.lagged_encoder, trail_dims, Vh)
 
     best_lr = tune_learning_rate(trainer, fmap, torch_dl)
     assert fmap.lightning_module.lr == best_lr
@@ -244,7 +237,7 @@ def _run_NNFeatureMap(rng_seed: int, loss_fn, loss_kwargs):
         model.fit(
             np_train,
         )
-        return evaluate_model(model, experiment_path, configs)
+        return evaluate_model(model)
     except Exception as e:
         logger.warn(e)
         return None
@@ -275,21 +268,16 @@ def run_DPNets_relaxed(rng_seed: int):
 def _run_Kernel(kernel_fn):
     model = Kernel(kernel_fn, reduced_rank=False, rank=32, tikhonov_reg=1e-6)
     model.fit(np_train)
-    return model
+    return evaluate_model(model)
 
 
-def run_Poly1():
+def run_Poly1(rng_seed):
     kernel_fn = partial(polynomial_kernel, degree=1)
     return _run_Kernel(kernel_fn)
 
 
-def run_Poly3():
+def run_Poly3(rng_seed):
     kernel_fn = polynomial_kernel
-    return _run_Kernel(kernel_fn)
-
-
-def run_RBF():
-    kernel_fn = RBF(length_scale=1.0)
     return _run_Kernel(kernel_fn)
 
 
@@ -322,7 +310,7 @@ def run_DynamicalAE(rng_seed: int):
     lr = tune_learning_rate(trainer, model, torch_dl)
     assert model.lightning_module.lr == lr
     model.fit(torch_dl)
-    return evaluate_model(model, experiment_path, configs)
+    return evaluate_model(model)
 
 
 def run_ConsistentAE(rng_seed: int):
@@ -367,7 +355,7 @@ def run_ConsistentAE(rng_seed: int):
     lr = tune_learning_rate(trainer, model, cae_dl)
     assert model.lightning_module.lr == lr
     model.fit(cae_dl)
-    return evaluate_model(model, experiment_path, configs)
+    return evaluate_model(model)
 
 
 AVAIL_MODELS = {
@@ -376,6 +364,8 @@ AVAIL_MODELS = {
     "DPNets-relaxed": run_DPNets_relaxed,
     "DynamicalAE": run_DynamicalAE,
     "ConsistentAE": run_ConsistentAE,
+    "Poly3": run_Poly3,
+    "Poly1": run_Poly1,
 }
 
 
