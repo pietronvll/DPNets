@@ -1,6 +1,7 @@
 import argparse
 import logging
 import pickle
+from functools import partial
 from pathlib import Path
 
 import lightning
@@ -9,7 +10,10 @@ import numpy as np
 import torch
 from kooplearn.abc import BaseModel
 from kooplearn.data import traj_to_contexts
+from kooplearn.models import Kernel
 from kooplearn.nn.data import collate_context_dataset
+from sklearn.gaussian_process.kernels import RBF
+from sklearn.metrics.pairwise import polynomial_kernel
 
 from experiments.utils import sanitize_filename, tune_learning_rate
 
@@ -18,9 +22,7 @@ experiment_path = Path(__file__).parent
 data_path = experiment_path / "data"
 ckpt_path = experiment_path / "ckpt"
 results_path = experiment_path / "results"
-configs = ml_confs.from_file(
-    experiment_path / "configs.yaml", register_jax_pytree=False
-)
+configs = ml_confs.from_file(experiment_path / "configs.yaml")
 
 # Logging
 logger = logging.getLogger("fluid_flow")
@@ -187,6 +189,9 @@ train_ds, test_ds, mean, std = load_data(experiment_path, configs)
 np_train = traj_to_contexts(
     train_ds,
 )
+np_test = traj_to_contexts(
+    test_ds,
+)
 # Torch
 train_ctxs = traj_to_contexts(
     train_ds, backend="torch", device=device, dtype=torch.float32
@@ -236,7 +241,9 @@ def _run_NNFeatureMap(rng_seed: int, loss_fn, loss_kwargs):
     rank = configs.layer_widths[-1]  # Full rank OLS
     model = Nonlinear(fmap, rank=rank, reduced_rank=False)
     try:
-        model.fit(np_train, verbose=False)
+        model.fit(
+            np_train,
+        )
         return evaluate_model(model, experiment_path, configs)
     except Exception as e:
         logger.warn(e)
@@ -263,6 +270,27 @@ def run_DPNets_relaxed(rng_seed: int):
     return _run_NNFeatureMap(
         rng_seed, DPLoss, {"center_covariances": False, "relaxed": True}
     )
+
+
+def _run_Kernel(kernel_fn):
+    model = Kernel(kernel_fn, reduced_rank=False, rank=32, tikhonov_reg=1e-6)
+    model.fit(np_train)
+    return model
+
+
+def run_Poly1():
+    kernel_fn = partial(polynomial_kernel, degree=1)
+    return _run_Kernel(kernel_fn)
+
+
+def run_Poly3():
+    kernel_fn = polynomial_kernel
+    return _run_Kernel(kernel_fn)
+
+
+def run_RBF():
+    kernel_fn = RBF(length_scale=1.0)
+    return _run_Kernel(kernel_fn)
 
 
 def run_DynamicalAE(rng_seed: int):
@@ -323,8 +351,17 @@ def run_ConsistentAE(rng_seed: int):
     )
 
     # Data for this
-    cae_train = TrajToContextsDataset(train_ds.astype(np.float32), context_window_len=3)
-    cae_dl = torch.utils.data.DataLoader(cae_train, batch_size=64, shuffle=True)
+    # Torch
+    train_ctxs = traj_to_contexts(
+        train_ds,
+        context_window_len=3,
+        backend="torch",
+        device=device,
+        dtype=torch.float32,
+    )
+    cae_dl = torch.utils.data.DataLoader(
+        train_ctxs, batch_size=64, shuffle=True, collate_fn=collate_context_dataset
+    )
 
     # Choose learning rate
     lr = tune_learning_rate(trainer, model, cae_dl)

@@ -3,6 +3,9 @@
 Warning! The repository is in the process of being updated to the latest version of `kooplearn`. Thanks for your patience!
 
 ### Timeline:
+**Mar 20, 2024:**
+
+- Working on the fluid flow. Need to fix `evaluate_model`.
 
 **Mar 19, 2024:**
 
