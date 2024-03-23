@@ -190,7 +190,10 @@ train_ctxs = traj_to_contexts(
     train_ds, backend="torch", device=device, dtype=torch.float32
 )
 torch_dl = torch.utils.data.DataLoader(
-    train_ctxs, batch_size=64, shuffle=True, collate_fn=collate_context_dataset
+    train_ctxs,
+    batch_size=len(train_ctxs),
+    shuffle=True,
+    collate_fn=collate_context_dataset,
 )
 # Data info
 trail_dims = train_ctxs.data.shape[2:]

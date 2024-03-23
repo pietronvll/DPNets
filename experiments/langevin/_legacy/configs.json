@@ -1,0 +1,20 @@
+{
+    "project_name": "generator-langevin",
+    "entity": "csml",
+    "mlp_layers": [32, 64, 128, 128, 64, 4],
+    "lr": 1e-5,
+    "metric_reg": 50,
+    "validation": {
+        "batch_size": 8192,
+        "shuffle": true,
+        "log_every": 10
+    },
+    "training": {
+        "batch_size": 8192,
+        "shuffle": false,
+        "log_every": 10,
+        "max_epochs": 500
+    },
+    "seed": 42,
+    "estimator_reg": 1e-5
+}
