@@ -235,7 +235,7 @@ def _run_NNFeatureMap(rng_seed: int, loss_fn, loss_kwargs):
     fmap.fit(torch_dl)
 
     rank = configs.layer_widths[-1]  # Full rank OLS
-    model = Nonlinear(fmap, rank=rank, reduced_rank=False)
+    model = Nonlinear(fmap, rank=rank, reduced_rank=False, tikhonov_reg=1e-4)
     try:
         model.fit(
             np_train,
