@@ -256,7 +256,13 @@ def run_DPNets(rng_seed: int):
     from kooplearn.nn import DPLoss
 
     return _run_NNFeatureMap(
-        rng_seed, DPLoss, {"center_covariances": False, "relaxed": False}
+        rng_seed,
+        DPLoss,
+        {
+            "center_covariances": False,
+            "relaxed": False,
+            "metric_deformation": configs.metric_deformation,
+        },
     )
 
 
@@ -264,7 +270,13 @@ def run_DPNets_relaxed(rng_seed: int):
     from kooplearn.nn import DPLoss
 
     return _run_NNFeatureMap(
-        rng_seed, DPLoss, {"center_covariances": False, "relaxed": True}
+        rng_seed,
+        DPLoss,
+        {
+            "center_covariances": False,
+            "relaxed": True,
+            "metric_deformation": configs.metric_deformation,
+        },
     )
 
 

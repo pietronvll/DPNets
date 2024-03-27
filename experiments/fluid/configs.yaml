@@ -1,3 +1,4 @@
-max_epochs: 40000
+max_epochs: 10000
 subsample: 2 
 layer_widths: [128, 512, 1024, 512, 256, 64]
+metric_deformation: 0.0068
